@@ -1,0 +1,22 @@
+<wpml-config>
+	<custom-types>
+		<custom-type translate="1">portfolio</custom-type>
+		<custom-type translate="1">testimonials</custom-type>
+	</custom-types>
+	<taxonomies>
+		<taxonomy translate="1">portfolio-type</taxonomy>
+		<taxonomy translate="1">testimonials-type</taxonomy>
+	</taxonomies>
+	<custom-fields>
+		<custom-field action="copy">om_quote</custom-field>
+		<custom-field action="copy">om_quote_author</custom-field>
+		<custom-field action="copy">om_testimonial_author_desc</custom-field>
+	</custom-fields>
+	<admin-texts>
+		<key name="om_amax_header_tagline" />
+		<key name="om_amax_subfooter_text" />
+		<key name="om_amax_site_logo_text" />
+		<key name="om_amax_breadcrumbs_caption" />
+		<key name="ompf_portfolio_random_title" />
+	</admin-texts>
+</wpml-config>

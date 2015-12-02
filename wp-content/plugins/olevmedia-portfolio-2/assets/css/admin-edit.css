@@ -1,0 +1,7 @@
+.wp-list-table .column-portfolio_type {
+	width:20px;
+}
+
+.wp-list-table .column-portfolio_type .post-format-icon:before {
+	margin-right:0;
+}

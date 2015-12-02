@@ -1,0 +1,363 @@
+.omsc-one-half,
+.omsc-one-third,
+.omsc-two-third,
+.omsc-one-fourth,
+.omsc-three-fourth,
+.omsc-one-fifth,
+.omsc-two-fifth,
+.omsc-three-fifth,
+.omsc-four-fifth,
+.omsc-one-sixth,
+.omsc-five-sixth,
+
+.one-half,
+.one-third,
+.two-third,
+.one-fourth,
+.three-fourth,
+.one-fifth,
+.two-fifth,
+.three-fifth,
+.four-fifth,
+.one-sixth,
+.five-sixth {
+  float: right;
+  margin-right:0;
+  margin-left:4%;
+}
+.omsc-one-half.omsc-last,
+.omsc-one-third.omsc-last,
+.omsc-two-third.omsc-last,
+.omsc-one-fourth.omsc-last,
+.omsc-three-fourth.omsc-last,
+.omsc-one-fifth.omsc-last,
+.omsc-two-fifth.omsc-last,
+.omsc-three-fifth.omsc-last,
+.omsc-four-fifth.omsc-last,
+.omsc-one-sixth.omsc-last,
+.omsc-five-sixth.omsc-last,
+
+.one-half.last,
+.one-third.last,
+.two-third.last,
+.one-fourth.last,
+.three-fourth.last,
+.one-fifth.last,
+.two-fifth.last,
+.three-fifth.last,
+.four-fifth.last,
+.one-sixth.last,
+.five-sixth.last {
+  margin-left: 0;
+}
+
+.header-intro-text, .header-wpml-selector {
+	float:right;
+}
+
+.header-socials {
+	float:left;
+}
+
+.header-socials [class^="social-icon"],
+.header-socials [class*=" social-icon"] {
+	margin-left:0;
+	margin-right:0.5em;
+}
+
+.logo-menu-wrapper .logo-box {
+	padding-left:60px;
+	padding-right:0;
+}
+
+.header-search {
+	float:left;
+}
+
+.header-layout-1 .header-search {
+	margin-right:0;
+}
+
+.search-popup {
+	right:auto;
+	left:-1px;
+}
+
+.search-popup:before {
+	right:auto;
+	left:3px;
+}
+
+.search-popup:after {
+	right:auto;
+	left:6px;
+}
+
+.primary-menu > li > ul {
+	left:auto;
+	right:0;
+}
+
+.primary-menu > li:first-child > ul {
+	right:auto;
+	left:0;
+}
+
+.primary-menu ul ul {
+	left:auto;
+	right:100%;
+}
+
+.primary-menu.show-dropdown-symbol > li.menu-parent-item > a:after,
+.primary-menu.show-dropdown-symbol ul li.menu-parent-item > a:after {
+	display:none;
+}
+
+.primary-menu.show-dropdown-symbol > li.menu-parent-item > a:before {
+	content:"\f107";
+	font-family:"FontAwesome";
+	margin-right:0.6em;
+	line-height:1;
+}
+
+.primary-menu.show-dropdown-symbol ul li.menu-parent-item > a:before {
+	content:"\f104";
+	font-family:"FontAwesome";
+	margin-right:0.6em;
+	line-height:1;
+}
+
+.sidebar-widget ul li, .footer-widget ul li {
+	padding-right:1em;
+	padding-left:0;
+}
+
+.sidebar-widget ul li:before, .footer-widget ul li:before {
+	display:none;
+}
+
+.sidebar-widget ul li:after, .footer-widget ul li:after {
+	content: "\f104";
+	font-family: "FontAwesome";
+	position: absolute;
+	top: 1px;
+	right:0;
+}
+
+.with-sub-footer-text .sub-footer-menu-social {
+	float:left;
+	text-align:left;
+}
+
+.with-sub-footer-text .sub-footer-text {
+	float:right;
+}
+
+.secondary-menu > li {
+	float:right;
+}
+
+.secondary-menu > li:first-child {
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: inherit;
+}
+
+.secondary-menu > li:first-child a {
+	padding-left:0.8em;
+	padding-right:0;
+}
+
+.secondary-menu > li:last-child a {
+	padding-right:0.8em;
+	padding-left:0;
+}
+
+.secondary-menu > li:last-child {
+	border-left:0;
+}
+
+.footer-menu li, .footer-menu ul {
+	border-left:0;
+	border-right-width: 1px;
+	border-right-style: solid;
+}
+
+.footer-menu li:first-child {
+	border-right:0;
+}
+
+.omsc-button .fa {
+	margin-right:0;
+	margin-left: 0.6em;
+}
+
+.footer-social-icons [class^="social-icon"], .footer-social-icons [class*=" social-icon"] {
+	margin-left:0;
+	margin-right:0.5em;
+}
+
+.ompf-portfolio {
+	margin-right: 0;
+	margin-left: -3%;
+}
+
+.ompf-portfolio-thumb {
+	float: right;
+	margin-right: 0;
+	margin-left: 3%;
+}
+
+.blogroll.layout-medium .post-media,
+.blogroll.layout-small .post-media {
+	float: right;
+	margin-right:0;
+	margin-left:4%;
+}
+
+.navigation-prev {
+	float:right;
+}
+
+.navigation-prev a {
+	padding-left: 0.5em;
+	padding-right:0;
+}
+
+.navigation-prev a:before {
+	content:'\2192';
+	margin-left: 0.5em;
+	margin-right: 0;
+}
+
+.navigation-next {
+	float:left;
+}
+
+.navigation-next a {
+	padding-right: 0.5em;
+	padding-left:0;
+}
+
+.navigation-next a:after {
+	content:'\2190';
+	margin-right: 0.5em;
+	margin-left: 0;
+}
+
+.ompf-portfolio-categories li, .entry-content .ompf-portfolio-categories li {
+	float: right;
+	margin-left:1em;
+	margin-right:0;
+}
+
+.om_theme .ompf-portfolio-categories li:first-child {
+	border-left-width: 1px;
+	border-left-style: solid;
+	padding-left: 0.9em;
+}
+
+.om_theme .ompf-portfolio-categories li:last-child {
+	border-width:0;
+	padding-left: 0;
+}
+
+.omsc-infobox.omsc-with-icon {
+	padding-right:2.7em;
+	padding-left:1em;
+}
+
+.omsc-biginfobox .omsc-button-block {
+	text-align:left;
+}
+
+.omsc-toggle-title {
+	padding-left:1em;
+	padding-right:2.4em;
+}
+
+.omsc-toggle-title:after {
+	left:auto;
+	right:1em;
+}
+
+/**************************/
+
+@media only screen and (max-width: 767px) {
+	.header-intro-text,
+	.header-socials,
+	.header-wpml-selector {
+		float:none;
+	}
+	
+	.header-socials [class^="social-icon"],
+	.header-socials [class*=" social-icon"] {
+		margin-left:0.2em;
+		margin-right:0.2em;
+	}
+	
+	.logo-menu-wrapper .logo-box {
+		padding-left:0;
+	}
+	
+	.omsc-one-half,
+	.omsc-one-third,
+	.omsc-two-third,
+	.omsc-one-fourth,
+	.omsc-three-fourth,
+	.omsc-one-fifth,
+	.omsc-two-fifth,
+	.omsc-three-fifth,
+	.omsc-four-fifth,
+	.omsc-one-sixth,
+	.omsc-five-sixth,
+	
+	.one-half,
+	.one-third,
+	.two-third,
+	.one-fourth,
+	.three-fourth,
+	.one-fifth,
+	.two-fifth,
+	.three-fifth,
+	.four-fifth,
+	.one-sixth,
+	.five-sixth {
+	  float: none;
+	  margin-left:0;
+	}
+	
+	.with-sub-footer-text .sub-footer-menu-social,
+	.with-sub-footer-text .sub-footer-text {
+		float:none;
+		text-align:center;
+	}
+	
+	.footer-social-icons [class^="social-icon"], .footer-social-icons [class*=" social-icon"] {
+		margin:0 0.25em 0.5em;
+	}
+	
+	.ompf-portfolio {
+		margin-left:0;
+	}
+	
+	.ompf-portfolio-thumb {
+		float:none;
+		margin-left:0;
+	}
+	
+	.blogroll.layout-small .post-media,
+	.blogroll.layout-medium .post-media {
+		margin:1em auto;
+		float:none;
+	}
+	
+	.blogroll.layout-grid .post {
+		margin-left:0;
+		float:none;
+	}
+	
+	.omsc-biginfobox .omsc-button-block {
+		text-align:center;
+	}
+}

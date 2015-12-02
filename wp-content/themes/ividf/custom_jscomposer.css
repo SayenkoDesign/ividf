@@ -1,0 +1,61 @@
+/* js composer*/
+.modal-dialog {width:900px !important;}
+.modal { position: fixed; top: 0; right: 0; bottom: 0; left: 0; z-index: 99999; display: none; overflow: hidden; -webkit-overflow-scrolling: touch; outline: 0 }
+.modal-open .modal-dialog {top:50% ; left:50% ; float:left; margin-top:-253px ; margin-left:-450px; position:fixed; z-index:999999;}
+.page-id-636.modal-open .modal-dialog {top:50% ; left:50% ; float:left; margin-top:-333px ; margin-left:-317px; position:absolute; z-index:999999;}
+.modal button.close {background:none !important;}
+.modal-backdrop.in {opacity: .8 !important;}
+
+.about_us_popup {width: 635px !important; float: left; margin: 0;}
+.about_us_popup .popup_photo { width: auto;  float: left; margin:0 40px 0 0; height:260px; position:relative;}
+.about_us_popup .modal-content {background-color: #4d4d4d; float: left; width: 100%;}
+.about_us_popup .popup_name { color: #fff; font-weight: 500; font-size: 36px; margin:70px 0 0 0;}
+.about_us_popup .popup_job {font-size: 16px; color: #fff;}
+.about_us_popup button.close {background:none; font-weight:normal; margin:0 10px 0 0; font-size:40px; cursor:pointer; }
+.about_us_popup .popup_description {background:#fff; padding:20px; font-size:13px; line-height:20px; text-align:justify;}
+.about_us_popup .popup_contact_us a {font-size: 14px; font-weight: 600;}
+.about_us_popup .popup_contact_us a:hover {text-decoration:none;}
+.about_us_popup .popup_photo:before {content:'';width: 0;height: 0; border-top:20px solid transparent; border-right:30px solid #4d4d4d; border-bottom:20px solid transparent; position:absolute; left:230px; top:110px; z-index:99999;}
+
+.vc_om-person.om-person-style-colored .om-person-job{font-size: 12px;}
+
+@media (max-width:768px) {
+	.modal-body iframe {width:748px; height:421px;}
+}
+
+@media (max-width:767px) {
+	.modal-body iframe {width:716px; height:403px;}
+}
+
+@media (max-width:667px) {
+	.modal-body iframe {width:647px; height:364px;}
+}
+
+@media (max-width:568px) {
+	.modal-body iframe {width:548px; height:308px;}
+}
+
+@media (max-width:480px) {
+	.modal-body iframe {width:460px; height:259px;} 
+	.about_us_popup .popup_photo {margin: 0 20px 0 0;}
+	.about_us_popup .popup_name {font-size:22px;}
+	.about_us_popup .popup_job {font-size: 13px;}
+}
+
+@media (max-width:414px) {
+	.modal-body iframe {width:394px; height:222px;}
+	.about_us_popup .popup_photo {width:150px; height:150px;}	
+	.about_us_popup .popup_photo:before {top:50px; left:120px;}
+	.about_us_popup .popup_name {margin:30px 0 0 0;}
+}
+@media (max-width:375px) {
+	.about_us_popup .popup_photo:before {top:55px;}
+	.modal-body iframe {width:355px; height:200px;}
+}
+@media (max-width:320px) {
+	.about_us_popup .popup_name {font-size:14px;}
+	.about_us_popup .popup_job {font-size:12px; line-height:16px;}
+	.about_us_popup .popup_contact_us a {font-size:12px;}
+	.modal-body iframe {width:300px; height:169px;}
+}
+/* js composer end */

@@ -1,0 +1,13 @@
+/* LayerSlider Borderless Dark Skin */
+
+.om_theme .ls-borderlessdark .ls-playvideo,
+.om_theme .ls-borderlessdark .ls-nav-sides,
+.om_theme .ls-borderlessdark .ls-bottom-slidebuttons a,
+.om_theme .ls-borderlessdark .ls-nav-prev,
+.om_theme .ls-borderlessdark .ls-nav-next,
+.om_theme .ls-borderlessdark .ls-nav-start,
+.om_theme .ls-borderlessdark .ls-nav-stop,
+.om_theme .ls-borderlessdark .ls-fullscreen,
+.om_theme .ls-borderlessdark .ls-loading-container {
+	background-image: url(borderlessdark/skin.png);	
+}

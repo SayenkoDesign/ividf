@@ -1,0 +1,4967 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Amax\n"
+"POT-Creation-Date: 2015-05-25 12:48+0300\n"
+"PO-Revision-Date: 2015-05-25 12:48+0300\n"
+"Last-Translator: \n"
+"Language-Team: Olevmedia\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SearchPath-0: amax\n"
+
+#: amax/404.php:5
+msgid "Oops, something went wrong&hellip;"
+msgstr ""
+
+#: amax/404.php:17
+msgid "Here are some useful links"
+msgstr ""
+
+#: amax/404.php:25
+msgid "Try to search"
+msgstr ""
+
+#: amax/archive.php:62
+#: amax/index.php:75
+#: amax/template-blog.php:86
+msgid "Newer Entries"
+msgstr ""
+
+#: amax/archive.php:63
+#: amax/index.php:76
+#: amax/template-blog.php:87
+msgid "Older Entries"
+msgstr ""
+
+#: amax/archive.php:75
+#, php-format
+msgid "Sorry, but there aren't any posts in the %s category yet."
+msgstr ""
+
+#: amax/archive.php:77
+#, php-format
+msgid "Sorry, but there aren't any posts tagged %s yet."
+msgstr ""
+
+#: amax/archive.php:79
+msgid "Sorry, but there aren't any posts with this date."
+msgstr ""
+
+#: amax/archive.php:81
+msgid "No posts found."
+msgstr ""
+
+#: amax/comments.php:23
+#: amax/functions/theme-options-fields.php:640
+msgid "Comments"
+msgstr ""
+
+#: amax/comments.php:32
+msgid "This post is password protected. Enter the password to view comments."
+msgstr ""
+
+#: amax/comments.php:44
+msgid "Leave your message here"
+msgstr ""
+
+#: amax/comments.php:44
+#: amax/functions/comments.php:30
+#: amax/functions/comments.php:36
+msgid "*"
+msgstr ""
+
+#: amax/comments.php:65
+msgid "Trackbacks for this post"
+msgstr ""
+
+#: amax/comments.php:74
+msgid "Older Comments"
+msgstr ""
+
+#: amax/comments.php:75
+msgid "Newer Comments"
+msgstr ""
+
+#: amax/comments.php:85
+msgid "Comments are closed."
+msgstr ""
+
+#: amax/functions.php:16
+msgid ""
+"This theme requires WordPress version 3.5 or greater to work properly. "
+"Please, update WordPress"
+msgstr ""
+
+#: amax/functions.php:33
+msgid "Primary Menu"
+msgstr ""
+
+#: amax/functions.php:35
+msgid "Footer Menu"
+msgstr ""
+
+#: amax/functions.php:36
+msgid "Menu for 404 Error page"
+msgstr ""
+
+#: amax/functions.php:117
+#: amax/functions/metaboxes-theme.php:14
+msgid "Main Sidebar"
+msgstr ""
+
+#: amax/functions.php:119
+msgid "Sidebar that appears on the right/left (depends on Theme Options)"
+msgstr ""
+
+#: amax/functions.php:129
+#: amax/functions.php:142
+msgid "Footer 1st Column 1/4"
+msgstr ""
+
+#: amax/functions.php:130
+#: amax/functions.php:137
+#: amax/functions.php:143
+msgid "Footer 2nd Column 1/4"
+msgstr ""
+
+#: amax/functions.php:131
+#: amax/functions.php:138
+msgid "Footer 3rd Column 1/4"
+msgstr ""
+
+#: amax/functions.php:132
+msgid "Footer 4th Column 1/4"
+msgstr ""
+
+#: amax/functions.php:136
+msgid "Footer 1st Column 2/4"
+msgstr ""
+
+#: amax/functions.php:144
+msgid "Footer 3rd Column 2/4"
+msgstr ""
+
+#: amax/functions.php:148
+#: amax/functions.php:159
+msgid "Footer 1st Column 1/3"
+msgstr ""
+
+#: amax/functions.php:149
+#: amax/functions.php:155
+msgid "Footer 2nd Column 1/3"
+msgstr ""
+
+#: amax/functions.php:150
+msgid "Footer 3rd Column 1/3"
+msgstr ""
+
+#: amax/functions.php:154
+msgid "Footer 1st Column 2/3"
+msgstr ""
+
+#: amax/functions.php:160
+msgid "Footer 2nd Column 2/3"
+msgstr ""
+
+#: amax/functions.php:164
+msgid "Footer 1st Column 1/2"
+msgstr ""
+
+#: amax/functions.php:165
+msgid "Footer 2nd Column 1/2"
+msgstr ""
+
+#: amax/functions.php:169
+#: amax/functions/customization.php:120
+msgid "Footer"
+msgstr ""
+
+#: amax/functions.php:175
+msgid "Appears in the footer of the site"
+msgstr ""
+
+#: amax/functions.php:189
+msgid "Extra:"
+msgstr ""
+
+#: amax/functions.php:190
+msgid ""
+"This is an extra sidebar - it can be displayed on specific page instead of "
+"\"Main sidebar\""
+msgstr ""
+
+#: amax/header-empty.php:16
+#: amax/header.php:15
+msgid ""
+"You are using an <strong>outdated</strong> browser. Please, <a href=\"http://"
+"browsehappy.com/\">upgrade to a different browser</a> or <a href=\"http://"
+"www.google.com/chromeframe/?redirect=true\">install Google Chrome Frame</a> "
+"to experience this site."
+msgstr ""
+
+#: amax/header.php:155
+#: amax/functions/theme-options-fields.php:171
+msgid "Menu"
+msgstr ""
+
+#: amax/index.php:87
+#: amax/template-blog.php:98
+msgid "Error 404 - Not Found"
+msgstr ""
+
+#: amax/index.php:89
+#: amax/template-blog.php:100
+msgid "Sorry, but you are looking for something that isn't here."
+msgstr ""
+
+#: amax/search.php:5
+msgid "Search"
+msgstr ""
+
+#: amax/search.php:20
+#, php-format
+msgid "Search Results for: &ldquo;%s&rdquo;"
+msgstr ""
+
+#: amax/search.php:112
+#, php-format
+msgid "Your search for <em>\"%s\"</em> did not match any entries"
+msgstr ""
+
+#: amax/search.php:115
+msgid "Suggestions:"
+msgstr ""
+
+#: amax/search.php:117
+msgid "Make sure all words are spelled correctly."
+msgstr ""
+
+#: amax/search.php:118
+msgid "Try different keywords."
+msgstr ""
+
+#: amax/search.php:119
+msgid "Try more general keywords."
+msgstr ""
+
+#: amax/searchform.php:2
+msgid "Type and press enter to search"
+msgstr ""
+
+#: amax/single-portfolio.php:29
+#: amax/template-portfolio.php:31
+msgid ""
+"Please install and activate Olevmedia Portfolio plugin to display the "
+"portfolio content."
+msgstr ""
+
+#: amax/template-sitemap.php:36
+msgid "Site Feeds"
+msgstr ""
+
+#: amax/template-sitemap.php:38
+msgid "Main RSS Feed"
+msgstr ""
+
+#: amax/template-sitemap.php:39
+msgid "Comments RSS Feed"
+msgstr ""
+
+#: amax/template-sitemap.php:44
+msgid "Pages"
+msgstr ""
+
+#: amax/template-sitemap.php:56
+#: amax/wpb/functions/custom_shortcodes.php:1477
+msgid "Posts"
+msgstr ""
+
+#: amax/template-sitemap.php:69
+msgid "Categories"
+msgstr ""
+
+#: amax/template-sitemap.php:73
+msgid "Blog"
+msgstr ""
+
+#: amax/template-sitemap.php:81
+#: amax/template-sitemap.php:122
+#: amax/wpb/functions/custom_shortcodes.php:616
+msgid "Portfolio"
+msgstr ""
+
+#: amax/template-sitemap.php:94
+msgid "Tags"
+msgstr ""
+
+#: amax/template-sitemap.php:109
+msgid "Monthly Archives"
+msgstr ""
+
+#: amax/template-sitemap.php:134
+#: amax/widgets/testimonials/testimonials.php:18
+#: amax/widgets/testimonials/testimonials.php:26
+#: amax/wpb/functions/custom_shortcodes.php:523
+msgid "Testimonials"
+msgstr ""
+
+#: amax/functions/breadcrumbs.php:17
+#: amax/functions/breadcrumbs.php:181
+msgid "Home"
+msgstr ""
+
+#: amax/functions/comments.php:30
+msgid "Name"
+msgstr ""
+
+#: amax/functions/comments.php:36
+#: amax/wpb/functions/custom_shortcodes.php:975
+msgid "Email"
+msgstr ""
+
+#: amax/functions/comments.php:42
+msgid "Website"
+msgstr ""
+
+#: amax/functions/comments.php:68
+#, php-format
+msgid "<cite class=\"fn\">%s</cite>"
+msgstr ""
+
+#: amax/functions/comments.php:69
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: amax/functions/comments.php:77
+msgid "(Edit)"
+msgstr ""
+
+#: amax/functions/comments.php:102
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: amax/functions/common-meta.php:9
+msgid "Page Title"
+msgstr ""
+
+#: amax/functions/common-meta.php:11
+#: amax/functions/theme-options-fields.php:735
+msgid "Page Title Layout"
+msgstr ""
+
+#: amax/functions/common-meta.php:17
+msgid "Default (as in Theme Options)"
+msgstr ""
+
+#: amax/functions/common-meta.php:18
+#: amax/functions/common-meta.php:99
+#: amax/functions/theme-options-fields.php:741
+#: amax/functions/theme-options-fields.php:822
+#: amax/wpb/functions/custom_shortcodes.php:665
+msgid "Standard"
+msgstr ""
+
+#: amax/functions/common-meta.php:19
+#: amax/functions/gallery-interface.php:51
+#: amax/functions/portfolio.php:220
+#: amax/functions/post-meta.php:203
+#: amax/functions/theme-options-fields.php:742
+msgid "Hide"
+msgstr ""
+
+#: amax/functions/common-meta.php:20
+#: amax/functions/theme-options-fields.php:743
+msgid "Custom background color"
+msgstr ""
+
+#: amax/functions/common-meta.php:21
+#: amax/functions/theme-options-fields.php:744
+msgid "Custom background image"
+msgstr ""
+
+#: amax/functions/common-meta.php:22
+#: amax/functions/theme-options-fields.php:745
+msgid "Predefined parallax effect"
+msgstr ""
+
+#: amax/functions/common-meta.php:67
+#: amax/functions/theme-options-fields.php:790
+msgid "Title align"
+msgstr ""
+
+#: amax/functions/common-meta.php:73
+#: amax/functions/theme-options-fields.php:796
+#: amax/wpb/functions/custom_shortcodes.php:1188
+#: amax/wpb/functions/custom_shortcodes.php:1447
+msgid "Left"
+msgstr ""
+
+#: amax/functions/common-meta.php:74
+#: amax/functions/theme-options-fields.php:797
+#: amax/wpb/functions/custom_shortcodes.php:1187
+#: amax/wpb/functions/custom_shortcodes.php:1446
+msgid "Center"
+msgstr ""
+
+#: amax/functions/common-meta.php:75
+#: amax/functions/theme-options-fields.php:798
+msgid "Center, bottom"
+msgstr ""
+
+#: amax/functions/common-meta.php:79
+#: amax/functions/theme-options-fields.php:802
+msgid "Title margins"
+msgstr ""
+
+#: amax/functions/common-meta.php:85
+#: amax/functions/theme-options-fields.php:808
+#: amax/wpb/functions/custom_shortcodes.php:1066
+#: amax/wpb/functions/options.php:273
+msgid "Small"
+msgstr ""
+
+#: amax/functions/common-meta.php:86
+#: amax/functions/theme-options-fields.php:809
+#: amax/wpb/functions/custom_shortcodes.php:1067
+#: amax/wpb/functions/options.php:274
+msgid "Medium"
+msgstr ""
+
+#: amax/functions/common-meta.php:87
+#: amax/functions/common-meta.php:100
+#: amax/functions/theme-options-fields.php:810
+#: amax/functions/theme-options-fields.php:823
+#: amax/wpb/functions/custom_shortcodes.php:1068
+#: amax/wpb/functions/options.php:275
+msgid "Large"
+msgstr ""
+
+#: amax/functions/common-meta.php:88
+#: amax/functions/common-meta.php:101
+#: amax/functions/theme-options-fields.php:811
+#: amax/functions/theme-options-fields.php:824
+#: amax/wpb/functions/custom_shortcodes.php:1069
+#: amax/wpb/functions/options.php:276
+msgid "X-Large"
+msgstr ""
+
+#: amax/functions/common-meta.php:89
+#: amax/functions/common-meta.php:102
+#: amax/functions/theme-options-fields.php:812
+#: amax/functions/theme-options-fields.php:825
+msgid "XX-Large"
+msgstr ""
+
+#: amax/functions/common-meta.php:93
+#: amax/functions/theme-options-fields.php:816
+msgid "Title size"
+msgstr ""
+
+#: amax/functions/common-meta.php:106
+#: amax/functions/theme-options-fields.php:829
+msgid "Title background color"
+msgstr ""
+
+#: amax/functions/common-meta.php:107
+#: amax/functions/theme-options-fields.php:830
+msgid ""
+"To automatically apply theme Hightlight color from Theme Options type \"theme"
+"\" or click \"default\""
+msgstr ""
+
+#: amax/functions/common-meta.php:113
+#: amax/functions/theme-options-fields.php:836
+msgid "Title text color"
+msgstr ""
+
+#: amax/functions/common-meta.php:114
+#: amax/functions/theme-options-fields.php:837
+msgid ""
+"To automatically apply theme Hightlight color from Theme Options type \"theme"
+"\""
+msgstr ""
+
+#: amax/functions/common-meta.php:120
+#: amax/functions/theme-options-fields.php:843
+msgid "Title background image"
+msgstr ""
+
+#: amax/functions/common-meta.php:128
+#: amax/functions/theme-options-fields.php:851
+msgid "Title background image position"
+msgstr ""
+
+#: amax/functions/common-meta.php:136
+#: amax/functions/theme-options-fields.php:859
+msgid "Title background image attachment"
+msgstr ""
+
+#: amax/functions/common-meta.php:142
+#: amax/functions/theme-options-fields.php:865
+#: amax/wpb/functions/options.php:132
+msgid "Scroll"
+msgstr ""
+
+#: amax/functions/common-meta.php:143
+#: amax/functions/theme-options-fields.php:866
+#: amax/wpb/functions/options.php:133
+msgid "Fixed"
+msgstr ""
+
+#: amax/functions/common-meta.php:147
+#: amax/functions/theme-options-fields.php:870
+msgid "Parallax effect"
+msgstr ""
+
+#: amax/functions/common-meta.php:153
+#: amax/functions/theme-options-fields.php:876
+msgid "Lines"
+msgstr ""
+
+#: amax/functions/common-meta.php:154
+#: amax/functions/theme-options-fields.php:877
+msgid "Geometry"
+msgstr ""
+
+#: amax/functions/common-meta.php:155
+#: amax/functions/theme-options-fields.php:878
+msgid "Circles"
+msgstr ""
+
+#: amax/functions/common-meta.php:164
+#: amax/functions/gallery-interface.php:12
+#: amax/functions/portfolio.php:158
+msgid "Slider"
+msgstr ""
+
+#: amax/functions/common-meta.php:168
+msgid "Choose the slider"
+msgstr ""
+
+#: amax/functions/common-meta.php:175
+msgid "Slider layout"
+msgstr ""
+
+#: amax/functions/common-meta.php:181
+msgid "Full width slider"
+msgstr ""
+
+#: amax/functions/common-meta.php:182
+msgid "Boxed width slider"
+msgstr ""
+
+#: amax/functions/common-meta.php:183
+msgid "Before Header"
+msgstr ""
+
+#: amax/functions/common-meta.php:193
+#: amax/functions/customization.php:78
+msgid "Header"
+msgstr ""
+
+#: amax/functions/common-meta.php:196
+msgid "Header background"
+msgstr ""
+
+#: amax/functions/common-meta.php:202
+#: amax/wpb/functions/options.php:712
+#: amax/wpb/functions/options.php:734
+#: amax/wpb/functions/options.php:761
+#: amax/wpb/functions/options.php:851
+msgid "Default"
+msgstr ""
+
+#: amax/functions/common-meta.php:203
+#: amax/wpb/functions/custom_shortcodes.php:306
+#: amax/wpb/functions/custom_shortcodes.php:312
+#: amax/wpb/functions/options.php:564
+#: amax/wpb/functions/options.php:673
+#: amax/wpb/functions/options.php:945
+msgid "Custom color"
+msgstr ""
+
+#: amax/functions/common-meta.php:204
+msgid "Custom image"
+msgstr ""
+
+#: amax/functions/common-meta.php:205
+msgid "Transparent (slider or page title background will be used)"
+msgstr ""
+
+#: amax/functions/common-meta.php:238
+#: amax/functions/theme-options-fields.php:268
+#: amax/wpb/functions/options.php:63
+msgid "Background color"
+msgstr ""
+
+#: amax/functions/common-meta.php:245
+#: amax/wpb/functions/options.php:105
+msgid "Background image"
+msgstr ""
+
+#: amax/functions/common-meta.php:253
+#: amax/wpb/functions/options.php:117
+msgid "Background image position"
+msgstr ""
+
+#: amax/functions/common-meta.php:259
+msgid "Repeat"
+msgstr ""
+
+#: amax/functions/common-meta.php:260
+msgid "Cover"
+msgstr ""
+
+#: amax/functions/common-meta.php:264
+msgid "Set custom menu color"
+msgstr ""
+
+#: amax/functions/common-meta.php:270
+#: amax/functions/common-meta.php:299
+#: amax/functions/theme-options.php:541
+#: amax/wpb/functions/options.php:255
+#: amax/wpb/functions/options.php:466
+#: amax/wpb/functions/options.php:486
+msgid "No"
+msgstr ""
+
+#: amax/functions/common-meta.php:271
+#: amax/functions/common-meta.php:300
+#: amax/wpb/functions/custom_shortcodes.php:411
+msgid "Yes"
+msgstr ""
+
+#: amax/functions/common-meta.php:286
+msgid "Custom menu color"
+msgstr ""
+
+#: amax/functions/common-meta.php:293
+msgid "Set custom logo image"
+msgstr ""
+
+#: amax/functions/common-meta.php:317
+msgid "Custom logo image"
+msgstr ""
+
+#: amax/functions/common-meta.php:325
+msgid "Custom logo image for retina displays"
+msgstr ""
+
+#: amax/functions/common-meta.php:326
+msgid "Double sized image for retina displays for better quality"
+msgstr ""
+
+#: amax/functions/common-meta.php:339
+#: amax/functions/common-meta.php:341
+msgid "Sidebar"
+msgstr ""
+
+#: amax/functions/common-meta.php:342
+msgid "You can create any number of sidebars under \"Appearance > Sidebars\"."
+msgstr ""
+
+#: amax/functions/common-meta.php:347
+msgid "Display Sidebar"
+msgstr ""
+
+#: amax/functions/common-meta.php:348
+msgid "Hide Sidebar"
+msgstr ""
+
+#: amax/functions/common-meta.php:353
+msgid "Choose the sidebar"
+msgstr ""
+
+#: amax/functions/common-meta.php:360
+msgid "Sidebar Position"
+msgstr ""
+
+#: amax/functions/common-meta.php:361
+msgid "Sidebar position for current page."
+msgstr ""
+
+#: amax/functions/common-meta.php:366
+msgid "Default (As in \"Theme Options\")"
+msgstr ""
+
+#: amax/functions/common-meta.php:367
+msgid "Left Side"
+msgstr ""
+
+#: amax/functions/common-meta.php:368
+msgid "Right Side"
+msgstr ""
+
+#: amax/functions/customization.php:16
+msgid "More options"
+msgstr ""
+
+#: amax/functions/customization.php:18
+msgid ""
+"For more Options see <a href=\"admin.php?page=om_options\">\"Theme Options"
+"\"</a> section"
+msgstr ""
+
+#: amax/functions/customization.php:38
+#: amax/functions/theme-options-fields.php:115
+#: amax/wpb/functions/custom_shortcodes.php:630
+msgid "Layout"
+msgstr ""
+
+#: amax/functions/customization.php:50
+#: amax/wpb/functions/custom_shortcodes.php:127
+#: amax/wpb/functions/options.php:58
+#: amax/wpb/functions/options.php:66
+#: amax/wpb/functions/options.php:78
+#: amax/wpb/functions/options.php:96
+#: amax/wpb/functions/options.php:108
+#: amax/wpb/functions/options.php:124
+#: amax/wpb/functions/options.php:141
+#: amax/wpb/functions/options.php:149
+#: amax/wpb/functions/options.php:165
+#: amax/wpb/functions/options.php:177
+#: amax/wpb/functions/options.php:189
+#: amax/wpb/functions/options.php:201
+#: amax/wpb/functions/options.php:213
+#: amax/wpb/functions/options.php:225
+#: amax/wpb/functions/options.php:232
+#: amax/wpb/functions/options.php:243
+#: amax/wpb/functions/options.php:261
+#: amax/wpb/functions/options.php:278
+#: amax/wpb/functions/options.php:290
+msgid "Background"
+msgstr ""
+
+#: amax/functions/customization.php:51
+msgid "This option makes sense only if \"Boxed\" layout chosen above"
+msgstr ""
+
+#: amax/functions/customization.php:323
+msgid "Variant"
+msgstr ""
+
+#: amax/functions/gallery-interface.php:11
+msgid "WordPress Default"
+msgstr ""
+
+#: amax/functions/gallery-interface.php:13
+#: amax/functions/portfolio.php:159
+#: amax/functions/post-meta.php:192
+#: amax/wpb/functions/options.php:376
+msgid "Sliced"
+msgstr ""
+
+#: amax/functions/gallery-interface.php:14
+#: amax/functions/portfolio.php:161
+#: amax/functions/post-meta.php:193
+#: amax/wpb/functions/custom_shortcodes.php:1496
+#: amax/wpb/functions/options.php:377
+msgid "Masonry"
+msgstr ""
+
+#: amax/functions/gallery-interface.php:50
+msgid "Display"
+msgstr ""
+
+#: amax/functions/icons.php:1015
+msgid "No icon"
+msgstr ""
+
+#: amax/functions/megamenu.php:83
+#, php-format
+msgid "%s (Invalid)"
+msgstr ""
+
+#: amax/functions/megamenu.php:87
+#, php-format
+msgid "%s (Pending)"
+msgstr ""
+
+#: amax/functions/megamenu.php:100
+msgid "sub item"
+msgstr ""
+
+#: amax/functions/megamenu.php:132
+msgid "Edit Menu Item"
+msgstr ""
+
+#: amax/functions/megamenu.php:141
+msgid "URL"
+msgstr ""
+
+#: amax/functions/megamenu.php:148
+msgid "Navigation Label"
+msgstr ""
+
+#: amax/functions/megamenu.php:154
+msgid "Title Attribute"
+msgstr ""
+
+#: amax/functions/megamenu.php:161
+msgid "Open link in a new window/tab"
+msgstr ""
+
+#: amax/functions/megamenu.php:166
+msgid "CSS Classes (optional)"
+msgstr ""
+
+#: amax/functions/megamenu.php:172
+msgid "Link Relationship (XFN)"
+msgstr ""
+
+#: amax/functions/megamenu.php:178
+msgid "Description"
+msgstr ""
+
+#: amax/functions/megamenu.php:180
+msgid ""
+"The description will be displayed in the menu if the current theme supports "
+"it."
+msgstr ""
+
+#: amax/functions/megamenu.php:186
+#: amax/wpb/functions/custom_shortcodes.php:1166
+#: amax/wpb/functions/misc.php:117
+#: amax/wpb/functions/misc.php:132
+#: amax/wpb/functions/misc.php:147
+#: amax/wpb/functions/misc.php:162
+#: amax/wpb/functions/misc.php:176
+#: amax/wpb/functions/options.php:889
+msgid "Icon"
+msgstr ""
+
+#: amax/functions/megamenu.php:197
+msgid "Enable MegaMenu for nested items"
+msgstr ""
+
+#: amax/functions/megamenu.php:220
+msgid "Hide MegaMenu column titles"
+msgstr ""
+
+#: amax/functions/megamenu.php:226
+msgid "Move"
+msgstr ""
+
+#: amax/functions/megamenu.php:227
+msgid "Up one"
+msgstr ""
+
+#: amax/functions/megamenu.php:228
+msgid "Down one"
+msgstr ""
+
+#: amax/functions/megamenu.php:231
+msgid "To the top"
+msgstr ""
+
+#: amax/functions/megamenu.php:238
+#, php-format
+msgid "Original: %s"
+msgstr ""
+
+#: amax/functions/megamenu.php:251
+#: amax/functions/theme-options.php:904
+msgid "Remove"
+msgstr ""
+
+#: amax/functions/megamenu.php:252
+msgid "Cancel"
+msgstr ""
+
+#: amax/functions/misc.php:185
+#: amax/functions/misc.php:187
+#: amax/functions/misc.php:189
+msgid "Archive for"
+msgstr ""
+
+#: amax/functions/misc.php:196
+msgid "All posts by"
+msgstr ""
+
+#: amax/functions/misc.php:200
+msgid "Blog Archives"
+msgstr ""
+
+#: amax/functions/misc.php:673
+msgid "Previous Post"
+msgstr ""
+
+#: amax/functions/misc.php:673
+msgid "Next Post"
+msgstr ""
+
+#: amax/functions/misc.php:1067
+#: amax/includes/post-standard-footer.php:91
+msgid "Read more"
+msgstr ""
+
+#: amax/functions/page-meta.php:11
+#: amax/functions/theme-options-fields.php:886
+msgid "Blog options"
+msgstr ""
+
+#: amax/functions/page-meta.php:13
+msgid "Blog Layout"
+msgstr ""
+
+#: amax/functions/page-meta.php:19
+msgid "Standard / Small thumbnails"
+msgstr ""
+
+#: amax/functions/page-meta.php:20
+msgid "Standard / Medium thumbnails"
+msgstr ""
+
+#: amax/functions/page-meta.php:21
+msgid "Standard / Large thumbnails"
+msgstr ""
+
+#: amax/functions/page-meta.php:22
+msgid "Grid Medium"
+msgstr ""
+
+#: amax/functions/page-meta.php:23
+msgid "Grid Small"
+msgstr ""
+
+#: amax/functions/page-meta.php:27
+msgid "Categories to display"
+msgstr ""
+
+#: amax/functions/plugins.php:91
+#: amax/libraries/class-tgm-plugin-activation.php:228
+msgid "Install Required Plugins"
+msgstr ""
+
+#: amax/functions/plugins.php:92
+#: amax/libraries/class-tgm-plugin-activation.php:229
+msgid "Install Plugins"
+msgstr ""
+
+#: amax/functions/plugins.php:93
+#: amax/libraries/class-tgm-plugin-activation.php:230
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: amax/functions/plugins.php:94
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: amax/functions/plugins.php:105
+#: amax/libraries/class-tgm-plugin-activation.php:243
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: amax/functions/plugins.php:106
+#: amax/libraries/class-tgm-plugin-activation.php:245
+#: amax/libraries/class-tgm-plugin-activation.php:2181
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: amax/functions/plugins.php:107
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: amax/functions/portfolio.php:152
+msgid "Gallery mode"
+msgstr ""
+
+#: amax/functions/portfolio.php:160
+msgid "Grid"
+msgstr ""
+
+#: amax/functions/portfolio.php:179
+msgid "Gallery Images Width/Height Ratio"
+msgstr ""
+
+#: amax/functions/portfolio.php:214
+msgid "Gallery Image Captions"
+msgstr ""
+
+#: amax/functions/portfolio.php:221
+#: amax/functions/post-meta.php:204
+msgid "Display image captions"
+msgstr ""
+
+#: amax/functions/portfolio.php:241
+msgid "Number of Columns in Gallery"
+msgstr ""
+
+#: amax/functions/portfolio.php:319
+msgid "Pull portfolio layout settings for Archive/Category pages from page:"
+msgstr ""
+
+#: amax/functions/post-meta.php:11
+msgid "Quote Settings"
+msgstr ""
+
+#: amax/functions/post-meta.php:14
+msgid "The Quote"
+msgstr ""
+
+#: amax/functions/post-meta.php:15
+msgid "Write your quote in this field"
+msgstr ""
+
+#: amax/functions/post-meta.php:21
+msgid "Quote author"
+msgstr ""
+
+#: amax/functions/post-meta.php:32
+msgid "Link Settings"
+msgstr ""
+
+#: amax/functions/post-meta.php:35
+msgid "The URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:36
+msgid "Insert the URL you wish to link to"
+msgstr ""
+
+#: amax/functions/post-meta.php:46
+msgid "Video Settings"
+msgstr ""
+
+#: amax/functions/post-meta.php:48
+msgid "HTML Embed code or link to YouTube, Vimeo, etc."
+msgstr ""
+
+#: amax/functions/post-meta.php:49
+msgid ""
+"If your video is hosted by video service insert the link to the video or "
+"HTML embed code.<br/>If you want to insert video file from WordPress Media "
+"library, use the fields below"
+msgstr ""
+
+#: amax/functions/post-meta.php:55
+msgid "Video File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:56
+msgid "The URL to the video file"
+msgstr ""
+
+#: amax/functions/post-meta.php:62
+msgid "Poster Image"
+msgstr ""
+
+#: amax/functions/post-meta.php:63
+msgid "The preivew image, only for self hosted videos"
+msgstr ""
+
+#: amax/functions/post-meta.php:70
+msgid ""
+"Fields below are not necessary if the \"Video File URL\" is specified, but "
+"can be used as a fallback video sources if the browser does not support "
+"format of the video chosen above."
+msgstr ""
+
+#: amax/functions/post-meta.php:74
+msgid "MP4 File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:81
+msgid "M4V File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:88
+msgid "WebM File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:95
+msgid "OGV File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:102
+msgid "WMV File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:109
+msgid "FLV File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:121
+msgid "Audio Settings"
+msgstr ""
+
+#: amax/functions/post-meta.php:123
+msgid "HTML Embed code or link to SoundCloud, etc."
+msgstr ""
+
+#: amax/functions/post-meta.php:124
+msgid ""
+"If your audio is hosted by audio service insert the link to the audio or "
+"HTML embed code.<br/>If you want to insert audio file from WordPress Media "
+"library, use the fields below"
+msgstr ""
+
+#: amax/functions/post-meta.php:130
+msgid "Audio File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:131
+msgid "The URL to the audio file"
+msgstr ""
+
+#: amax/functions/post-meta.php:138
+msgid ""
+"Fields below are not necessary if the \"Audio File URL\" is specified, but "
+"can be used as a fallback audio sources if the browser does not support "
+"format of the audio chosen above."
+msgstr ""
+
+#: amax/functions/post-meta.php:142
+msgid "MP3 File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:149
+msgid "M4A File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:156
+msgid "OGG File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:163
+msgid "WAV File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:170
+msgid "WMA File URL"
+msgstr ""
+
+#: amax/functions/post-meta.php:182
+msgid "Gallery Settings"
+msgstr ""
+
+#: amax/functions/post-meta.php:185
+msgid "Gallery mode on the single page"
+msgstr ""
+
+#: amax/functions/post-meta.php:191
+msgid "Standard (slider)"
+msgstr ""
+
+#: amax/functions/post-meta.php:197
+msgid "Captions"
+msgstr ""
+
+#: amax/functions/post-meta.php:208
+msgid "Gallery"
+msgstr ""
+
+#: amax/functions/sidebars-manager.php:9
+#: amax/functions/sidebars-manager.php:28
+#: amax/functions/theme-options-fields.php:1040
+msgid "Sidebars"
+msgstr ""
+
+#: amax/functions/sidebars-manager.php:29
+#, php-format
+msgid ""
+"Any number of sidebars is possible. You can choose a certain sidebar which "
+"should be displayed on a specific page, when you edit a page. Widgets can be "
+"added into sidebars <a href=\"%s\">here</a>."
+msgstr ""
+
+#: amax/functions/sidebars-manager.php:34
+msgid "Sidebar name"
+msgstr ""
+
+#: amax/functions/sidebars-manager.php:44
+#: amax/functions/sidebars-manager.php:77
+msgid "remove"
+msgstr ""
+
+#: amax/functions/sidebars-manager.php:55
+msgid "Add"
+msgstr ""
+
+#: amax/functions/sidebars-manager.php:110
+msgid "Are you sure you want to remove sidebar "
+msgstr ""
+
+#: amax/functions/social-icons.php:10
+msgid "AIM"
+msgstr ""
+
+#: amax/functions/social-icons.php:11
+msgid "Amazon"
+msgstr ""
+
+#: amax/functions/social-icons.php:12
+msgid "Apple"
+msgstr ""
+
+#: amax/functions/social-icons.php:13
+msgid "AppStore"
+msgstr ""
+
+#: amax/functions/social-icons.php:14
+msgid "BaseCamp"
+msgstr ""
+
+#: amax/functions/social-icons.php:15
+msgid "Bebo"
+msgstr ""
+
+#: amax/functions/social-icons.php:16
+msgid "Behance"
+msgstr ""
+
+#: amax/functions/social-icons.php:17
+msgid "Bing"
+msgstr ""
+
+#: amax/functions/social-icons.php:18
+msgid "Blogger"
+msgstr ""
+
+#: amax/functions/social-icons.php:19
+msgid "CreativeCommons"
+msgstr ""
+
+#: amax/functions/social-icons.php:20
+msgid "Delicious"
+msgstr ""
+
+#: amax/functions/social-icons.php:21
+msgid "Devianart"
+msgstr ""
+
+#: amax/functions/social-icons.php:22
+msgid "Digg"
+msgstr ""
+
+#: amax/functions/social-icons.php:23
+msgid "Dribble"
+msgstr ""
+
+#: amax/functions/social-icons.php:24
+msgid "Dropbox"
+msgstr ""
+
+#: amax/functions/social-icons.php:25
+msgid "Drupal"
+msgstr ""
+
+#: amax/functions/social-icons.php:26
+msgid "Ember"
+msgstr ""
+
+#: amax/functions/social-icons.php:27
+msgid "Evernote"
+msgstr ""
+
+#: amax/functions/social-icons.php:28
+msgid "Facebook"
+msgstr ""
+
+#: amax/functions/social-icons.php:29
+msgid "FeedBurner"
+msgstr ""
+
+#: amax/functions/social-icons.php:30
+msgid "Flickr"
+msgstr ""
+
+#: amax/functions/social-icons.php:31
+msgid "Forrst"
+msgstr ""
+
+#: amax/functions/social-icons.php:32
+msgid "Friendfeed"
+msgstr ""
+
+#: amax/functions/social-icons.php:33
+msgid "Friendster"
+msgstr ""
+
+#: amax/functions/social-icons.php:34
+msgid "GitHub"
+msgstr ""
+
+#: amax/functions/social-icons.php:35
+msgid "GitHub2"
+msgstr ""
+
+#: amax/functions/social-icons.php:36
+msgid "Google+"
+msgstr ""
+
+#: amax/functions/social-icons.php:37
+msgid "Gowalla"
+msgstr ""
+
+#: amax/functions/social-icons.php:38
+msgid "GrooveShark"
+msgstr ""
+
+#: amax/functions/social-icons.php:39
+msgid "ICQ"
+msgstr ""
+
+#: amax/functions/social-icons.php:40
+msgid "Instagram"
+msgstr ""
+
+#: amax/functions/social-icons.php:41
+msgid "last.fm"
+msgstr ""
+
+#: amax/functions/social-icons.php:42
+msgid "LinkedIn"
+msgstr ""
+
+#: amax/functions/social-icons.php:43
+msgid "Livejournal"
+msgstr ""
+
+#: amax/functions/social-icons.php:44
+msgid "Lovedsgn"
+msgstr ""
+
+#: amax/functions/social-icons.php:45
+msgid "MSNmessenger"
+msgstr ""
+
+#: amax/functions/social-icons.php:46
+msgid "MySpace"
+msgstr ""
+
+#: amax/functions/social-icons.php:47
+msgid "Newsvine"
+msgstr ""
+
+#: amax/functions/social-icons.php:48
+msgid "OpenID"
+msgstr ""
+
+#: amax/functions/social-icons.php:49
+msgid "PhotoBucket"
+msgstr ""
+
+#: amax/functions/social-icons.php:50
+msgid "Picasa"
+msgstr ""
+
+#: amax/functions/social-icons.php:51
+msgid "Pinterest"
+msgstr ""
+
+#: amax/functions/social-icons.php:52
+msgid "Plixi"
+msgstr ""
+
+#: amax/functions/social-icons.php:53
+msgid "reddit"
+msgstr ""
+
+#: amax/functions/social-icons.php:54
+msgid "RSS"
+msgstr ""
+
+#: amax/functions/social-icons.php:55
+msgid "ShareThis"
+msgstr ""
+
+#: amax/functions/social-icons.php:56
+msgid "Simplenote"
+msgstr ""
+
+#: amax/functions/social-icons.php:57
+msgid "Skype"
+msgstr ""
+
+#: amax/functions/social-icons.php:58
+msgid "SlideShare"
+msgstr ""
+
+#: amax/functions/social-icons.php:59
+msgid "SmugMug"
+msgstr ""
+
+#: amax/functions/social-icons.php:60
+msgid "SoundCloud"
+msgstr ""
+
+#: amax/functions/social-icons.php:61
+msgid "Squarespace"
+msgstr ""
+
+#: amax/functions/social-icons.php:62
+msgid "Squidoo"
+msgstr ""
+
+#: amax/functions/social-icons.php:63
+msgid "Stumbleupon"
+msgstr ""
+
+#: amax/functions/social-icons.php:64
+msgid "Technorati"
+msgstr ""
+
+#: amax/functions/social-icons.php:65
+msgid "Tumblr"
+msgstr ""
+
+#: amax/functions/social-icons.php:66
+msgid "Twitter"
+msgstr ""
+
+#: amax/functions/social-icons.php:67
+msgid "Vimeo"
+msgstr ""
+
+#: amax/functions/social-icons.php:68
+msgid "WordPress"
+msgstr ""
+
+#: amax/functions/social-icons.php:69
+msgid "Yahoo"
+msgstr ""
+
+#: amax/functions/social-icons.php:70
+msgid "YouTube"
+msgstr ""
+
+#: amax/functions/social-icons.php:111
+#: amax/functions/social-icons.php:152
+msgid "Sort Social Icons"
+msgstr ""
+
+#: amax/functions/social-icons.php:153
+msgid "Sort icons by drag-n-drop. Items at the top will appear first."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:10
+msgid "General settings"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:14
+msgid "You can import demo content in a one click:"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:14
+msgid "Demo Content Import Tool &rarr;"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:18
+msgid "Site favicon"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:19
+msgid ""
+"Upload an *.ico file or 16px x 16px Png/Gif image that will for your "
+"website's favicon."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:24
+msgid "Header tagline"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:31
+msgid "Sub-footer text line"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:47
+msgid "Use lazy load for images"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:48
+msgid "Check if you want to load images on scroll to the view area"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:61
+msgid "Display search box in the header"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:62
+msgid "Check if you want to display search button in the header"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:67
+msgid "Disable animation on touch devices"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:68
+msgid ""
+"Check if you want to disable some animation effects to improve perfomance on "
+"mobile devices"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:73
+msgid "Enable animation on page transitions"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:74
+msgid ""
+"Check if you want to enable animation on click, when user is moving to "
+"another page.<br/>NOTE: doesn't work in Safari browser."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:81
+msgid "Logo"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:84
+msgid "Site logo type"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:85
+msgid "Choose what do you want to use as site logo: image or plain text."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:89
+msgid "Plain text"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:90
+#: amax/wpb/functions/custom_shortcodes.php:1165
+#: amax/wpb/functions/custom_shortcodes.php:1194
+#: amax/wpb/functions/options.php:55
+msgid "Image"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:91
+msgid "No logo"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:95
+msgid "Site logo text"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:96
+msgid "Specify logo text, if \"Plain text\" Logo used."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:101
+msgid "Site logo image"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:102
+msgid ""
+"Choose a logo for your theme, or specify the image address of your online "
+"logo (http://example.com/logo.png)."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:107
+msgid "Site logo image for retina displays (optional)"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:108
+msgid "Choose double sized image for retina displays for better quality"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:119
+msgid "Activate responsive mode for mobile devices"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:120
+msgid "Check if you want your site to be fitted by width on mobile devices"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:125
+msgid "Overall layout"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:130
+msgid "Wide"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:131
+msgid "Boxed"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:135
+msgid "Header layout"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:136
+msgid "Select header layout."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:147
+msgid "Footer layout"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:152
+msgid "4 Columns 1/4 + 1/4 + 1/4 + 1/4"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:153
+msgid "3 Columns 2/4 + 1/4 + 1/4"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:154
+msgid "3 Columns 1/4 + 1/4 + 2/4"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:155
+msgid "3 Columns 1/3 + 1/3 + 1/3"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:156
+msgid "2 Columns 2/3 + 1/3"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:157
+msgid "2 Columns 1/3 + 2/3"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:158
+msgid "2 Columns 1/2 + 1/2"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:159
+msgid "1 Column"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:163
+msgid "Uncovering footer"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:164
+msgid "Check to enable \"uncovering footer\" effect"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:174
+msgid "Menu position"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:179
+msgid "At the top, not fixed"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:180
+msgid "Fixed on top"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:184
+msgid "Display drop down symbol for menu items with sublevels"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:185
+msgid ""
+"Check if you want to display drop down symbol in primary menu for items "
+"which has sublevels"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:190
+msgid "Apply bold font style to root menu elements of primary menu"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:191
+msgid ""
+"Check if you want to apply bold font style to root menu elements of primary "
+"menu"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:196
+msgid "Highlight active menu item"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:197
+msgid "Check if you want to highlight active menu item of primary menu"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:202
+msgid "Uppercase"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:203
+msgid "Check to apply uppercase for menu items"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:208
+msgid "Enable MegaMenu addon"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:209
+msgid ""
+"Check if you want to enable MegaMenu feature or uncheck if you don't need it "
+"or you want to use some other plugin for this purpose"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:217
+msgid "Styling"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:221
+msgid ""
+"Apply custom styling by inline code (check this option if you have problems "
+"with styling because of styling file rewrite permissions)"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:227
+msgid "Style Presets:"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:232
+msgid "Choose one of the preseted styles or create your own one"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:265
+msgid "Overall Background (in case \"Boxed\" layout is enabled):"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:274
+msgid "Background pattern"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:275
+msgid "Choose one of the built-in background"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:312
+msgid "Background pattern preview"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:321
+msgid "Custom Background image"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:322
+msgid ""
+"Upload your background, or leave this field empty to choose one of the above "
+"dropdown"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:327
+msgid "Custom Background position"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:334
+msgid "Background attachment"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:344
+msgid "Enable additional dots overlay layer"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:345
+msgid "Useful for full screen background images"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:350
+msgid "Background image dimmer (percent)"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:351
+msgid ""
+"Value between 0 and 100 to dim background image. 0 - no dim, 100 - maximum "
+"dim"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:356
+msgid "Background image dimmer color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:357
+msgid "Choose the dimming color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:367
+msgid "Common:"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:370
+msgid "Hightlight color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:377
+msgid "Header:"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:380
+msgid "Pre-Header background color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:381
+msgid "Tiny block which holds tagline and socials icons if enabled"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:386
+msgid "Tagline color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:392
+msgid "Social Icons color in the header"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:393
+msgid "With light overall background use dark icons and vice versa."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:397
+#: amax/functions/theme-options-fields.php:534
+msgid "Dark"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:398
+#: amax/functions/theme-options-fields.php:535
+msgid "Light"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:402
+msgid "Header background color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:403
+msgid "Block which holds logo and menu"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:410
+msgid "Header menu:"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:413
+msgid "Menu items color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:419
+msgid "Menu items color by hover"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:425
+msgid "Sub-Menu items color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:431
+msgid "Sub-Menu items color by hover"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:439
+msgid "Main Content:"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:442
+msgid "Main content background color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:448
+msgid "Main text color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:454
+msgid "Side text color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:493
+msgid "Footer:"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:496
+msgid "Footer background color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:502
+msgid "Footer titles color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:508
+msgid "Footer text color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:515
+msgid "Footer side text color"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:529
+msgid "Social Icons color in the footer"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:530
+msgid "With light footer background use dark icons and vice versa."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:542
+msgid "Fonts"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:553
+msgid "Base font"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:574
+msgid "Highlight font"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:595
+msgid "Primary menu font"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:619
+msgid "Font scaling"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:620
+msgid "You can scale all font sizes in the theme by this selector"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:630
+msgid "Text Line Height"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:643
+msgid "Hide comments block on pages"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:644
+msgid ""
+"Check if you want to hide comments block on single pages. To hide comments "
+"on post pages and portfolio - see sections \"Post options\" and \"Portfolio "
+"options\""
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:649
+msgid "Hide comments block on the post pages"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:650
+msgid "Check if you want to hide comments block on the post pages."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:656
+msgid "Hide comments block on the portfolio pages"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:657
+msgid "Check if you want to hide comments block on the portfolio pages."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:664
+msgid "Facebook comments"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:667
+msgid "Moderator Facebook user ID"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:668
+msgid ""
+"The easiest way to moderate comments - insert Facebook user ID who can "
+"moderate comments. To add multiple moderators, separate the uids by comma "
+"without spaces."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:673
+msgid "Your Facebook application ID"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:674
+msgid ""
+"Second way to moderate comments - insert Facebook application ID. You will "
+"be able to moderate comments with Facebook Comment Moderation Tool <a href="
+"\"http://developers.facebook.com/tools/comments\" target=\"_blank\">http://"
+"developers.facebook.com/tools/comments</a>"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:679
+msgid "Number of posts to display by default"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:685
+msgid "Facebook comments color scheme"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:695
+msgid "Show Facebook comments on pages"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:696
+msgid "Check to show Facebook comments block on single pages"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:701
+msgid "Show Facebook comments on post pages"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:702
+msgid "Check to show Facebook comments block on single post pages"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:708
+msgid "Show Facebook comments on portfolio pages"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:709
+msgid "Check to show Facebook comments block on single portfolio pages"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:715
+msgid "Position of Facebook comments"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:728
+msgid "Page titles"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:732
+msgid ""
+"You can set default page titles layout here. Also it's possible to set "
+"custom page title layout for a specific page when edit it."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:889
+msgid "Excerpt mode"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:890
+msgid ""
+"&lt;!--more--&gt; tag can be inserted with \"Insert More Tag\" button at the "
+"toolbar pane. Custom excerpt field can be enabled under \"Screen options - "
+"Excerpt\" when you edit the post"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:894
+msgid ""
+"Excerpt separated by &lt;!--more--&gt; tag or set by custom excerpt field"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:895
+msgid "Excerpt generated automatically if not set by custom excerpt field"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:899
+msgid "Auto excerpt length"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:900
+msgid ""
+"Specify the length of excerpt in number of words, if the automatically "
+"generated excerpt chosen above"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:905
+msgid "Hide post author"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:906
+msgid "Check, if you want to hide post author name"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:911
+msgid "Hide post categories"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:912
+msgid "Check, if you want to hide post categories"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:917
+msgid "Hide post tags"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:918
+msgid "Check, if you want to hide post tags"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:923
+msgid "Hide post date"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:924
+msgid "Check, if you want to hide post date"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:929
+msgid "Hide comments counter"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:930
+msgid "Check, if you want to hide post comments counter"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:935
+msgid "Show featured image on the post page"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:936
+msgid ""
+"Check to show the featured image at the beginning of the post on the single "
+"post page"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:941
+msgid "Previous/next navigation links"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:942
+msgid "Show previous/next links on post pages"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:947
+msgid "Pagination mode"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:948
+msgid ""
+"Choose the pagination mode for blog (number of posts per page can be set "
+"under \"Settings - Reading\")"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:952
+msgid "Older/Newer links"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:953
+msgid "Links to pages (1, 2, 3, ...)"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:958
+msgid "Archive/Category Options"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:961
+msgid "Pull sidebar/slider settings for Archive/Category pages from page:"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:968
+msgid "Frontpage displays latest posts"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:971
+msgid "Pull sidebar/slider settings for Frontpage from page:"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:972
+msgid "Use this option if Frontpage displays latest posts"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:979
+msgid "Lightbox"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:982
+msgid "PrettyPhoto Lightbox"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:983
+#: amax/functions/theme-options-fields.php:1019
+msgid "Check to show navigation chain"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:987
+msgid "Use Lightbox for images and galleries"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:988
+msgid "Disable Lightbox"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:989
+msgid "Disable Lightbox and disable click on image in galleries"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:994
+msgid "Show title"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1000
+msgid "Show social buttons"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1006
+msgid "Overlay gallery on the fullscreen image on mouse over"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1015
+msgid "Breadcrumbs"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1018
+msgid "Show breadcrumbs"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1024
+msgid "Breadcrumbs caption"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1030
+msgid "Current page title"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1031
+msgid "Check to include current page title to breadcrumbs"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1043
+msgid "Sidebar position"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1044
+msgid "Select sidebar alignment."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1066
+msgid "Sidebar sliding"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1067
+msgid ""
+"Check to enable sidebar sliding up and down when it's height less than page "
+"content height."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1073
+msgid "Sidebar delay before sliding"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1074
+msgid "Value in milliseconds"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1081
+#, php-format
+msgid ""
+"You can create new sidebars on <a href=\"%s\">Appearance &gt; Sidebars</a> "
+"page"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1087
+msgid "Social icons"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1090
+msgid "Social icons in the header"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1091
+msgid "Check to display social icons in the header."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1097
+msgid "Social icons in the footer"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1098
+msgid "Check to display social icons in the footer."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1105
+msgid ""
+"Specify necessary links and icons will be shown in the header. Note, that "
+"link should begins with http://"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1109
+#, php-format
+msgid "You can set order of icons for the front page <a href=\"%s\">here</a>"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1115
+msgid "link"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1124
+msgid "Sliders"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1128
+msgid "LayerSlider"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1133
+#, php-format
+msgid ""
+"LayerSlider can be deactivated via <a href=\"%s\">plugins manager tool</a>."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1137
+#, php-format
+msgid ""
+"LayerSlider can be installed and activated via <a href=\"%s\">theme plugins "
+"manager tool</a>."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1142
+msgid "Revolution slider"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1147
+#, php-format
+msgid ""
+"Revolution slider can be deactivated via <a href=\"%s\">plugins manager "
+"tool</a>."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1151
+#, php-format
+msgid ""
+"Revolution slider can be installed and activated via <a href=\"%s\">theme "
+"plugins manager tool</a>."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1158
+msgid "Visual Composer"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1163
+#, php-format
+msgid ""
+"Visual Composer can be deactivated via <a href=\"%s\">plugins manager tool</"
+"a>."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1167
+msgid ""
+"Check this option if you want to deactivate all addons and modifications, "
+"provided by the Theme. It can be handy, if you want to use some other addon "
+"for Visual Composer, but it cause a conflict."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1174
+#, php-format
+msgid ""
+"Visual Composer can be installed and activated via <a href=\"%s\">theme "
+"plugins manager tool</a>."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1182
+msgid "Theme updates"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1186
+msgid ""
+"If you want to receive notifications about new Theme versions in WordPress "
+"Dashboard, please, specify your ThemeForest(Envato) username and API key "
+"below."
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1189
+msgid "Your ThemeForest(Envato) username"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1195
+msgid "Your ThemeForest(Envato) API key"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1205
+msgid "Extra code blocks, counters"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1208
+msgid "Code block for custom CSS"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1209
+msgid "Here you can add you custom CSS classes"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1214
+msgid "Code block before &lt;/head&gt;"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1215
+msgid "Here you can add Google.Analytics code"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1220
+msgid "Code block before &lt;/body&gt;"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1226
+msgid "Code block after page header (&lt;/H1&gt;)"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1232
+msgid "Code block after page content"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1238
+msgid "Code block after post header (&lt;/H1&gt;) on the single page"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1244
+msgid "Code block after post content on the single page"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1251
+msgid "Code block after portfolio header (&lt;/H1&gt;) on the single page"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1257
+msgid "Code block after portfolio content on the single page"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1263
+msgid "Code block after portfolio description on the single page"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1272
+msgid "WPML"
+msgstr ""
+
+#: amax/functions/theme-options-fields.php:1276
+msgid "Display WPML language selector in the header"
+msgstr ""
+
+#: amax/functions/theme-options.php:54
+#: amax/functions/theme-options.php:176
+msgid "Theme Options"
+msgstr ""
+
+#: amax/functions/theme-options.php:168
+msgid "Options Updated"
+msgstr ""
+
+#: amax/functions/theme-options.php:169
+msgid "Options Reset"
+msgstr ""
+
+#: amax/functions/theme-options.php:170
+msgid "Options Imported"
+msgstr ""
+
+#: amax/functions/theme-options.php:171
+msgid "Sorry, there has been an error while import"
+msgstr ""
+
+#: amax/functions/theme-options.php:183
+#: amax/functions/theme-options.php:199
+msgid "Save All Changes"
+msgstr ""
+
+#: amax/functions/theme-options.php:197
+msgid "Reset Options"
+msgstr ""
+
+#: amax/functions/theme-options.php:208
+msgid "(+) Export / Import Options"
+msgstr ""
+
+#: amax/functions/theme-options.php:211
+msgid "Export:"
+msgstr ""
+
+#: amax/functions/theme-options.php:213
+msgid "Download Export File"
+msgstr ""
+
+#: amax/functions/theme-options.php:218
+msgid "Import:"
+msgstr ""
+
+#: amax/functions/theme-options.php:220
+msgid "Choose a file from your computer:"
+msgstr ""
+
+#: amax/functions/theme-options.php:222
+msgid "Upload and Import"
+msgstr ""
+
+#: amax/functions/theme-options.php:482
+#: amax/libraries/om-metaboxes/functions/core.php:157
+#: amax/libraries/om-metaboxes/functions/core.php:196
+#: amax/widgets/recent-posts/recent-posts.php:116
+#: amax/widgets/testimonials/testimonials.php:90
+#: amax/wpb/functions/attribute-types.php:38
+#: amax/wpb/functions/attribute-types.php:73
+msgid "All Categories"
+msgstr ""
+
+#: amax/functions/theme-options.php:483
+#: amax/widgets/recent-posts/recent-posts.php:117
+msgid "No Categories"
+msgstr ""
+
+#: amax/functions/theme-options.php:526
+msgid "None (default)"
+msgstr ""
+
+#: amax/functions/theme-options.php:540
+#: amax/wpb/vc_templates/vc_posts_grid.php:138
+msgid "All"
+msgstr ""
+
+#: amax/functions/theme-options.php:673
+#: amax/libraries/om-metaboxes/functions/core.php:105
+msgid "Choose a file"
+msgstr ""
+
+#: amax/functions/theme-options.php:673
+#: amax/libraries/om-metaboxes/functions/core.php:105
+msgid "Select"
+msgstr ""
+
+#: amax/functions/theme-options.php:715
+#: amax/functions/theme-options.php:789
+msgid "Source:"
+msgstr ""
+
+#: amax/functions/theme-options.php:717
+#: amax/functions/theme-options.php:791
+msgid "Standard fonts"
+msgstr ""
+
+#: amax/functions/theme-options.php:718
+#: amax/functions/theme-options.php:792
+msgid "Google.Fonts"
+msgstr ""
+
+#: amax/functions/theme-options.php:719
+#: amax/functions/theme-options.php:793
+msgid "Any external fonts (e.g. Typekit)"
+msgstr ""
+
+#: amax/functions/theme-options.php:723
+#: amax/functions/theme-options.php:777
+#: amax/functions/theme-options.php:797
+#: amax/functions/theme-options.php:823
+msgid "Font family:"
+msgstr ""
+
+#: amax/functions/theme-options.php:731
+#: amax/functions/theme-options.php:805
+msgid "Font name:"
+msgstr ""
+
+#: amax/functions/theme-options.php:732
+msgid ""
+"Choose the the font from <a href=\"http://www.google.com/fonts\" target="
+"\"_blank\">http://www.google.com/fonts</a> and enter the name."
+msgstr ""
+
+#: amax/functions/theme-options.php:735
+msgid "Font weight for normal text:"
+msgstr ""
+
+#: amax/functions/theme-options.php:739
+#: amax/functions/theme-options.php:755
+msgid "standard"
+msgstr ""
+
+#: amax/functions/theme-options.php:748
+msgid "Font weight for bold text:"
+msgstr ""
+
+#: amax/functions/theme-options.php:760
+msgid "Please, make sure that chosen font supports chosen weight"
+msgstr ""
+
+#: amax/functions/theme-options.php:761
+#: amax/functions/theme-options.php:807
+msgid ""
+"Latin charset by default. Include additional character sets for fonts (make "
+"sure at <a href=\"http://www.google.com/fonts/\" target=\"_blank\">http://"
+"www.google.com/fonts/</a> before that charset is available for chosen font):"
+msgstr ""
+
+#: amax/functions/theme-options.php:762
+#: amax/functions/theme-options.php:808
+msgid "Latin Extended"
+msgstr ""
+
+#: amax/functions/theme-options.php:763
+#: amax/functions/theme-options.php:809
+msgid "Arabic"
+msgstr ""
+
+#: amax/functions/theme-options.php:764
+#: amax/functions/theme-options.php:810
+msgid "Cyrillic"
+msgstr ""
+
+#: amax/functions/theme-options.php:765
+#: amax/functions/theme-options.php:811
+msgid "Cyrillic Extended"
+msgstr ""
+
+#: amax/functions/theme-options.php:766
+#: amax/functions/theme-options.php:812
+msgid "Devanagari"
+msgstr ""
+
+#: amax/functions/theme-options.php:767
+#: amax/functions/theme-options.php:813
+msgid "Greek"
+msgstr ""
+
+#: amax/functions/theme-options.php:768
+#: amax/functions/theme-options.php:814
+msgid "Greek Extended"
+msgstr ""
+
+#: amax/functions/theme-options.php:769
+#: amax/functions/theme-options.php:815
+msgid "Hebrew"
+msgstr ""
+
+#: amax/functions/theme-options.php:770
+#: amax/functions/theme-options.php:816
+msgid "Khmer"
+msgstr ""
+
+#: amax/functions/theme-options.php:771
+#: amax/functions/theme-options.php:817
+msgid "Telugu"
+msgstr ""
+
+#: amax/functions/theme-options.php:772
+#: amax/functions/theme-options.php:818
+msgid "Vietnamese"
+msgstr ""
+
+#: amax/functions/theme-options.php:776
+#: amax/functions/theme-options.php:822
+msgid "Embed code for the &lt;head&gt; section:"
+msgstr ""
+
+#: amax/functions/theme-options.php:778
+#: amax/functions/theme-options.php:824
+msgid ""
+"Enter the value for \"font-family\" attribute, also you can specify the "
+"stack of the fonts"
+msgstr ""
+
+#: amax/functions/theme-options.php:806
+msgid ""
+"Choose the the font from <a href=\"http://www.google.com/fonts/\" target="
+"\"_blank\">http://www.google.com/fonts/</a> and enter the name."
+msgstr ""
+
+#: amax/functions/theme-options.php:827
+msgid "Font size:"
+msgstr ""
+
+#: amax/functions/theme-options.php:833
+msgid "Line height:"
+msgstr ""
+
+#: amax/functions/theme-options.php:882
+msgid "<b>Field"
+msgstr ""
+
+#: amax/functions/theme-options.php:883
+msgid "Name:"
+msgstr ""
+
+#: amax/functions/theme-options.php:884
+msgid "Type:"
+msgstr ""
+
+#: amax/functions/theme-options.php:885
+msgid "Required:"
+msgstr ""
+
+#: amax/functions/theme-options.php:897
+msgid "No presets created yet."
+msgstr ""
+
+#: amax/functions/theme-options.php:903
+msgid "Apply"
+msgstr ""
+
+#: amax/functions/theme-options.php:909
+msgid "Save current styling options as new preset:"
+msgstr ""
+
+#: amax/functions/theme-options.php:909
+msgid "Save"
+msgstr ""
+
+#: amax/includes/post-single-header.php:38
+#: amax/includes/post-standard-footer.php:50
+msgid "by"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:231
+msgid "Something went wrong."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:244
+msgid "Return to the dashboard"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:246
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:247
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:248
+msgid "Dismiss this notice"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1323
+msgid "Private Repository"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1327
+msgid "Pre-Packaged"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1332
+msgid "WordPress Repository"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1335
+msgid "Required"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1335
+msgid "Recommended"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1338
+msgid "Not Installed"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1341
+msgid "Update required"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1344
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1555
+#, php-format
+msgid ""
+"No plugins to install or activate. <a href=\"%1$s\">Return to the Dashboard</"
+"a>"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1571
+msgid "Plugin"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1572
+msgid "Source"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1573
+msgid "Type"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1574
+msgid "Status"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1592
+msgid "Install"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:1593
+msgid "Activate"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2164
+msgid "Install package not available."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2165
+#, php-format
+msgid "Downloading install package from <span class=\"code\">%s</span>&#8230;"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2166
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2167
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2168
+msgid "Plugin install failed."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2169
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2180
+msgid "Plugin activation failed."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2303
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2304
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2308
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2309
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2309
+#: amax/libraries/class-tgm-plugin-activation.php:2316
+msgid "Show Details"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2309
+#: amax/libraries/class-tgm-plugin-activation.php:2316
+msgid "Hide Details"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2310
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2311
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2315
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2316
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2317
+msgid "All installations have been completed."
+msgstr ""
+
+#: amax/libraries/class-tgm-plugin-activation.php:2318
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: amax/libraries/envato-theme-updater/class-envato-protected-api.php:67
+msgid "Please enter your Envato Marketplace Username."
+msgstr ""
+
+#: amax/libraries/envato-theme-updater/class-envato-protected-api.php:71
+msgid "Please enter your Envato Marketplace API Key."
+msgstr ""
+
+#: amax/libraries/envato-theme-updater/class-envato-protected-api.php:96
+msgid "The API \"set\" is a required parameter."
+msgstr ""
+
+#: amax/libraries/envato-theme-updater/class-envato-protected-api.php:167
+msgid "The Envato Marketplace \"item ID\" is a required parameter."
+msgstr ""
+
+#: amax/libraries/om-import-tool/om-import-tool.php:35
+msgid "Demo Content"
+msgstr ""
+
+#: amax/libraries/om-import-tool/om-import-tool.php:44
+msgid "One Click Demo Content Import"
+msgstr ""
+
+#: amax/libraries/om-import-tool/om-import-tool.php:46
+msgid "Import of demo content completed! Enjoy!"
+msgstr ""
+
+#: amax/libraries/om-import-tool/om-import-tool.php:48
+msgid ""
+"Please, note, that all settings which were made under \"Theme Options\" will "
+"be reverted to \"Demo\". So, if you have already made any changes under "
+"\"Theme Options\" and want to save them, navigate to <a href=\"admin.php?"
+"page=om_options\">Theme Options</a> and export current settings."
+msgstr ""
+
+#: amax/libraries/om-import-tool/om-import-tool.php:53
+msgid "Import demo content WITHOUT media files"
+msgstr ""
+
+#: amax/libraries/om-import-tool/om-import-tool.php:54
+msgid ""
+"This is a quick import, which will import all pages, posts, menus, etc. "
+"without demo images."
+msgstr ""
+
+#: amax/libraries/om-import-tool/om-import-tool.php:57
+msgid "Import demo content WITH media files"
+msgstr ""
+
+#: amax/libraries/om-import-tool/om-import-tool.php:58
+msgid ""
+"This will import all demo images, but it can take much time to complete an "
+"import."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/parsers.php:42
+#: amax/libraries/om-import-tool/includes/parsers.php:72
+#: amax/libraries/om-import-tool/includes/parsers.php:80
+msgid "There was an error when reading this WXR file"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/parsers.php:43
+msgid ""
+"Details are shown above. The importer will now try again with a different "
+"parser..."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/parsers.php:84
+#: amax/libraries/om-import-tool/includes/parsers.php:89
+#: amax/libraries/om-import-tool/includes/parsers.php:279
+#: amax/libraries/om-import-tool/includes/parsers.php:468
+msgid ""
+"This does not appear to be a WXR file, missing/invalid WXR version number"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/widgets-import.php:34
+msgid "You must upload a <b>.wie</b> file generated by this plugin."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/widgets-import.php:77
+msgid "Import file could not be found. Please try again."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/widgets-import.php:112
+msgid "Import data could not be read. Please try a different file."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/widgets-import.php:154
+msgid "Sidebar does not exist in theme (using Inactive)"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/widgets-import.php:176
+msgid "Site does not support widget"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/widgets-import.php:212
+msgid "Widget already exists"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/widgets-import.php:261
+msgid "Imported"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/widgets-import.php:264
+msgid "Imported to Inactive"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/widgets-import.php:271
+msgid "No Title"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:134
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:143
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:194
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:198
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:207
+msgid "Sorry, there has been an error."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:135
+msgid "The file does not exist, please try again."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:178
+msgid "All done."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:178
+msgid "Have fun!"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:179
+msgid "Remember to update the passwords and roles of imported users."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:199
+#, php-format
+msgid ""
+"The export file could not be found at <code>%s</code>. It is likely that "
+"this was caused by a permissions problem."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:215
+#, php-format
+msgid ""
+"This WXR file (version %s) may not be supported by this version of the "
+"importer. Please consider updating."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:240
+#, php-format
+msgid ""
+"Failed to import author %s. Their posts will be attributed to the current "
+"user."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:266
+msgid "Assign Authors"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:267
+msgid ""
+"To make it easier for you to edit and save the imported content, you may "
+"want to reassign the author of the imported item to an existing user of this "
+"site. For example, you may want to import all the entries as <code>admin</"
+"code>s entries."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:269
+#, php-format
+msgid ""
+"If a new user is created by WordPress, a new password will be randomly "
+"generated and the new user&#8217;s role will be set as %s. Manually changing "
+"the new user&#8217;s details will be necessary."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:279
+msgid "Import Attachments"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:282
+msgid "Download and import file attachments"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:299
+msgid "Import author:"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:310
+msgid "or create new user with login name:"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:313
+msgid "as a new user:"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:321
+msgid "assign posts to an existing user:"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:323
+msgid "or assign posts to an existing user:"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:324
+msgid "- Select -"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:374
+#, php-format
+msgid ""
+"Failed to create new user for %s. Their posts will be attributed to the "
+"current user."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:425
+#, php-format
+msgid "Failed to import category %s"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:465
+#, php-format
+msgid "Failed to import post tag %s"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:511
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:652
+#, php-format
+msgid "Failed to import %s %s"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:537
+#, php-format
+msgid "Failed to import &#8220;%s&#8221;: Invalid post type %s"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:559
+#, php-format
+msgid "%s &#8220;%s&#8221; already exists."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:618
+#, php-format
+msgid "Failed to import %s &#8220;%s&#8221;"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:783
+msgid "Menu item skipped due to missing menu slug"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:790
+#, php-format
+msgid "Menu item skipped due to invalid menu slug: %s"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:853
+msgid "Fetching attachments is not enabled"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:866
+msgid "Invalid file type"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:910
+msgid "Remote server did not respond"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:916
+#, php-format
+msgid "Remote server returned error response %1$d %2$s"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:923
+msgid "Remote file is incorrect size"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:928
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:934
+#, php-format
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:1034
+msgid "Import WordPress"
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:1041
+#, php-format
+msgid ""
+"A new version of this importer is available. Please update to version %s to "
+"ensure compatibility with newer export files."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:1056
+msgid ""
+"Howdy! Upload your WordPress eXtended RSS (WXR) file and we&#8217;ll import "
+"the posts, pages, comments, custom fields, categories, and tags into this "
+"site."
+msgstr ""
+
+#: amax/libraries/om-import-tool/includes/wordpress-importer.php:1057
+msgid "Choose a WXR (.xml) file to upload, then click Upload file and import."
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:105
+msgid "Browse"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:238
+msgid "Manage Images"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:256
+msgid "Choose which images you want to show in gallery"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:266
+msgid "Custom images set from Media Library"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:267
+msgid ""
+"Images uploaded and attached to current post via WordPress standard Media "
+"Manager"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:277
+msgid "Gallery images"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:286
+msgid "Chosen Images"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:287
+msgid "No images yet, choose from the images below"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:295
+msgid "Upload images"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:295
+msgid "Add media"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:296
+msgid "Refresh"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:316
+msgid "Select a Slider"
+msgstr ""
+
+#: amax/libraries/om-metaboxes/functions/core.php:327
+#: amax/libraries/om-metaboxes/functions/core.php:339
+msgid "No sliders created yet"
+msgstr ""
+
+#: amax/widgets/facebook/facebook.php:18
+msgid "Facebook Like Box"
+msgstr ""
+
+#: amax/widgets/facebook/facebook.php:21
+msgid ""
+"Widget that enables Facebook Page owners to attract and gain Likes from your "
+"own website."
+msgstr ""
+
+#: amax/widgets/facebook/facebook.php:98
+#: amax/widgets/recent-posts/recent-posts.php:89
+#: amax/widgets/testimonials/testimonials.php:81
+#: amax/widgets/tweets/tweets.php:134
+msgid "Title:"
+msgstr ""
+
+#: amax/widgets/facebook/facebook.php:104
+msgid "Facebook Page URL:"
+msgstr ""
+
+#: amax/widgets/facebook/facebook.php:110
+msgid "Hide cover Photo"
+msgstr ""
+
+#: amax/widgets/facebook/facebook.php:116
+msgid "Show Faces"
+msgstr ""
+
+#: amax/widgets/facebook/facebook.php:122
+msgid "Show Stream"
+msgstr ""
+
+#: amax/widgets/recent-posts/recent-posts.php:16
+#: amax/widgets/recent-posts/recent-posts.php:77
+msgid "Recent Posts"
+msgstr ""
+
+#: amax/widgets/recent-posts/recent-posts.php:19
+msgid "The most recent posts on your site with or without thumbnails"
+msgstr ""
+
+#: amax/widgets/recent-posts/recent-posts.php:95
+msgid "Number of posts"
+msgstr ""
+
+#: amax/widgets/recent-posts/recent-posts.php:101
+msgid "Show thumbnails"
+msgstr ""
+
+#: amax/widgets/recent-posts/recent-posts.php:107
+msgid "Show excerpt"
+msgstr ""
+
+#: amax/widgets/recent-posts/recent-posts.php:113
+msgid "Posts category:"
+msgstr ""
+
+#: amax/widgets/recent-posts/recent-posts.php:138
+msgid "Custom post IDs"
+msgstr ""
+
+#: amax/widgets/testimonials/testimonials.php:21
+msgid "Use this widget to display testimonials"
+msgstr ""
+
+#: amax/widgets/testimonials/testimonials.php:87
+msgid "Testimonials category:"
+msgstr ""
+
+#: amax/widgets/testimonials/testimonials.php:111
+msgid ""
+"A list of testimonials ID separated with a comma to display certain "
+"testimonials."
+msgstr ""
+
+#: amax/widgets/testimonials/testimonials.php:117
+msgid "Autorotate (interval in milliseconds. Leave empty to disable):"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:18
+msgid "Latest Tweets"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:21
+msgid "A widget that displays your latest tweets."
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:45
+msgid "less than a minute ago"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:47
+msgid "about a minute ago"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:49
+msgid "minutes ago"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:51
+msgid "about an hour ago"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:53
+msgid "about"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:53
+msgid "hours ago"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:55
+msgid "1 day ago"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:57
+msgid "days ago"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:100
+msgid "Authentication error has occured."
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:140
+msgid "Twitter username e.g. mopc007"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:146
+msgid "Number of tweets"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:152
+msgid "Include retweets"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:158
+msgid "Exclude replies"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:164
+msgid "Follow Text e.g. Follow @mopc007"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:175
+msgid "OAuth Consumer key"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:181
+msgid "OAuth Consumer secret"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:187
+msgid "Access token"
+msgstr ""
+
+#: amax/widgets/tweets/tweets.php:193
+msgid "Access token secret"
+msgstr ""
+
+#: amax/wpb/functions/attribute-types.php:19
+#: amax/wpb/functions/custom_shortcodes.php:345
+#: amax/wpb/functions/options.php:788
+msgid "Get code"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:12
+msgid "Separator with Icon"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:14
+msgid "Horisontal separator line with icon"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:16
+#: amax/wpb/functions/custom_shortcodes.php:34
+#: amax/wpb/functions/custom_shortcodes.php:40
+#: amax/wpb/functions/custom_shortcodes.php:184
+#: amax/wpb/functions/custom_shortcodes.php:271
+#: amax/wpb/functions/custom_shortcodes.php:372
+#: amax/wpb/functions/custom_shortcodes.php:474
+#: amax/wpb/functions/custom_shortcodes.php:526
+#: amax/wpb/functions/custom_shortcodes.php:619
+#: amax/wpb/functions/custom_shortcodes.php:736
+#: amax/wpb/functions/custom_shortcodes.php:815
+#: amax/wpb/functions/custom_shortcodes.php:918
+#: amax/wpb/functions/custom_shortcodes.php:1046
+#: amax/wpb/functions/custom_shortcodes.php:1156
+#: amax/wpb/functions/custom_shortcodes.php:1161
+#: amax/wpb/functions/custom_shortcodes.php:1273
+#: amax/wpb/functions/custom_shortcodes.php:1322
+#: amax/wpb/functions/custom_shortcodes.php:1402
+#: amax/wpb/functions/custom_shortcodes.php:1480
+msgid "Content"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:30
+msgid "Box"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:32
+msgid "Set border, icon, background"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:42
+msgid "<p>I am text block. Click edit button to change this text.</p>"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:46
+msgid "Border Width"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:47
+msgid "Border width in pixels"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:53
+msgid "Border Style"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:56
+msgid "Solid"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:57
+msgid "Dotted"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:66
+msgid "Border Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:68
+#: amax/wpb/functions/custom_shortcodes.php:89
+#: amax/wpb/functions/custom_shortcodes.php:228
+#: amax/wpb/functions/custom_shortcodes.php:306
+#: amax/wpb/functions/custom_shortcodes.php:1221
+#: amax/wpb/functions/custom_shortcodes.php:1352
+#: amax/wpb/functions/options.php:999
+msgid "Theme Hightlight Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:68
+#: amax/wpb/functions/custom_shortcodes.php:89
+#: amax/wpb/functions/custom_shortcodes.php:228
+#: amax/wpb/functions/custom_shortcodes.php:1078
+#: amax/wpb/functions/custom_shortcodes.php:1095
+#: amax/wpb/functions/custom_shortcodes.php:1116
+#: amax/wpb/functions/custom_shortcodes.php:1221
+#: amax/wpb/functions/custom_shortcodes.php:1352
+#: amax/wpb/functions/options.php:667
+#: amax/wpb/functions/options.php:691
+#: amax/wpb/functions/options.php:713
+#: amax/wpb/functions/options.php:735
+#: amax/wpb/functions/options.php:762
+#: amax/wpb/functions/options.php:852
+#: amax/wpb/functions/options.php:936
+msgid "Custom"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:77
+msgid "Border Custom Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:87
+#: amax/wpb/functions/custom_shortcodes.php:1093
+#: amax/wpb/functions/custom_shortcodes.php:1350
+msgid "Background Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:89
+msgid "None"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:94
+#: amax/wpb/functions/custom_shortcodes.php:1104
+#: amax/wpb/functions/custom_shortcodes.php:1362
+msgid "Background Custom Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:104
+#: amax/wpb/functions/custom_shortcodes.php:1412
+msgid "Background Image"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:110
+msgid "Background Image Position"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:123
+msgid "Icon Style"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:126
+msgid "Border"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:136
+msgid "Icon Shape"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:139
+msgid "Circle"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:140
+msgid "Square"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:149
+#: amax/wpb/functions/custom_shortcodes.php:1083
+msgid "Text Custom Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:155
+msgid "Certain Box Height"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:156
+msgid ""
+"Specify box height in pixels if you need certain height, otherwise the "
+"height will be set automatically"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:162
+#: amax/wpb/functions/custom_shortcodes.php:250
+#: amax/wpb/functions/custom_shortcodes.php:339
+#: amax/wpb/functions/custom_shortcodes.php:378
+#: amax/wpb/functions/custom_shortcodes.php:450
+#: amax/wpb/functions/custom_shortcodes.php:505
+#: amax/wpb/functions/custom_shortcodes.php:595
+#: amax/wpb/functions/custom_shortcodes.php:713
+#: amax/wpb/functions/custom_shortcodes.php:793
+#: amax/wpb/functions/custom_shortcodes.php:895
+#: amax/wpb/functions/custom_shortcodes.php:1025
+#: amax/wpb/functions/custom_shortcodes.php:1135
+#: amax/wpb/functions/custom_shortcodes.php:1251
+#: amax/wpb/functions/custom_shortcodes.php:1300
+#: amax/wpb/functions/custom_shortcodes.php:1380
+#: amax/wpb/functions/custom_shortcodes.php:1459
+#: amax/wpb/functions/custom_shortcodes.php:1561
+#: amax/wpb/functions/options.php:451
+#: amax/wpb/functions/options.php:602
+#: amax/wpb/functions/options.php:868
+#: amax/wpb/functions/options.php:962
+#: amax/wpb/functions/options.php:990
+msgid "Extra class name"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:164
+#: amax/wpb/functions/custom_shortcodes.php:252
+#: amax/wpb/functions/custom_shortcodes.php:341
+#: amax/wpb/functions/custom_shortcodes.php:380
+#: amax/wpb/functions/custom_shortcodes.php:452
+#: amax/wpb/functions/custom_shortcodes.php:507
+#: amax/wpb/functions/custom_shortcodes.php:597
+#: amax/wpb/functions/custom_shortcodes.php:715
+#: amax/wpb/functions/custom_shortcodes.php:795
+#: amax/wpb/functions/custom_shortcodes.php:897
+#: amax/wpb/functions/custom_shortcodes.php:1027
+#: amax/wpb/functions/custom_shortcodes.php:1137
+#: amax/wpb/functions/custom_shortcodes.php:1253
+#: amax/wpb/functions/custom_shortcodes.php:1302
+#: amax/wpb/functions/custom_shortcodes.php:1382
+#: amax/wpb/functions/custom_shortcodes.php:1461
+#: amax/wpb/functions/custom_shortcodes.php:1563
+#: amax/wpb/functions/options.php:453
+#: amax/wpb/functions/options.php:604
+#: amax/wpb/functions/options.php:870
+#: amax/wpb/functions/options.php:964
+#: amax/wpb/functions/options.php:992
+msgid ""
+"If you wish to style particular content element differently, then use this "
+"field to add a class name and then refer to it in your css file."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:180
+msgid "Counter"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:182
+msgid "Animated counter"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:188
+#: amax/wpb/functions/options.php:887
+msgid "Number"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:189
+msgid "Value will be animated"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:195
+msgid "Number Prefix"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:196
+msgid "e.g. \"$\" or \"up to \""
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:202
+msgid "Number Suffix"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:203
+msgid "e.g. \"%\""
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:209
+#: amax/wpb/functions/custom_shortcodes.php:395
+#: amax/wpb/functions/custom_shortcodes.php:819
+#: amax/wpb/functions/custom_shortcodes.php:1050
+#: amax/wpb/functions/custom_shortcodes.php:1287
+#: amax/wpb/functions/custom_shortcodes.php:1336
+#: amax/wpb/functions/custom_shortcodes.php:1424
+msgid "Title"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:215
+#: amax/wpb/functions/custom_shortcodes.php:322
+#: amax/wpb/functions/custom_shortcodes.php:1063
+msgid "Size"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:226
+#: amax/wpb/functions/custom_shortcodes.php:304
+#: amax/wpb/functions/custom_shortcodes.php:1074
+#: amax/wpb/functions/options.php:562
+msgid "Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:233
+#: amax/wpb/functions/options.php:571
+msgid "Custom Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:243
+msgid "Animation duration"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:244
+msgid "value in milliseconds or 0 - to disable animation"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:268
+msgid "Animated Button"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:272
+msgid "Animated eye catching button"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:277
+#: amax/wpb/functions/custom_shortcodes.php:1057
+#: amax/wpb/functions/custom_shortcodes.php:1278
+#: amax/wpb/functions/custom_shortcodes.php:1327
+#: amax/wpb/functions/custom_shortcodes.php:1406
+msgid "URL (Link)"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:279
+#: amax/wpb/functions/custom_shortcodes.php:1059
+#: amax/wpb/functions/custom_shortcodes.php:1280
+#: amax/wpb/functions/custom_shortcodes.php:1329
+#: amax/wpb/functions/custom_shortcodes.php:1408
+msgid "Button link."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:283
+#: amax/wpb/functions/custom_shortcodes.php:287
+#: amax/wpb/vc_templates/om_a_button.php:5
+#: amax/wpb/vc_templates/vc_button2.php:4
+#: amax/wpb/vc_templates/vc_cta.php:22
+#: amax/wpb/vc_templates/vc_cta_button2.php:22
+msgid "Text on the button"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:288
+msgid "Text on the button."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:292
+#: amax/wpb/functions/custom_shortcodes.php:922
+#: amax/wpb/functions/options.php:581
+msgid "Style"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:295
+msgid "Colored icon"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:296
+msgid "Colored title"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:297
+msgid "Colored icon & title"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:298
+msgid "Not colored"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:300
+msgid "Button color style."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:307
+msgid "Button color."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:314
+#: amax/wpb/functions/options.php:675
+msgid "Select custom color for button."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:332
+msgid "Button size."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:347
+#: amax/wpb/functions/options.php:790
+msgid ""
+"If you wish to use button shortcode somewhere out of Visual Composer or "
+"insert it into text inline, you can generate the code which you can use "
+"separately."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:368
+msgid "Pricing Table"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:387
+msgid "Pricing table column"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:398
+msgid "Enter pricing column title."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:402
+msgid "Subtitle"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:407
+msgid "Featured"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:410
+msgid "If selected, column will stand out."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:415
+msgid "Price"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:420
+msgid "Price prefix"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:422
+msgid "e.g. \"$\""
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:426
+msgid "Price Suffix"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:428
+msgid "e.g. \"daily\", \"monthly\""
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:432
+msgid "Options"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:434
+msgid "Enter tariff options. Divide options with linebreaks (Enter)."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:438
+msgid "Button title"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:440
+msgid "e.g. \"Sing up\""
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:444
+msgid "Button URL (Link)"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:471
+msgid "Data HTML Table"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:476
+msgid "Apply styling to data table"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:481
+msgid "Table HTML"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:500
+msgid ""
+"Enter your table HTML markup. More information about table HTML markup <a "
+"href=\"http://www.w3schools.com/html/html_tables.asp\" target=\"_blank"
+"\">here</a>"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:527
+msgid "Testimonials block"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:533
+#, php-format
+msgid ""
+"Testimonials are managed under <a href=\"%s\" target=\"_blank\">"
+"\"Testimonials\"</a> section. This block just displays testimonials."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:537
+#: amax/wpb/functions/custom_shortcodes.php:624
+#: amax/wpb/functions/custom_shortcodes.php:741
+#: amax/wpb/functions/custom_shortcodes.php:1485
+msgid "Widget title"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:539
+#: amax/wpb/functions/custom_shortcodes.php:626
+#: amax/wpb/functions/custom_shortcodes.php:743
+#: amax/wpb/functions/custom_shortcodes.php:1487
+msgid ""
+"Enter text which will be used as widget title. Leave blank if no title is "
+"needed."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:543
+#: amax/wpb/functions/custom_shortcodes.php:1491
+msgid "Layout mode"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:547
+msgid "In one box with sliding"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:548
+msgid "Full list"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:553
+msgid "Autorotate for box mode"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:556
+msgid "Interval in milliseconds. Leave empty to disable autorotate"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:564
+msgid "Pause autorotate on hover"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:566
+#: amax/wpb/functions/custom_shortcodes.php:591
+#: amax/wpb/functions/custom_shortcodes.php:682
+#: amax/wpb/functions/custom_shortcodes.php:709
+#: amax/wpb/functions/custom_shortcodes.php:865
+#: amax/wpb/functions/custom_shortcodes.php:871
+#: amax/wpb/functions/custom_shortcodes.php:950
+#: amax/wpb/functions/custom_shortcodes.php:1539
+#: amax/wpb/functions/custom_shortcodes.php:1545
+#: amax/wpb/functions/custom_shortcodes.php:1551
+#: amax/wpb/functions/custom_shortcodes.php:1557
+#: amax/wpb/functions/options.php:430
+#: amax/wpb/functions/options.php:442
+msgid "Yes, please"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:574
+msgid "Testimonials category"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:579
+msgid "Choose a category, to display testimonials from certain category."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:583
+msgid "Testimonials by ID"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:585
+msgid ""
+"Specify a list of testimonial IDs separated with a comma to display certain "
+"testimonials."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:589
+msgid "Randomize testimonials"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:620
+msgid "Portfolio items block"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:637
+msgid "Thumbnail width/height ratio"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:648
+msgid "Thumbnail size"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:655
+msgid "Preview layout"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:662
+msgid "Item margins"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:666
+msgid "No margins"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:668
+msgid "Gap between portfolio items in the grid"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:672
+msgid "Count"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:675
+msgid "Number of items to display. Leave empty to display all items."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:679
+#: amax/wpb/functions/options.php:439
+msgid "Use hi-res images"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:680
+msgid ""
+"Check this option of you use element in a row without padding and the "
+"dimendions of images is not enough."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:686
+msgid "Category"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:691
+msgid "Choose a category, to display portfolio items from certain category."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:695
+msgid "Portfolio items by ID"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:697
+msgid ""
+"Specify a list of portfolio item IDs separated with a comma to display "
+"certain items."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:701
+msgid "Items order"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:707
+msgid "Randomize items"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:733
+msgid "Logos"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:737
+msgid "Align set of logotypes"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:747
+msgid "Images"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:748
+msgid "Choose image to display."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:753
+#: amax/wpb/functions/custom_shortcodes.php:938
+#: amax/wpb/functions/custom_shortcodes.php:1203
+msgid "Image size"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:755
+#: amax/wpb/functions/custom_shortcodes.php:1205
+#: amax/wpb/functions/custom_shortcodes.php:1420
+#: amax/wpb/functions/options.php:645
+msgid ""
+"Enter image size. Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
+"other sizes defined by current theme. Alternatively enter image size in "
+"pixels: 200x100 (Width x Height). Leave empty to use \"full\" size."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:759
+msgid "On click"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:762
+msgid "Do nothing"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:763
+msgid "Open custom link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:764
+msgid "Open link, defined in the \"Description\" field of an image"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:769
+msgid "Custom links"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:771
+msgid "Enter links for each image. Divide links with linebreaks (Enter) . "
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:779
+msgid "Link target"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:781
+msgid "Select where to open custom links."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:787
+msgid "Same window"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:788
+msgid "New window"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:811
+msgid "Charts"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:813
+msgid "Insert a simple chart"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:825
+msgid "Chart type"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:839
+msgid "Labels"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:840
+msgid ""
+"X axis labels, separated by commas (,). E.g. January, February, March, April"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:850
+msgid "Data"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:852
+msgid ""
+"Chart data. Divide datasets with linebreaks (Enter). Each dataset (line) "
+"must have a format<br/>Label|10,20,30,40|#e75956<br/>where \"Label\" is a "
+"label of the dataset. \"10,20,30,40\" are values, number of values must be "
+"equal to number of X axis labels. \"#e75956\" is the color of the dataset on "
+"the chart. Optional, if missed Theme highlight color is used.<br/>For "
+"PolarArea, Pie and Doughnut types, value must contain just single value, "
+"like \"Label|20|#e75956\""
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:857
+msgid "Chart width/height ratio"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:863
+msgid "Display legend"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:869
+msgid "Fill datasets with a color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:879
+msgid "Labels Custom Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:885
+msgid "Segment Stroke Custom Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:914
+msgid "Person card"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:916
+msgid "Photo, name, contacts"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:925
+msgid "Simple"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:926
+msgid "Centered"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:927
+msgid "Colored"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:933
+msgid "Photo"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:940
+msgid ""
+"Enter image size. Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
+"other sizes defined by current theme. Alternatively enter image size in "
+"pixels: 200x100 (Width x Height). Leave empty to use \"large\" size."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:948
+msgid "Round image"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:958
+msgid "Person name"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:964
+msgid "Job title"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:970
+msgid "Short description"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:980
+msgid "Behance link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:985
+msgid "Facebook link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:990
+msgid "Google+ link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:995
+msgid "Instagram link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1000
+msgid "LinkedIn link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1005
+msgid "Pinterest link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1010
+msgid "Skype link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1015
+msgid "Twitter link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1020
+msgid "YouTube link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1042
+msgid "Clickable Wide Box"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1045
+msgid "Call to action box"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1077
+msgid "Theme Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1114
+msgid "Hover Background Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1125
+msgid "Hover Background Custom Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1152
+msgid "Moving Image/Icon"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1153
+msgid "Floating, Pulsing, Spinning"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1171
+msgid "Animation"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1174
+msgid "Vertical Float"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1175
+msgid "Horisontal Float"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1176
+msgid "Pulse"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1177
+msgid "Tossing"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1178
+#: amax/wpb/functions/options.php:498
+msgid "Spin"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1184
+msgid "Align"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1189
+#: amax/wpb/functions/custom_shortcodes.php:1448
+msgid "Right"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1219
+msgid "Icon Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1230
+msgid "Icon Custom Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1240
+msgid "Icon size"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1243
+msgid "Icon size in pixels (e.g. \"64px\") or percents (e.g. \"300%\")"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1269
+msgid "Clickable Icon Box"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1270
+msgid "Icon, Title, Text"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1294
+#: amax/wpb/functions/custom_shortcodes.php:1343
+#: amax/wpb/functions/custom_shortcodes.php:1431
+msgid "Text"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1318
+msgid "Icon Box 2"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1319
+msgid "Horisontal Layout, Background, Title, Text"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1373
+msgid "Text Color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1398
+msgid "Teaser"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1399
+msgid "Background Image, Title, Text, Link"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1418
+msgid "Background Image size"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1437
+#: amax/wpb/functions/options.php:709
+msgid "Text color"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1443
+msgid "Text align"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1453
+msgid "Certain teaser height"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1455
+msgid ""
+"Specify teaser height in pixels if you need certain height, otherwise the "
+"height will be set automatically"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1481
+msgid "Posts block"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1495
+msgid "Table view (fixed cells)"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1501
+msgid "Columns"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1511
+msgid "Total number"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1515
+msgid "Leave empty to display all posts"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1519
+msgid "Posts category"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1522
+msgid ""
+"Choose a category (or multiple caterogires), to display posts from certain "
+"category."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1526
+msgid "Display only these posts"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1533
+msgid "If you want to display only certain posts, choose them here."
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1537
+msgid "Randomize posts"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1543
+msgid "Hide thumbnail"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1549
+msgid "Hide meta (date, categories, tags)"
+msgstr ""
+
+#: amax/wpb/functions/custom_shortcodes.php:1555
+msgid "Hide excerpt"
+msgstr ""
+
+#: amax/wpb/functions/misc.php:97
+msgid "Font Awesome"
+msgstr ""
+
+#: amax/wpb/functions/misc.php:98
+msgid "Open Iconic"
+msgstr ""
+
+#: amax/wpb/functions/misc.php:99
+msgid "Typicons"
+msgstr ""
+
+#: amax/wpb/functions/misc.php:100
+msgid "Entypo"
+msgstr ""
+
+#: amax/wpb/functions/misc.php:101
+msgid "Linecons"
+msgstr ""
+
+#: amax/wpb/functions/misc.php:105
+msgid "No Icon"
+msgstr ""
+
+#: amax/wpb/functions/misc.php:110
+msgid "Icon library"
+msgstr ""
+
+#: amax/wpb/functions/misc.php:113
+msgid "Select icon library."
+msgstr ""
+
+#: amax/wpb/functions/misc.php:128
+#: amax/wpb/functions/misc.php:143
+#: amax/wpb/functions/misc.php:158
+#: amax/wpb/functions/misc.php:187
+msgid "Select icon from library."
+msgstr ""
+
+#: amax/wpb/functions/misc.php:356
+#, php-format
+msgid "Wrong name for shortcode:%s. Name required"
+msgstr ""
+
+#: amax/wpb/functions/misc.php:358
+#, php-format
+msgid "Wrong attribute for '%s' shortcode. Attribute 'param_name' required"
+msgstr ""
+
+#: amax/wpb/functions/options.php:23
+msgid ""
+"Please, note, that if you use \"Stretch row\" option you must hide the "
+"sidebar on the page to make use of this option."
+msgstr ""
+
+#: amax/wpb/functions/options.php:43
+msgid "Font color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:45
+msgid "Select custom font color or leave empty to use default."
+msgstr ""
+
+#: amax/wpb/functions/options.php:50
+msgid "Row Background"
+msgstr ""
+
+#: amax/wpb/functions/options.php:53
+msgid "Solid Color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:54
+msgid "Gradient Color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:56
+msgid "Video"
+msgstr ""
+
+#: amax/wpb/functions/options.php:75
+msgid "Background color 2"
+msgstr ""
+
+#: amax/wpb/functions/options.php:77
+msgid "Second color of the gradient."
+msgstr ""
+
+#: amax/wpb/functions/options.php:87
+msgid "Gradient type"
+msgstr ""
+
+#: amax/wpb/functions/options.php:90
+msgid "Vertical"
+msgstr ""
+
+#: amax/wpb/functions/options.php:91
+msgid "Horisontal"
+msgstr ""
+
+#: amax/wpb/functions/options.php:92
+#: amax/wpb/functions/options.php:93
+#: amax/wpb/functions/options.php:256
+#: amax/wpb/functions/options.php:257
+msgid "Diagonal"
+msgstr ""
+
+#: amax/wpb/functions/options.php:94
+msgid "Radial"
+msgstr ""
+
+#: amax/wpb/functions/options.php:107
+msgid "Select background image for the row."
+msgstr ""
+
+#: amax/wpb/functions/options.php:129
+msgid "Background image attachment"
+msgstr ""
+
+#: amax/wpb/functions/options.php:134
+msgid "Parallax, up direction"
+msgstr ""
+
+#: amax/wpb/functions/options.php:135
+msgid "Parallax, down direction"
+msgstr ""
+
+#: amax/wpb/functions/options.php:146
+msgid "Background Video File"
+msgstr ""
+
+#: amax/wpb/functions/options.php:148
+msgid "Select background video for the row."
+msgstr ""
+
+#: amax/wpb/functions/options.php:158
+msgid "MP4 Video File URL (Optional)"
+msgstr ""
+
+#: amax/wpb/functions/options.php:160
+#: amax/wpb/functions/options.php:172
+#: amax/wpb/functions/options.php:184
+#: amax/wpb/functions/options.php:196
+#: amax/wpb/functions/options.php:208
+#: amax/wpb/functions/options.php:220
+msgid "Use as a fallback format in addition to the main video file."
+msgstr ""
+
+#: amax/wpb/functions/options.php:170
+msgid "M4V Video File URL (Optional)"
+msgstr ""
+
+#: amax/wpb/functions/options.php:182
+msgid "WebM Video File URL (Optional)"
+msgstr ""
+
+#: amax/wpb/functions/options.php:194
+msgid "OGV Video File URL (Optional)"
+msgstr ""
+
+#: amax/wpb/functions/options.php:206
+msgid "WMV Video File URL (Optional)"
+msgstr ""
+
+#: amax/wpb/functions/options.php:218
+msgid "FLV Video File URL (Optional)"
+msgstr ""
+
+#: amax/wpb/functions/options.php:230
+msgid "Fallback background color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:241
+msgid "Fallback background image"
+msgstr ""
+
+#: amax/wpb/functions/options.php:252
+msgid "Fancy bottom edge"
+msgstr ""
+
+#: amax/wpb/functions/options.php:258
+#: amax/wpb/functions/options.php:259
+msgid "Corner"
+msgstr ""
+
+#: amax/wpb/functions/options.php:270
+msgid "Edge size"
+msgstr ""
+
+#: amax/wpb/functions/options.php:287
+msgid "Edge transient color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:289
+msgid ""
+"Set this color if you want to apply transition to custom color (for instance "
+"background color of next section). Leave empty to disable transition."
+msgstr ""
+
+#: amax/wpb/functions/options.php:299
+msgid "Top padding"
+msgstr ""
+
+#: amax/wpb/functions/options.php:301
+#: amax/wpb/functions/options.php:309
+#: amax/wpb/functions/options.php:317
+#: amax/wpb/functions/options.php:325
+msgid ""
+"You can use px, em, %, etc. or enter just number and it will use pixels."
+msgstr ""
+
+#: amax/wpb/functions/options.php:302
+#: amax/wpb/functions/options.php:310
+#: amax/wpb/functions/options.php:318
+#: amax/wpb/functions/options.php:326
+#: amax/wpb/functions/options.php:334
+msgid "Extra"
+msgstr ""
+
+#: amax/wpb/functions/options.php:307
+msgid "Bottom padding"
+msgstr ""
+
+#: amax/wpb/functions/options.php:315
+msgid "Top margin"
+msgstr ""
+
+#: amax/wpb/functions/options.php:323
+msgid "Bottom margin"
+msgstr ""
+
+#: amax/wpb/functions/options.php:331
+msgid "Custom CSS Style"
+msgstr ""
+
+#: amax/wpb/functions/options.php:333
+msgid "You can add custom CSS style for the row."
+msgstr ""
+
+#: amax/wpb/functions/options.php:356
+msgid "Width/Height Ratio"
+msgstr ""
+
+#: amax/wpb/functions/options.php:362
+msgid "Maximum width (pixels)"
+msgstr ""
+
+#: amax/wpb/functions/options.php:364
+msgid ""
+"By default video will fit all available width, you can specify maximum width"
+msgstr ""
+
+#: amax/wpb/functions/options.php:375
+msgid "OM slider"
+msgstr ""
+
+#: amax/wpb/functions/options.php:386
+msgid "Columns number"
+msgstr ""
+
+#: amax/wpb/functions/options.php:407
+msgid "Images width/height ratio"
+msgstr ""
+
+#: amax/wpb/functions/options.php:428
+msgid "Display captions"
+msgstr ""
+
+#: amax/wpb/functions/options.php:440
+msgid ""
+"Check this option of you use gallery in a row without padding and the "
+"dimendions of images is not enough. Source images also must be high "
+"resolution in this case."
+msgstr ""
+
+#: amax/wpb/functions/options.php:462
+msgid "Delimiter"
+msgstr ""
+
+#: amax/wpb/functions/options.php:463
+msgid "Delimiter at right hand side, between columns."
+msgstr ""
+
+#: amax/wpb/functions/options.php:467
+msgid "Vertical line"
+msgstr ""
+
+#: amax/wpb/functions/options.php:468
+msgid "Horisontal line"
+msgstr ""
+
+#: amax/wpb/functions/options.php:469
+msgid "Dot"
+msgstr ""
+
+#: amax/wpb/functions/options.php:470
+msgid "Arrow"
+msgstr ""
+
+#: amax/wpb/functions/options.php:482
+msgid "CSS Animation"
+msgstr ""
+
+#: amax/wpb/functions/options.php:487
+msgid "Top to bottom"
+msgstr ""
+
+#: amax/wpb/functions/options.php:488
+msgid "Bottom to top"
+msgstr ""
+
+#: amax/wpb/functions/options.php:489
+msgid "Left to right"
+msgstr ""
+
+#: amax/wpb/functions/options.php:490
+msgid "Right to left"
+msgstr ""
+
+#: amax/wpb/functions/options.php:491
+msgid "Appear from center"
+msgstr ""
+
+#: amax/wpb/functions/options.php:493
+msgid "Bounce"
+msgstr ""
+
+#: amax/wpb/functions/options.php:494
+msgid "Zoom In"
+msgstr ""
+
+#: amax/wpb/functions/options.php:495
+msgid "Zoom In Down"
+msgstr ""
+
+#: amax/wpb/functions/options.php:496
+msgid "Zoom In Up"
+msgstr ""
+
+#: amax/wpb/functions/options.php:497
+msgid "Zoom Out"
+msgstr ""
+
+#: amax/wpb/functions/options.php:499
+msgid "Spin around Left Top"
+msgstr ""
+
+#: amax/wpb/functions/options.php:500
+msgid "Spin around Right Top"
+msgstr ""
+
+#: amax/wpb/functions/options.php:501
+msgid "Flip"
+msgstr ""
+
+#: amax/wpb/functions/options.php:502
+msgid "Flip X"
+msgstr ""
+
+#: amax/wpb/functions/options.php:503
+msgid "Flip Y"
+msgstr ""
+
+#: amax/wpb/functions/options.php:505
+msgid ""
+"Select type of animation if you want this element to be animated when it "
+"enters into the browsers viewport. Note: Works only in modern browsers."
+msgstr ""
+
+#: amax/wpb/functions/options.php:509
+msgid "Delay before animation starts (milliseconds)"
+msgstr ""
+
+#: amax/wpb/functions/options.php:551
+msgid "Icon position"
+msgstr ""
+
+#: amax/wpb/functions/options.php:554
+msgid "Align center"
+msgstr ""
+
+#: amax/wpb/functions/options.php:555
+msgid "Align left"
+msgstr ""
+
+#: amax/wpb/functions/options.php:556
+msgid "Align right"
+msgstr ""
+
+#: amax/wpb/functions/options.php:558
+msgid "Select title location."
+msgstr ""
+
+#: amax/wpb/functions/options.php:566
+msgid "Separator color."
+msgstr ""
+
+#: amax/wpb/functions/options.php:573
+msgid "Custom separator color for your element."
+msgstr ""
+
+#: amax/wpb/functions/options.php:584
+msgid "Separator style."
+msgstr ""
+
+#: amax/wpb/functions/options.php:589
+msgid "Border width in pixels."
+msgstr ""
+
+#: amax/wpb/functions/options.php:590
+msgid "Border width"
+msgstr ""
+
+#: amax/wpb/functions/options.php:595
+msgid "Element width"
+msgstr ""
+
+#: amax/wpb/functions/options.php:598
+msgid "Separator element width in percents."
+msgstr ""
+
+#: amax/wpb/functions/options.php:660
+#: amax/wpb/functions/options.php:811
+msgid "Classic"
+msgstr ""
+
+#: amax/wpb/functions/options.php:661
+msgid "Outlined"
+msgstr ""
+
+#: amax/wpb/functions/options.php:686
+msgid "Hover color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:688
+msgid "Select color for button by hover."
+msgstr ""
+
+#: amax/wpb/functions/options.php:690
+msgid "Auto"
+msgstr ""
+
+#: amax/wpb/functions/options.php:698
+msgid "Custom hover color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:720
+msgid "Custom text color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:731
+msgid "Hover text color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:742
+msgid "Custom hover text color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:758
+msgid "Icon color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:773
+msgid "Custom icon color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:812
+msgid "Outline"
+msgstr ""
+
+#: amax/wpb/functions/options.php:848
+msgid "Titles color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:858
+msgid "Titles custom color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:884
+msgid "Pie label inside circle"
+msgstr ""
+
+#: amax/wpb/functions/options.php:888
+msgid "Display widget title"
+msgstr ""
+
+#: amax/wpb/functions/options.php:895
+msgid "Pie label value"
+msgstr ""
+
+#: amax/wpb/functions/options.php:897
+msgid "Input integer value for label. If empty \"Pie value\" will be used."
+msgstr ""
+
+#: amax/wpb/functions/options.php:907
+msgid "Units"
+msgstr ""
+
+#: amax/wpb/functions/options.php:909
+msgid ""
+"Enter measurement units (if needed) Eg. %, px, points, etc. Graph value and "
+"unit will be appended to the graph title."
+msgstr ""
+
+#: amax/wpb/functions/options.php:926
+msgid "Bar color"
+msgstr ""
+
+#: amax/wpb/functions/options.php:929
+msgid "Grey"
+msgstr ""
+
+#: amax/wpb/functions/options.php:930
+msgid "Blue"
+msgstr ""
+
+#: amax/wpb/functions/options.php:931
+msgid "Turquoise"
+msgstr ""
+
+#: amax/wpb/functions/options.php:932
+msgid "Green"
+msgstr ""
+
+#: amax/wpb/functions/options.php:933
+msgid "Orange"
+msgstr ""
+
+#: amax/wpb/functions/options.php:934
+msgid "Red"
+msgstr ""
+
+#: amax/wpb/functions/options.php:935
+msgid "Black"
+msgstr ""
+
+#: amax/wpb/functions/options.php:938
+msgid "Select pie chart color."
+msgstr ""
+
+#: amax/wpb/functions/options.php:955
+msgid "Width"
+msgstr ""
+
+#: amax/wpb/functions/options.php:957
+msgid "Leave this field blank for auto width or specify maximum width"
+msgstr ""
+
+#: amax/wpb/functions/options.php:977
+msgid "Map embed iframe"
+msgstr ""
+
+#: amax/wpb/functions/options.php:979
+#, php-format
+msgid ""
+"Visit %s or %s to create your map. 1) Find location 2) Click \"Share\" and "
+"make sure map is public on the web 3) Copy iframe code and paste it here."
+msgstr ""
+
+#: amax/wpb/functions/options.php:983
+msgid "Map height"
+msgstr ""
+
+#: amax/wpb/functions/options.php:986
+msgid ""
+"Enter map height in pixels. Example: 200 or leave it empty to make map "
+"responsive."
+msgstr ""
+
+#: amax/wpb/functions/options.php:1047
+msgid "Button"
+msgstr ""
+
+#: amax/wpb/vc_templates/vc_posts_grid.php:180
+#: amax/wpb/vc_templates/vc_posts_slider.php:194
+msgid "Nothing found."
+msgstr ""
+
+#: amax/wpb/vc_templates/vc_toggle.php:17
+msgid "Click to toggle"
+msgstr ""
