@@ -2,3 +2,8 @@
 .page-id-3103 .header-slider > a {
     display: none;
 }
+
+.page-id-3103 #gform_2 input[type=text], .page-id-3103 #gform_2 textarea {
+    color: #FFF;
+    border-color: #FFF;
+}
