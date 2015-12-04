@@ -479,4 +479,74 @@ function remove_menus(){
   
 }
 add_action( 'admin_menu', 'remove_menus' );
+
+
+/*************************************************************************************
+ *	Menu stuffs
+ *************************************************************************************/
+add_action( 'add_meta_boxes', function() {
+	add_meta_box('alt_menu_sectionid', __('Menu'), 'alt_menu_meta_box_view', 'post', 'side', 'high');
+	add_meta_box('alt_menu_sectionid', __('Menu'), 'alt_menu_meta_box_view', 'page', 'side', 'high');
+});
+
+function alt_menu_meta_box_view($post) {
+	wp_nonce_field( 'alt_menu_save_meta_box_data', 'alt_menu_meta_box_view_nonce' );
+	$value = esc_attr(get_post_meta( $post->ID, 'alt_menu', true ));
+	$label = __('Select a menu for this page');
+
+
+	$menus = get_terms('nav_menu', array('hide_empty' => false));
+	if(!$menus){
+		$select = __("No menus have been built");
+	} else {
+		if(!is_array($menus)) {
+			$menus = [$menus];
+		}
+		$default = new stdClass();
+		$default->term_id = 0;
+		$default->name = "Theme default";
+		array_unshift($menus, $default);
+		$options = '';
+		foreach($menus as $menu) {
+			if($value == $menu->term_id || (!$value && $menu->term_id == 0)) {
+				$options .= '<option value="' . $menu->term_id . '" selected="selected">' . $menu->name . '</option>';
+			} else {
+				$options .= '<option value="' . $menu->term_id . '">' . $menu->name . '</option>';
+			}
+		}
+		$select = '<select id="alt_menu" name="alt_menu" class="postbox">' . $options . '</select>';
+	}
+
+	echo <<<HTML
+		<p><strong>$label</strong></p>
+		$select
+HTML;
+}
+
+function alt_menu_save_meta_box_data( $post_id ) {
+	// incorrect nonce or draft or empty value
+	if (
+			!isset($_POST['alt_menu_meta_box_view_nonce'])
+			|| !wp_verify_nonce($_POST['alt_menu_meta_box_view_nonce'], 'alt_menu_save_meta_box_data')
+			|| (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
+			|| !isset($_POST['alt_menu'])
+	) {
+		return;
+	}
+
+	// permissions
+	if (isset($_POST['post_type'] ) && 'page' == $_POST['post_type']) {
+		if (!current_user_can( 'edit_page', $post_id)) {
+			return;
+		}
+	} else {
+		if (!current_user_can( 'edit_post', $post_id)) {
+			return;
+		}
+	}
+
+	$my_data = sanitize_text_field( $_POST['alt_menu'] );
+	update_post_meta( $post_id, 'alt_menu', $my_data );
+}
+add_action( 'save_post', 'alt_menu_save_meta_box_data' );
 ?>

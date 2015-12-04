@@ -88,7 +88,7 @@
 	.om_theme .wpb_column > .wpb_wrapper > *:last-child { margin-bottom: 2em; }
 	span.mobile_letstalk { background: #0e73a3; color: #fff; padding: 8px 30px !important; margin: 23px 0; display: block; width: auto; float: right; font-weight: 500; line-height: 23px; text-transform: uppercase; }
 	span.mobile_letstalk a { color: #fff; }
-	.mobile-header-menu-container .header-menu-mobile .menu-item-2523 { display: none; }
+	.mobile-header-menu-container .header-menu-mobile .talk { display: none; }
 	.single-portfolio .portfolio .vc_row.wpb_row.vc_row-fluid { width: 735px; }
 	.logo-box { float: left; }
 	.toggle { width: auto; float: right; margin: 15px 0 0 20px; }

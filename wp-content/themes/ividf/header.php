@@ -72,8 +72,10 @@
 							}?>							                            				
 							<?php			
 							//menu
+							$menu_id = get_post_meta($wp_query->post->ID, 'alt_menu')[0];
 							$menu = wp_nav_menu( array(
 								'theme_location' => 'primary-menu',
+								'menu' => $menu_id,
 								'container' => false,
 								'fallback_cb' => 'om_primary_menu_fallback',
 								'menu_class' => 'primary-menu sf-menu clearfix'
@@ -125,8 +127,10 @@
                                                                         <div class="mobile-header-menu-control"> <?php _e('Menu', 'om_theme') ?></div>
                                                                         <div class="mobile-header-menu-container">
                                                                             <?php
+																					$menu_id = get_post_meta($wp_query->post->ID, 'alt_menu')[0];
                                                                                     wp_nav_menu( array(
                                                                                         'theme_location' => 'primary-menu',
+																						'menu' => $menu_id,
                                                                                         'container' => false,
                                                                                         'fallback_cb' => 'om_primary_menu_fallback',
                                                                                         'menu_class' => 'header-menu-mobile sf-menu clearfix'.(get_option(OM_THEME_PREFIX . 'show_dropdown_symbol')=='true'?' show-dropdown-symbol':''),

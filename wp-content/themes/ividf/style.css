@@ -2904,7 +2904,7 @@ body.error404 .content-column-content { padding-top: 3em; }
 /* updated css */
 .header-slider { border-bottom: 8px solid #0e73a3; }
 .home .wpb_column.vc_column_delimiter-vline:after { position: relative !important; }
-#menu-item-2523 a { background: #0e73a3; color: #fff; padding-left: 28px; padding-right: 28px;}
+.talk a { background: #0e73a3; color: #fff; padding-left: 28px; padding-right: 28px;}
 .page-id-2518 .gform_wrapper .gform_title { display: none !important; }
 .page-id-2518 .gform_wrapper .gform_body ul li { margin-bottom: 0 !important; }
 .page-id-2518 .gform_wrapper .gform_body label { display: none !important; }

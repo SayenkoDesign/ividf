@@ -8,4 +8,22 @@
     color: #FFF;
     border-color: #FFF;
     padding: 12px;
+    background-color: rgba(255,255,255,0.3);
+}
+
+.page-id-3103 #gform_2 ::-webkit-input-placeholder {
+    color: #FFf;
+    opacity:1;
+}
+.page-id-3103 #gform_2 :-moz-placeholder { /* Firefox 18- */
+    color: #FFf;
+    opacity:1;
+}
+.page-id-3103 #gform_2 ::-moz-placeholder {  /* Firefox 19+ */
+    color: #FFf;
+    opacity:1;
+}
+.page-id-3103 #gform_2 :-ms-input-placeholder {
+    color: #FFf;
+    opacity:1;
 }
