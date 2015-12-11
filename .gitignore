@@ -97,4 +97,4 @@ forum/*
 .idea
 srdb/
 wp-content/mysql.sql
-wp-content/plugins/ividf-crawler
+wp-content/plugins/ividf-patnet-crawler
