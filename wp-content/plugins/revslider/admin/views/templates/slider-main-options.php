@@ -23,14 +23,25 @@ $_width_notebook = (isset($arrValues['width_notebook'])) ? $arrValues['width_not
 $_width_tablet = (isset($arrValues['width_tablet'])) ? $arrValues['width_tablet'] : 778;
 $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'] : 480;
 
+
+if(!isset($is_edit)) $is_edit = false;
+if(!isset($linksEditSlides)) $linksEditSlides = '';
 ?>
 <div class="wrap settings_wrap">
 	<div class="clear_both"></div>
 
-	<div class="title_line">
+	<div class="title_line" style="margin-bottom:0px !important">
 		<div id="icon-options-general" class="icon32"></div>
-		<div class="view_title"><?php echo (@$is_edit) ? __("Edit Slider", REVSLIDER_TEXTDOMAIN) : __("New Slider", REVSLIDER_TEXTDOMAIN);?></div>
-		<a href="<?php echo RevSliderGlobals::LINK_HELP_SLIDER;?>" class="button-secondary float_right mtop_10 mleft_10" target="_blank"><?php _e("Help", REVSLIDER_TEXTDOMAIN);?></a>
+		<div class="view_title"><?php echo ($is_edit) ? __("Edit Slider", REVSLIDER_TEXTDOMAIN) : __("New Slider", REVSLIDER_TEXTDOMAIN); ?></div>
+		<a href="<?php echo RevSliderGlobals::LINK_HELP_SLIDER;?>" class="button-secondary float_right mtop_10 mleft_10" target="_blank"><?php _e("Help", REVSLIDER_TEXTDOMAIN); ?></a>
+		<div class="tp-clearfix"></div>
+	</div>
+
+	<div class="rs_breadcrumbs">
+		<a class='breadcrumb-button' href='<?php echo self::getViewUrl("sliders"); ?>'><i class="eg-icon-th-large"></i><?php _e("All Sliders", REVSLIDER_TEXTDOMAIN); ?></a>
+		<a class='breadcrumb-button selected' href="#"><i class="eg-icon-cog"></i><?php _e('Slider Settings', REVSLIDER_TEXTDOMAIN);?></a>
+		<a class='breadcrumb-button' href="<?php echo $linksEditSlides; ?>"><i class="eg-icon-pencil-2"></i><?php _e('Slide Editor', REVSLIDER_TEXTDOMAIN); ?></a>
+		<div class="tp-clearfix"></div>
 	</div>
 
 
@@ -71,9 +82,9 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 								<input type="radio" id="source_type_4" value="instagram" name="source_type" <?php checked($source_type, 'instagram');?> />
 								<span class="rs-source-label"><?php _e('Instagram Stream', REVSLIDER_TEXTDOMAIN);?></span>
 							</span>
-							<span class="rs-source-selector rs-coming-soon">
+							<span class="rs-source-selector">
 								<span class="rs-source-image rssi-woo"></span>
-								<!--input type="radio" id="source_type_5" value="woocommerce" name="source_type" <?php checked($source_type, 'woocommerce');?> /-->
+								<input type="radio" id="source_type_5" value="woocommerce" name="source_type" <?php checked($source_type, 'woocommerce');?> />
 								<span class="rs-source-label"><?php _e('Woo Commerce Slider', REVSLIDER_TEXTDOMAIN);?></span>
 							</span>
 							<span class="rs-source-selector">
@@ -109,237 +120,285 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 						   		jQuery('.source-selector-wrapper input').change(rsSelectorFun);
 						   		rsSelectorFun();
 								
-								jQuery('.rs-coming-soon').click(function(){
+								/*jQuery('.rs-coming-soon').click(function(){
 									alert('<?php _e('Coming Soon!', REVSLIDER_TEXTDOMAIN); ?>');
-								});
+								});*/
 						   })
 						</script>
-				  </div>
-
-				<div id="rs-instagram-settings-wrapper" class="rs-settings-wrapper">
-			  		<div style="width:50%;display:block;float:left;">
-			  			<span class="rev-new-label"><?php _e('Slides (max 33)', REVSLIDER_TEXTDOMAIN);?></span>
-						<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'instagram-count', '');?>" name="instagram-count" title="<?php _e('Display this number of photos', REVSLIDER_TEXTDOMAIN);?>">
-						<p>
-			  				<span class="rev-new-label"><?php _e('Access Token', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'instagram-access-token', '');?>" name="instagram-access-token" title="<?php _e('Put in your Instagram Access Token', REVSLIDER_TEXTDOMAIN);?>">
-						</p>
-						<p>
-							<span class="description"><?php _e('Get your Instagram Access Token <a target="_blank" href="http://www.pinceladasdaweb.com.br/instagram/access-token/">here</a>', REVSLIDER_TEXTDOMAIN);?></span>
-						</p>
 					</div>
-					<div style="width:50%;display:block;float:left;">
-						<span class="rev-new-label"><?php _e('Instagram User ID', REVSLIDER_TEXTDOMAIN);?></span>
-						<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'instagram-user-id', '');?>" name="instagram-user-id" title="<?php _e('Put in the Instagram User ID', REVSLIDER_TEXTDOMAIN);?>">
-						<p>
-							<span class="description"><?php _e('Find the Instagram User ID <a target="_blank" href="http://www.otzberg.net/iguserid/">here</a>', REVSLIDER_TEXTDOMAIN);?></span>
-						</p>
-					</div>
-				</div>
-
-				<div id="rs-flickr-settings-wrapper" class="rs-settings-wrapper">
-			  		<div style="width:50%;display:block;float:left;">
-						<span class="rev-new-label"><?php _e('Slides (max 500)', REVSLIDER_TEXTDOMAIN);?></span>
-						<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-count', '');?>" name="flickr-count" title="<?php _e('Display this number of photos', REVSLIDER_TEXTDOMAIN);?>">
-						<p>
-							<span class="rev-new-label"><?php _e('Flickr API Key', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-api-key', '');?>" name="flickr-api-key" title="<?php _e('Put in your Flickr API Key', REVSLIDER_TEXTDOMAIN);?>">
-						</p>
-						<span class="description"><?php _e('Read <a target="_blank" href="http://weblizar.com/get-flickr-api-key/">here</a> how to receive your Flickr API key', REVSLIDER_TEXTDOMAIN);?></span>
-					</div>
-					<div style="width:50%;display:block;float:left;">
-						<span class="rev-new-label"><?php _e('Source', REVSLIDER_TEXTDOMAIN);?></span>
-						<select name="flickr-type">
-							<option value="publicphotos" title="<?php _e('Display a user\'s public photos', REVSLIDER_TEXTDOMAIN);?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'flickr-type', 'publicphotos'), 'publicphotos');?>> <?php _e('User Public Photos', REVSLIDER_TEXTDOMAIN);?></option>
-							<option value="photosets" title="<?php _e('Display a certain photoset from a user', REVSLIDER_TEXTDOMAIN);?>"<?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'flickr-type', 'publicphotos'), 'photosets');?>> <?php _e('User Photoset', REVSLIDER_TEXTDOMAIN);?></option>
-							<option value="gallery" title="<?php _e('Display a gallery', REVSLIDER_TEXTDOMAIN);?>"<?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'flickr-type', 'publicphotos'), 'gallery');?>> <?php _e('Gallery', REVSLIDER_TEXTDOMAIN);?></option>
-							<option value="group" title="<?php _e('Display a group\'s photos', REVSLIDER_TEXTDOMAIN);?>"<?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'flickr-type', 'publicphotos'), 'group');?>> <?php _e('Groups\' Photos', REVSLIDER_TEXTDOMAIN);?></option>
-						</select>
-						<div id="flickr-publicphotos-url-wrap">
+					
+					<div id="rs-instagram-settings-wrapper" class="rs-settings-wrapper">
+						<div style="width:50%;display:block;float:left;">
+							<span class="rev-new-label"><?php _e('Slides (max 33)', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'instagram-count', '');?>" name="instagram-count" title="<?php _e('Display this number of photos', REVSLIDER_TEXTDOMAIN);?>">
 							<p>
-								<span class="rev-new-label"><?php _e('Flickr User Url', REVSLIDER_TEXTDOMAIN);?></span>
-								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-user-url');?>" name="flickr-user-url" title="<?php _e('Put in the URL of the flickr User', REVSLIDER_TEXTDOMAIN);?>">
+								<span class="rev-new-label"><?php _e('Access Token', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'instagram-access-token', '');?>" name="instagram-access-token" title="<?php _e('Put in your Instagram Access Token', REVSLIDER_TEXTDOMAIN);?>">
+							</p>
+							<p>
+								<span class="description"><?php _e('Get your Instagram Access Token <a target="_blank" href="http://www.pinceladasdaweb.com.br/instagram/access-token/">here</a>', REVSLIDER_TEXTDOMAIN);?></span>
 							</p>
 						</div>
-						<div id="flickr-photosets-wrap">
+						<div style="width:50%;display:block;float:left;">
+							<span class="rev-new-label"><?php _e('Instagram User ID', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'instagram-user-id', '');?>" name="instagram-user-id" title="<?php _e('Put in the Instagram User ID', REVSLIDER_TEXTDOMAIN);?>">
+							<p>
+								<span class="description"><?php _e('Find the Instagram User ID <a target="_blank" href="http://www.otzberg.net/iguserid/">here</a>', REVSLIDER_TEXTDOMAIN);?></span>
+							</p>
+						</div>
+					</div>
+
+					<div id="rs-flickr-settings-wrapper" class="rs-settings-wrapper">
+						<div style="width:50%;display:block;float:left;">
+							<span class="rev-new-label"><?php _e('Slides (max 500)', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-count', '');?>" name="flickr-count" title="<?php _e('Display this number of photos', REVSLIDER_TEXTDOMAIN);?>">
+							<p>
+								<span class="rev-new-label"><?php _e('Flickr API Key', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-api-key', '');?>" name="flickr-api-key" title="<?php _e('Put in your Flickr API Key', REVSLIDER_TEXTDOMAIN);?>">
+							</p>
+							<span class="description"><?php _e('Read <a target="_blank" href="http://weblizar.com/get-flickr-api-key/">here</a> how to receive your Flickr API key', REVSLIDER_TEXTDOMAIN);?></span>
+						</div>
+						<div style="width:50%;display:block;float:left;">
+							<span class="rev-new-label"><?php _e('Source', REVSLIDER_TEXTDOMAIN);?></span>
+							<select name="flickr-type">
+								<option value="publicphotos" title="<?php _e('Display a user\'s public photos', REVSLIDER_TEXTDOMAIN);?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'flickr-type', 'publicphotos'), 'publicphotos');?>> <?php _e('User Public Photos', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="photosets" title="<?php _e('Display a certain photoset from a user', REVSLIDER_TEXTDOMAIN);?>"<?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'flickr-type', 'publicphotos'), 'photosets');?>> <?php _e('User Photoset', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="gallery" title="<?php _e('Display a gallery', REVSLIDER_TEXTDOMAIN);?>"<?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'flickr-type', 'publicphotos'), 'gallery');?>> <?php _e('Gallery', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="group" title="<?php _e('Display a group\'s photos', REVSLIDER_TEXTDOMAIN);?>"<?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'flickr-type', 'publicphotos'), 'group');?>> <?php _e('Groups\' Photos', REVSLIDER_TEXTDOMAIN);?></option>
+							</select>
+							<div id="flickr-publicphotos-url-wrap">
 								<p>
-									<span class="rev-new-label"><?php _e('Select Photoset', REVSLIDER_TEXTDOMAIN);?></span>
-									<input type="hidden" name="flickr-photoset" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-photoset', '');?>">
-									<select name="flickr-photoset-select" title="<?php _e('Select the photoset to pull the data from ', REVSLIDER_TEXTDOMAIN);?>">
-									</select>
+									<span class="rev-new-label"><?php _e('Flickr User Url', REVSLIDER_TEXTDOMAIN);?></span>
+									<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-user-url');?>" name="flickr-user-url" title="<?php _e('Put in the URL of the flickr User', REVSLIDER_TEXTDOMAIN);?>">
+								</p>
+							</div>
+							<div id="flickr-photosets-wrap">
+									<p>
+										<span class="rev-new-label"><?php _e('Select Photoset', REVSLIDER_TEXTDOMAIN);?></span>
+										<input type="hidden" name="flickr-photoset" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-photoset', '');?>">
+										<select name="flickr-photoset-select" title="<?php _e('Select the photoset to pull the data from ', REVSLIDER_TEXTDOMAIN);?>">
+										</select>
+									</p>
+							</div>
+							<div id="flickr-gallery-url-wrap">
+								<p>
+									<span class="rev-new-label"><?php _e('Flickr Gallery Url', REVSLIDER_TEXTDOMAIN);?></span>
+									<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-gallery-url');?>" name="flickr-gallery-url" title="<?php _e('Put in the URL of the flickr Gallery', REVSLIDER_TEXTDOMAIN);?>">
+								</p>
+							</div>
+							<div id="flickr-group-url-wrap">
+								<p>
+									<span class="rev-new-label"><?php _e('Flickr Group Url', REVSLIDER_TEXTDOMAIN);?></span>
+									<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-group-url');?>" name="flickr-group-url" title="<?php _e('Put in the URL of the flickr Group', REVSLIDER_TEXTDOMAIN);?>">
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div id="rs-facebook-settings-wrapper" class="rs-settings-wrapper">
+						<div style="width:50%;display:block;float:left;">
+							<span class="rev-new-label"><?php _e('Slides (max 25)', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'facebook-count', '');?>" name="facebook-count" title="<?php _e('Display this number of posts', REVSLIDER_TEXTDOMAIN);?>">
+							<p>
+								<span class="rev-new-label"><?php _e('Cache (sec)', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'facebook-transient', '1200');?>" name="facebook-transient"  title="<?php _e('Cache the stream for x seconds', REVSLIDER_TEXTDOMAIN);?>">
+							</p>
+							<p>
+								<?php $facebook_page_url = RevSliderFunctions::getVal($arrFieldsParams, 'facebook-page-url', '');?>
+								<span class="rev-new-label"><?php _e('Facebook Page', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="text" value="<?php echo $facebook_page_url;?>" name="facebook-page-url" id="facebook-page-url" title="<?php _e('Put in the URL/ID of the Facebook page', REVSLIDER_TEXTDOMAIN);?>">
+							</p>
+						</div>
+						<div style="width:50%;display:block;float:left;">
+								<!--<span class="rev-new-label"><?php _e('Source', REVSLIDER_TEXTDOMAIN);?></span>
+								<select  name="facebook-type-source">
+									<option value="album" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'facebook-type-source', 'album'), 'album');?>><?php _e('Album', REVSLIDER_TEXTDOMAIN);?></option>
+									<option value="timeline" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'facebook-type-source', 'album'), 'timeline');?>><?php _e('Timeline', REVSLIDER_TEXTDOMAIN);?></option>
+								</select>-->
+								<input type="hidden" name="facebook-type-source" value="timeline">
+								<!--div id="facebook-album-wrap">
+									<p>
+										<?php $facebook_album = RevSliderFunctions::getVal($arrFieldsParams, 'facebook-album', '');?>
+										<span class="rev-new-label"><?php _e('Select Album', REVSLIDER_TEXTDOMAIN);?></span>
+										<input type="hidden" name="facebook-album" value="<?php echo $facebook_album;?>">
+										<select name="facebook-album-select" class="eg-tooltip-wrap" title="<?php _e('Select the album to pull the data from ', REVSLIDER_TEXTDOMAIN);?>">
+										</select>
+									</p>
+								</div-->
+								
+									<span class="rev-new-label"><?php _e('App ID', REVSLIDER_TEXTDOMAIN);?></span>
+									<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'facebook-app-id', '')?>" name="facebook-app-id" class="eg-tooltip-wrap" title="<?php _e('Put in the Facebook App ID', REVSLIDER_TEXTDOMAIN);?>">
+								
+								<p>
+									<span class="rev-new-label"><?php _e('App Secret', REVSLIDER_TEXTDOMAIN);?></span>
+									<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'facebook-app-secret', '')?>" name="facebook-app-secret" class="eg-tooltip-wrap" title="<?php _e('Put in the Facebook App secret', REVSLIDER_TEXTDOMAIN);?>">
 								</p>
 						</div>
-						<div id="flickr-gallery-url-wrap">
-							<p>
-								<span class="rev-new-label"><?php _e('Flickr Gallery Url', REVSLIDER_TEXTDOMAIN);?></span>
-								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-gallery-url');?>" name="flickr-gallery-url" title="<?php _e('Put in the URL of the flickr Gallery', REVSLIDER_TEXTDOMAIN);?>">
-							</p>
-						</div>
-						<div id="flickr-group-url-wrap">
-							<p>
-								<span class="rev-new-label"><?php _e('Flickr Group Url', REVSLIDER_TEXTDOMAIN);?></span>
-								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'flickr-group-url');?>" name="flickr-group-url" title="<?php _e('Put in the URL of the flickr Group', REVSLIDER_TEXTDOMAIN);?>">
-							</p>
-						</div>
-			  		</div>
-				</div>
-
-				<div id="rs-facebook-settings-wrapper" class="rs-settings-wrapper">
-			  		<div style="width:50%;display:block;float:left;">
-						<span class="rev-new-label"><?php _e('Slides (max 25)', REVSLIDER_TEXTDOMAIN);?></span>
-						<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'facebook-count', '');?>" name="facebook-count" title="<?php _e('Display this number of posts', REVSLIDER_TEXTDOMAIN);?>">
-						<p>
-							<span class="rev-new-label"><?php _e('Cache (sec)', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'facebook-transient', '1200');?>" name="facebook-transient"  title="<?php _e('Cache the stream for x seconds', REVSLIDER_TEXTDOMAIN);?>">
-						</p>
-						<p>
-							<?php $facebook_page_url = RevSliderFunctions::getVal($arrFieldsParams, 'facebook-page-url', '');?>
-							<span class="rev-new-label"><?php _e('Facebook Page', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="text" value="<?php echo $facebook_page_url;?>" name="facebook-page-url" id="facebook-page-url" title="<?php _e('Put in the URL/ID of the Facebook page', REVSLIDER_TEXTDOMAIN);?>">
-						</p>
 					</div>
-					<div style="width:50%;display:block;float:left;">
-							<span class="rev-new-label"><?php _e('Source', REVSLIDER_TEXTDOMAIN);?></span>
-							<select  name="facebook-type-source">
-								<option value="album" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'facebook-type-source', 'album'), 'album');?>><?php _e('Album', REVSLIDER_TEXTDOMAIN);?></option>
-								<option value="timeline" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'facebook-type-source', 'album'), 'timeline');?>><?php _e('Timeline', REVSLIDER_TEXTDOMAIN);?></option>
-							</select>
-							<div id="facebook-album-wrap">
+
+					<div id="rs-twitter-settings-wrapper" class="rs-settings-wrapper">
+						<div style="width:50%;display:block;float:left;">
+							<span class="rev-new-label"><?php _e('Slides (max 500)', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-count', '');?>" name="twitter-count" title="<?php _e('Display this number of tweets', REVSLIDER_TEXTDOMAIN);?>">
+							<p>
+								<span class="rev-new-label"><?php _e('Cache (sec)', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-transient', '1200');?>" name="twitter-transient"  title="<?php _e('Cache the stream for x seconds', REVSLIDER_TEXTDOMAIN);?>">
+							</p>
+							<p>
+								<span class="rev-new-label"><?php _e('Twitter Name @', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-user-id', '');?>" name="twitter-user-id"  title="<?php _e('Put in the Twitter Account to stream from', REVSLIDER_TEXTDOMAIN);?>">
+							</p>
+							<p>
+								<span class="rev-new-label"><?php _e('Text Tweets', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="checkbox" class="tp-moderncheckbox withlabel" id="twitter-image-only" name="twitter-image-only" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'twitter-image-only', 'off'), 'on');?> >
+							</p>
+							<p>
+								<span class="rev-new-label"><?php _e('Retweets', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="checkbox" class="tp-moderncheckbox withlabel" id="twitter-include-retweets" name="twitter-include-retweets" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'twitter-include-retweets', 'off'), 'on');?> >
+							</p>
+							<p>
+								<span class="rev-new-label"><?php _e('Replies', REVSLIDER_TEXTDOMAIN);?></span>
+									<input type="checkbox" class="tp-moderncheckbox withlabel" id="twitter-exclude-replies" name="twitter-exclude-replies" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'twitter-exclude-replies', 'off'), 'on');?> >
+							</p>
+						</div>
+						<div style="width:50%;display:block;float:left;">
+							<span class="rev-new-label"><?php _e('Consumer Key', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-consumer-key', '');?>" name="twitter-consumer-key" title="<?php _e('Put in your Twitter Consumer Key', REVSLIDER_TEXTDOMAIN);?>">
+							<p>
+								<span class="rev-new-label"><?php _e('Consumer Secret', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-consumer-secret', '');?>" name="twitter-consumer-secret" title="<?php _e('Put in your Twitter Consumer Secret', REVSLIDER_TEXTDOMAIN);?>">
+							</p>
+							<p>
+								<span class="rev-new-label"><?php _e('Access Token', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-access-token', '');?>" name="twitter-access-token" title="<?php _e('Put in your Twitter Access Token', REVSLIDER_TEXTDOMAIN);?>">
+							</p>
+							<p>
+								<span class="rev-new-label"><?php _e('Access Secret', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-access-secret', '');?>" name="twitter-access-secret" title="<?php _e('Put in your Twitter Access Secret', REVSLIDER_TEXTDOMAIN);?>">
+							</p>
+							<span class="description"><?php _e('Please <a target="_blank" href="https://dev.twitter.com/apps">register</a> your application with Twitter to get the values', REVSLIDER_TEXTDOMAIN);?></span>
+						</div>
+					</div>
+
+					<div id="rs-youtube-settings-wrapper" class="rs-settings-wrapper">
+						<div class="rs-notice-wrap stream-notice"><?php _e('The “YouTube Stream” content source is used to display a full stream of videos from a channel/playlist.<br> If you want to display a single youtube video, please select the content source “Default Slider” and add a video layer in the slide editor.', REVSLIDER_TEXTDOMAIN); ?></div>
+						<div style="width:50%;display:block;float:left;">
+							<span class="rev-new-label"><?php _e('Slides (max 50)', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'youtube-count', '');?>" name="youtube-count" title="<?php _e('Display this number of videos', REVSLIDER_TEXTDOMAIN);?>">
+							<p>
+								<span class="rev-new-label"><?php _e('Youtube API Key', REVSLIDER_TEXTDOMAIN);?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'youtube-api', '');?>" name="youtube-api" title="<?php _e('Put in your YouTube API Key', REVSLIDER_TEXTDOMAIN);?>">
+							</p>
+							
+							<span class="description"><?php _e('Find information about the YouTube API key <a target="_blank" href="https://developers.google.com/youtube/v3/getting-started#before-you-start">here</a>',REVSLIDER_TEXTDOMAIN);?></span>
+						</div>
+						<div style="width:50%;display:block;float:left;">
+							<span class="rev-new-label"><?php _e('Channel ID', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'youtube-channel-id', '');?>" name="youtube-channel-id" title="<?php _e('Put in the ID of the YouTube channel', REVSLIDER_TEXTDOMAIN);?>">
+							<p>
+								<span class="rev-new-label"><?php _e('Source', REVSLIDER_TEXTDOMAIN); ?></span>
+								<select name="youtube-type-source">
+									<option value="channel" title="<?php _e('Display the channel´s videos', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'youtube-type-source', 'channel'), 'channel'); ?> > <?php _e('Channel', REVSLIDER_TEXTDOMAIN); ?> </option>
+									<option value="playlist" title="<?php _e('Display a playlist', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'youtube-type-source', 'channel'), 'playlist'); ?> > <?php _e('Playlist', REVSLIDER_TEXTDOMAIN); ?>	</option>
+								</select>
+							</p>
+							<div id="youtube-playlist-wrap">
 								<p>
-									<?php $facebook_album = RevSliderFunctions::getVal($arrFieldsParams, 'facebook-album', '');?>
-									<span class="rev-new-label"><?php _e('Select Album', REVSLIDER_TEXTDOMAIN);?></span>
-									<input type="hidden" name="facebook-album" value="<?php echo $facebook_album;?>">
-									<select name="facebook-album-select" class="eg-tooltip-wrap" title="<?php _e('Select the album to pull the data from ', REVSLIDER_TEXTDOMAIN);?>">
+									<span class="rev-new-label"><?php _e('Select Playlist', REVSLIDER_TEXTDOMAIN); ?></span>
+									<input type="hidden" name="youtube-playlist" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams,'youtube-playlist', '') ?>">
+									<select name="youtube-playlist-select">
 									</select>
 								</p>
 							</div>
-							<p>
-								<span class="rev-new-label"><?php _e('App ID', REVSLIDER_TEXTDOMAIN);?></span>
-								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'facebook-app-id', '')?>" name="facebook-app-id" class="eg-tooltip-wrap" title="<?php _e('Put in the Facebook App ID', REVSLIDER_TEXTDOMAIN);?>">
-							</p>
-							<p>
-								<span class="rev-new-label"><?php _e('App Secret', REVSLIDER_TEXTDOMAIN);?></span>
-								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'facebook-app-secret', '')?>" name="facebook-app-secret" class="eg-tooltip-wrap" title="<?php _e('Put in the Facebook App secret', REVSLIDER_TEXTDOMAIN);?>">
-							</p>
-			  		</div>
-				</div>
-
-				<div id="rs-twitter-settings-wrapper" class="rs-settings-wrapper">
-			  		<div style="width:50%;display:block;float:left;">
-						<span class="rev-new-label"><?php _e('Slides (max 500)', REVSLIDER_TEXTDOMAIN);?></span>
-						<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-count', '');?>" name="twitter-count" title="<?php _e('Display this number of tweets', REVSLIDER_TEXTDOMAIN);?>">
-						<p>
-							<span class="rev-new-label"><?php _e('Cache (sec)', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-transient', '1200');?>" name="twitter-transient"  title="<?php _e('Cache the stream for x seconds', REVSLIDER_TEXTDOMAIN);?>">
-						</p>
-						<p>
-							<span class="rev-new-label"><?php _e('Twitter Name @', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-user-id', '');?>" name="twitter-user-id"  title="<?php _e('Put in the Twitter Account to stream from', REVSLIDER_TEXTDOMAIN);?>">
-						</p>
-						<p>
-							<span class="rev-new-label"><?php _e('Text Tweets', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="checkbox" class="tp-moderncheckbox withlabel" id="twitter-image-only" name="twitter-image-only" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'twitter-image-only', 'off'), 'on');?> >
-						</p>
-						<p>
-							<span class="rev-new-label"><?php _e('Retweets', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="checkbox" class="tp-moderncheckbox withlabel" id="twitter-include-retweets" name="twitter-include-retweets" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'twitter-include-retweets', 'off'), 'on');?> >
-						</p>
-						<p>
-							<span class="rev-new-label"><?php _e('Replies', REVSLIDER_TEXTDOMAIN);?></span>
-								<input type="checkbox" class="tp-moderncheckbox withlabel" id="twitter-exclude-replies" name="twitter-exclude-replies" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'twitter-exclude-replies', 'off'), 'on');?> >
-						</p>
+							<span class="description"><?php _e('See how to find the Youtube channel ID <a target="_blank" href="https://support.google.com/youtube/answer/3250431?hl=en">here</a>', REVSLIDER_TEXTDOMAIN);?></span>
+						</div>
 					</div>
-					<div style="width:50%;display:block;float:left;">
-						<span class="rev-new-label"><?php _e('Consumer Key', REVSLIDER_TEXTDOMAIN);?></span>
-						<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-consumer-key', '');?>" name="twitter-consumer-key" title="<?php _e('Put in your Twitter Consumer Key', REVSLIDER_TEXTDOMAIN);?>">
-						<p>
-							<span class="rev-new-label"><?php _e('Consumer Secret', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-consumer-secret', '');?>" name="twitter-consumer-secret" title="<?php _e('Put in your Twitter Consumer Secret', REVSLIDER_TEXTDOMAIN);?>">
-						</p>
-						<p>
-							<span class="rev-new-label"><?php _e('Access Token', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-access-token', '');?>" name="twitter-access-token" title="<?php _e('Put in your Twitter Access Token', REVSLIDER_TEXTDOMAIN);?>">
-						</p>
-						<p>
-							<span class="rev-new-label"><?php _e('Access Secret', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'twitter-access-secret', '');?>" name="twitter-access-secret" title="<?php _e('Put in your Twitter Access Secret', REVSLIDER_TEXTDOMAIN);?>">
-						</p>
-						<span class="description"><?php _e('Please <a target="_blank" href="https://dev.twitter.com/apps">register</a> your application with Twitter to get the values', REVSLIDER_TEXTDOMAIN);?></span>
-			  		</div>
-				</div>
 
-				<div id="rs-youtube-settings-wrapper" class="rs-settings-wrapper">
-			  		<div style="width:50%;display:block;float:left;">
-						<span class="rev-new-label"><?php _e('Slides (max 50)', REVSLIDER_TEXTDOMAIN);?></span>
-						<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'youtube-count', '');?>" name="youtube-count" title="<?php _e('Display this number of videos', REVSLIDER_TEXTDOMAIN);?>">
-						<p>
-							<span class="rev-new-label"><?php _e('Youtube API Key', REVSLIDER_TEXTDOMAIN);?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'youtube-api', '');?>" name="youtube-api" title="<?php _e('Put in your YouTube API Key', REVSLIDER_TEXTDOMAIN);?>">
-						</p>
-						
-						<span class="description"><?php _e('Find information about the YouTube API key <a target="_blank" href="https://developers.google.com/youtube/v3/getting-started#before-you-start">here</a>',REVSLIDER_TEXTDOMAIN);?></span>
-					</div>
-					<div style="width:50%;display:block;float:left;">
-						<span class="rev-new-label"><?php _e('Channel ID', REVSLIDER_TEXTDOMAIN);?></span>
-						<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'youtube-channel-id', '');?>" name="youtube-channel-id" title="<?php _e('Put in the ID of the YouTube channel', REVSLIDER_TEXTDOMAIN);?>">
-						<p>
-							<span class="rev-new-label"><?php _e('Source', REVSLIDER_TEXTDOMAIN); ?></span>
-							<select name="youtube-type-source">
-								<option value="channel" title="<?php _e('Display the channel´s videos', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'youtube-type-source', 'channel'), 'channel'); ?> > <?php _e('Channel', REVSLIDER_TEXTDOMAIN); ?> </option>
-								<option value="playlist" title="<?php _e('Display a playlist', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'youtube-type-source', 'channel'), 'playlist'); ?> > <?php _e('Playlist', REVSLIDER_TEXTDOMAIN); ?>	</option>
-							</select>
-						</p>
-						<div id="youtube-playlist-wrap">
+					<div id="rs-vimeo-settings-wrapper" class="rs-settings-wrapper">
+						<div class="rs-notice-wrap stream-notice"><?php _e('The “Vimeo Stream” content source is used to display a full stream of videos from a user/album/group/channel.<br> If you want to display a single vimeo video, please select the content source “Default Slider” and add a video layer in the slide editor.', REVSLIDER_TEXTDOMAIN); ?></div>
+						<div style="width:50%;display:block;float:left;">
+							<span class="rev-new-label"><?php _e('Slides (max 60)', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-count', '');?>" name="vimeo-count" title="<?php _e('Display this number of videos', REVSLIDER_TEXTDOMAIN);?>">
 							<p>
-								<span class="rev-new-label"><?php _e('Select Playlist', REVSLIDER_TEXTDOMAIN); ?></span>
-								<input type="hidden" name="youtube-playlist" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams,'youtube-playlist', '') ?>">
-								<select name="youtube-playlist-select">
+								<span class="rev-new-label"><?php _e('Source', REVSLIDER_TEXTDOMAIN);?></span>
+								<select name="vimeo-type-source">
+									<option name="vimeo-type-source" value="user" title="<?php _e('Display the user\'s videos', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-type-source', 'user'), 'user'); ?> > <?php _e('User', REVSLIDER_TEXTDOMAIN); ?></option>
+									<option name="vimeo-type-source" value="album" title="<?php _e('Display an album', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-type-source', 'user'), 'album'); ?> > <?php _e('Album', REVSLIDER_TEXTDOMAIN); ?></option>
+									<option name="vimeo-type-source" value="group" title="<?php _e('Display a group\'s videos', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-type-source', 'user'), 'group'); ?> > <?php _e('Group', REVSLIDER_TEXTDOMAIN); ?>	</option>
+									<option name="vimeo-type-source" value="channel" title="<?php _e('Display a channel\'s videos', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-type-source', 'user'), 'channel'); ?> > <?php _e('Channel', REVSLIDER_TEXTDOMAIN); ?>	</option>
 								</select>
 							</p>
 						</div>
-						<span class="description"><?php _e('See how to find the Youtube channel ID <a target="_blank" href="https://support.google.com/youtube/answer/3250431?hl=en">here</a>', REVSLIDER_TEXTDOMAIN);?></span>
-			  		</div>
-				</div>
-
-				<div id="rs-vimeo-settings-wrapper" class="rs-settings-wrapper">
-			  		<div style="width:50%;display:block;float:left;">
-						<span class="rev-new-label"><?php _e('Slides (max 60)', REVSLIDER_TEXTDOMAIN);?></span>
-						<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-count', '');?>" name="vimeo-count" title="<?php _e('Display this number of videos', REVSLIDER_TEXTDOMAIN);?>">
-						<p>
-							<span class="rev-new-label"><?php _e('Source', REVSLIDER_TEXTDOMAIN);?></span>
-							<select name="vimeo-type-source">
-								<option name="vimeo-type-source" value="user" title="<?php _e('Display the user\'s videos', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-type-source', 'user'), 'user'); ?> > <?php _e('User', REVSLIDER_TEXTDOMAIN); ?></option>
-								<option name="vimeo-type-source" value="album" title="<?php _e('Display an album', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-type-source', 'user'), 'album'); ?> > <?php _e('Album', REVSLIDER_TEXTDOMAIN); ?></option>
-								<option name="vimeo-type-source" value="group" title="<?php _e('Display a group\'s videos', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-type-source', 'user'), 'group'); ?> > <?php _e('Group', REVSLIDER_TEXTDOMAIN); ?>	</option>
-								<option name="vimeo-type-source" value="channel" title="<?php _e('Display a channel\'s videos', REVSLIDER_TEXTDOMAIN); ?>" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-type-source', 'user'), 'channel'); ?> > <?php _e('Channel', REVSLIDER_TEXTDOMAIN); ?>	</option>
-							</select>
-						</p>
+						<div style="width:50%;display:block;float:left;">
+							<div id="vimeo-user-wrap" class="source-vimeo">
+								<span class="rev-new-label"><?php _e('User', REVSLIDER_TEXTDOMAIN); ?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-username', ''); ?>" name="vimeo-username" title="<?php _e('Either the shortcut URL or ID of the user', REVSLIDER_TEXTDOMAIN); ?>">
+							</div>
+							<div id="vimeo-group-wrap" class="source-vimeo">
+								<span class="rev-new-label"><?php _e('Group', REVSLIDER_TEXTDOMAIN); ?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-groupname', ''); ?>" name="vimeo-groupname" title="<?php _e('Either the shortcut URL or ID of the group', REVSLIDER_TEXTDOMAIN); ?>">
+							</div>
+							<div id="vimeo-album-wrap" class="source-vimeo">
+								<span class="rev-new-label"><?php _e('Album ID', REVSLIDER_TEXTDOMAIN); ?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-albumid', ''); ?>" name="vimeo-albumid" title="<?php _e('The ID of the album', REVSLIDER_TEXTDOMAIN); ?>">
+							</div>
+							<div id="vimeo-channel-wrap" class="source-vimeo">
+								<span class="rev-new-label"><?php _e('Channel', REVSLIDER_TEXTDOMAIN); ?></span>
+								<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-channelname', ''); ?>" name="vimeo-channelname" title="<?php _e('Either the shortcut URL of the channel', REVSLIDER_TEXTDOMAIN); ?>">
+							</div>
+						</div>
 					</div>
-					<div style="width:50%;display:block;float:left;">
-						<div id="vimeo-user-wrap" class="source-vimeo">
-							<span class="rev-new-label"><?php _e('User', REVSLIDER_TEXTDOMAIN); ?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-username', ''); ?>" name="vimeo-username" title="<?php _e('Either the shortcut URL or ID of the user', REVSLIDER_TEXTDOMAIN); ?>">
-						</div>
-						<div id="vimeo-group-wrap" class="source-vimeo">
-							<span class="rev-new-label"><?php _e('Group', REVSLIDER_TEXTDOMAIN); ?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-groupname', ''); ?>" name="vimeo-groupname" title="<?php _e('Either the shortcut URL or ID of the group', REVSLIDER_TEXTDOMAIN); ?>">
-						</div>
-						<div id="vimeo-album-wrap" class="source-vimeo">
-							<span class="rev-new-label"><?php _e('Album ID', REVSLIDER_TEXTDOMAIN); ?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-albumid', ''); ?>" name="vimeo-albumid" title="<?php _e('The ID of the album', REVSLIDER_TEXTDOMAIN); ?>">
-						</div>
-						<div id="vimeo-channel-wrap" class="source-vimeo">
-							<span class="rev-new-label"><?php _e('Channel', REVSLIDER_TEXTDOMAIN); ?></span>
-							<input type="text" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'vimeo-channelname', ''); ?>" name="vimeo-channelname" title="<?php _e('Either the shortcut URL of the channel', REVSLIDER_TEXTDOMAIN); ?>">
-						</div>
-			  		</div>
-				</div>
-
-				<div id="rs-post-settings-wrapper" class="rs-settings-wrapper">
+					
+					
+					<div id="rs-post-settings-wrapper" class="rs-settings-wrapper">
 				  		<div style="width:50%;display:block;float:left;">
+							<div class="rs-woocommerce-product-wrap" style="display: none;">
+								<span class="rev-new-label"><?php _e('Post Types:', REVSLIDER_TEXTDOMAIN);?></span>
+								<?php
+								$post_type = RevSliderWooCommerce::getCustomPostTypes();
+								$sel_post_types = RevSliderFunctions::getVal($arrFieldsParams, 'product_types', 'product');
+								$sel_post_types = explode(',', $sel_post_types);
+								if (empty($sel_post_types)) {
+									$sel_post_types = array('post');
+								}
+								//default
+								?>
+								<select id="product_types" name="product_types" multiple size='2' style="width:181px; vertical-align: top; height:50px">
+									<?php
+									if (!empty($post_type)) {
+										foreach ($post_type as $post_handle => $post_name) {
+											$sel = (in_array($post_handle, $sel_post_types)) ? ' selected="selected"' : '';
+											echo '<option value="' . $post_handle . '"' . $sel . '>' . $post_name . '</option>';
+										}
+									}
+									?>
+								</select>
+								<?php
+								$sel_product_category = RevSliderFunctions::getVal($arrFieldsParams, 'product_category', '');
+								$sel_product_category = explode(',', $sel_product_category);
+
+								?>
+								<span class="tp-clearfix"></span>
+								<span class="rev-new-label"><?php _e('Product Categories:', REVSLIDER_TEXTDOMAIN);?></span>
+								<select id="product_category" name="product_category" multiple size='7' style="width:181px; vertical-align: top;">
+									<?php
+									if (!empty($postTypesWithCats)) {
+										foreach ($postTypesWithCats as $post_type => $post_array) {
+											if (!empty($post_array)) {
+												foreach ($post_array as $cat_handle => $cat_name) {
+													$sel = (in_array($cat_handle, $sel_product_category)) ? ' selected="selected"' : '';
+													$dis = (strpos($cat_handle, 'option_disabled') !== false) ? ' disabled="disabled"' : '';
+													echo '<option value="' . $cat_handle . '"' . $dis . $sel . '>' . $cat_name . '</option>';
+												}
+											}
+										}
+									}
+									?>
+								</select>
+							</div>
 							<div class="rs-specific-posts-wrap">
 								<span class="rev-new-label"><?php _e('Specific Posts List:', REVSLIDER_TEXTDOMAIN);?></span>
-								<input type="text" class='regular-text' placeholder="coma separated | ex: 23,24,25" id="posts_list" name="posts_list" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'posts_list', '');?>" style="width:255px" />
+								<input type="text" class='regular-text' placeholder="<?php _e('coma separated | ex: 23,24,25', REVSLIDER_TEXTDOMAIN); ?>" id="posts_list" name="posts_list" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'posts_list', '');?>" style="width:255px" />
 							</div>
 							<div class="rs-post-types-wrapper">
 								<span class="rev-new-label"><?php _e('Post Types:', REVSLIDER_TEXTDOMAIN);?></span>
@@ -366,24 +425,6 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 								$sel_post_cagetory = RevSliderFunctions::getVal($arrFieldsParams, 'post_category', '');
 								$sel_post_cagetory = explode(',', $sel_post_cagetory);
 
-								/*if ($sel_post_cagetory) {
-									if (!empty($postTypesWithCats)) {
-										foreach ($postTypesWithCats as $post_type => $post_array) {
-											if (!empty($post_array)) {
-												foreach ($post_array as $cat_handle => $cat_name) {
-													if (strpos($cat_handle, 'option_disabled') === false) {
-														$sel_post_cagetory = array($cat_handle);
-														break;
-													}
-												}
-											}
-											if (!empty($sel_post_cagetory)) {
-												break;
-											}
-										}
-									}
-								}*/
-								
 								?>
 								<span class="tp-clearfix"></span>
 								<span class="rev-new-label"><?php _e('Post Categories:', REVSLIDER_TEXTDOMAIN);?></span>
@@ -423,7 +464,69 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 							}
 						}
 						?>
-						<div style="width:50%;display:block;float:left">
+						<div style="width:50%;display:none;float:left;" class="rs-show-for-wc">
+							<?php $product_sortby = RevSliderFunctions::getVal($arrFieldsParams, 'product_sortby', 'ID');?>
+							<?php $wc_sortby = RevSliderWooCommerce::getArrSortBy(); ?>
+							<span class="rev-new-label"><?php _e('Sort Products By:', REVSLIDER_TEXTDOMAIN);?></span>
+							<select id="product_sortby" name="product_sortby">
+								<?php
+								foreach($wc_sortby as $wc_val => $wc_name){
+									?>
+									<option value="<?php echo $wc_val; ?>" <?php selected($product_sortby, $wc_val); ?>><?php echo $wc_name;?></option>
+									<?php
+								}
+								?>
+								<option value="ID" <?php selected($product_sortby, 'ID');?>><?php _e('Post ID', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="date" <?php selected($product_sortby, 'date');?>><?php _e('Date', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="title" <?php selected($product_sortby, 'title');?>><?php _e('Title', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="name" <?php selected($product_sortby, 'name');?>><?php _e('Slug', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="author" <?php selected($product_sortby, 'author');?>><?php _e('Author', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="modified" <?php selected($product_sortby, 'modified');?>><?php _e('Last Modified', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="comment_count" <?php selected($product_sortby, 'comment_count');?>><?php _e('Number Of Comments', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="rand" <?php selected($product_sortby, 'rand');?>><?php _e('Random', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="none" <?php selected($product_sortby, 'none');?>><?php _e('Unsorted', REVSLIDER_TEXTDOMAIN);?></option>
+								<option value="menu_order" <?php selected($product_sortby, 'menu_order');?>><?php _e('Custom Order', REVSLIDER_TEXTDOMAIN);?></option>
+							</select>
+							<span class="tp-clearfix"></span>
+
+							<?php $product_sort_direction = RevSliderFunctions::getVal($arrFieldsParams, 'product_sort_direction', 'DESC');?>
+							<span class="rev-new-label"><?php _e('Sort Direction:', REVSLIDER_TEXTDOMAIN);?></span>
+							<span>
+								<input type="radio" id="product_sort_direction_1" value="DESC" name="product_sort_direction" <?php checked($product_sort_direction, 'DESC');?> />
+								<label for="product_sort_direction_1" style="cursor:pointer;"><?php _e('Descending', REVSLIDER_TEXTDOMAIN);?></label>
+								<input type="radio" style="margin-left:20px;" id="product_sort_direction_2" value="ASC" name="product_sort_direction" <?php checked($product_sort_direction, 'ASC');?> />
+								<label for="product_sort_direction_2" style="cursor:pointer;"><?php _e('Ascending', REVSLIDER_TEXTDOMAIN);?></label>
+							</span>
+							<span class="tp-clearfix"></span>
+
+							<span class="rev-new-label"><?php _e('Max Products:', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" class='small-text' id="max_slider_products" name="max_slider_products" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'max_slider_products', '30');?>" />
+							<span class="tp-clearfix"></span>
+
+							<span class="rev-new-label"><?php _e('Limit The Excerpt To:', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="text" class='small-text' id="excerpt_limit_product" name="excerpt_limit_product" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'excerpt_limit_product', '55');?>" />
+							<span class="tp-clearfix"></span>
+							
+							<span class="rev-new-label"><?php _e('Regular Price:', REVSLIDER_TEXTDOMAIN);?></span>
+							<span style="width: 201px; display: inline-block;"><?php _e('From', REVSLIDER_TEXTDOMAIN); ?> <input type="text" class='small-text' style="width: 50px !important; margin-right: 40px;" id="reg_price_from" name="reg_price_from" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'reg_price_from', '');?>" />
+							<?php _e('To', REVSLIDER_TEXTDOMAIN); ?>  <input type="text" class='small-text' style="width: 50px !important;" id="reg_price_to" name="reg_price_to" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'reg_price_to', '');?>" />
+							</span><span class="tp-clearfix"></span>
+							
+							<span class="rev-new-label"><?php _e('Sale Price:', REVSLIDER_TEXTDOMAIN);?></span>
+							<span style="width: 201px; display: inline-block;"><?php _e('From', REVSLIDER_TEXTDOMAIN); ?> <input type="text" class='small-text' style="width: 50px !important; margin-right: 40px;" id="sale_price_from" name="sale_price_from" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'sale_price_from', '');?>" />
+							<?php _e('To', REVSLIDER_TEXTDOMAIN); ?>  <input type="text" class='small-text' style="width: 50px !important;" id="sale_price_to" name="sale_price_to" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, 'sale_price_to', '');?>" />
+							</span><span class="tp-clearfix"></span>
+							
+							<span class="rev-new-label"><?php _e('In Stock Only:', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="checkbox" id="instock_only" name="instock_only" class="tp-moderncheckbox" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'instock_only', 'off'), "on");?>>
+							<span class="tp-clearfix"></span>
+							
+							<span class="rev-new-label"><?php _e('Featured Only:', REVSLIDER_TEXTDOMAIN);?></span>
+							<input type="checkbox" id="featured_only" name="featured_only" class="tp-moderncheckbox" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'featured_only', 'off'), "on");?>>
+							<span class="tp-clearfix"></span>
+						</div>
+						
+						<div style="width:50%;display:block;float:left;" class="rs-hide-for-wc">
 							<div id="post_sortby_row" valign="top">
 								<?php $post_sortby = RevSliderFunctions::getVal($arrFieldsParams, 'post_sortby', 'ID');?>
 								<span class="rev-new-label"><?php _e('Sort Posts By:', REVSLIDER_TEXTDOMAIN);?></span>
@@ -530,14 +633,11 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 							<input style="display: none;" type="radio" name="slider-type" value="carousel" <?php checked($slider_type, 'carousel');?> />
 						</div>
 					</div>
-					<span class="preset-splitter"><?php _e("Load a Preset from this Slider Type", REVSLIDER_TEXTDOMAIN);?></span>
-					<div id="preset-selector-wrapper" class="preset-selector-wrapper">
+					<span class="preset-splitter readytoopen"><?php _e("Load a Preset from this Slider Type", REVSLIDER_TEXTDOMAIN);?><i class="eg-icon-down-open"></i></span>
+					<div id="preset-selector-wrapper" class="preset-selector-wrapper" style="display:none">
 						<div id="preselect-horiz-wrapper" class="preselect-horiz-wrapper">
 							<?php
 							$presets = RevSliderOperations::get_preset_settings();
-							//echo '<pre>';
-							//print_r($presets);
-							//echo '</pre>';
 							
 							echo '<span class="rs-preset-selector rs-do-nothing standardpreset heropreset carouselpreset" id="rs-add-new-settings-preset">';
 							echo '<span class="rs-preset-image" style="background-image: url('.RS_PLUGIN_URL.'/admin/assets/images/mainoptions/add_preset.png);"></span>';
@@ -556,6 +656,10 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 					 <script type="text/javascript">
 					 	jQuery("document").ready(function() {
 
+					 		jQuery('.preset-splitter').click(function() {
+					 			jQuery('#preset-selector-wrapper').slideDown(200);
+					 			jQuery(this).removeClass('readytoopen');
+					 		})
 							var preset_template_container = wp.template( "rs-preset-container" );
 							
 							function rs_reset_preset_html(){
@@ -777,8 +881,6 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 									
 									var update_preset = {name: revslider_presets[pr_id]['settings']['name'], values: params};
 									
-									console.log(update_preset);
-									
 									UniteAdminRev.ajaxRequest('update_preset', update_preset, function(response){
 										if(response.success == true){
 											//refresh presets
@@ -985,6 +1087,7 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 									<span class="relpos"><input id="height" name="height" type="text" style="width:120px" class="textbox-small" value="<?php echo $height;?>"><span class="pxfill">px</span></span>
 									<span class="tp-clearfix" style="margin-bottom:15px"></span>
 									<span class="description"><?php _e('Specify a layer grid size above', REVSLIDER_TEXTDOMAIN);?></span>
+									<span class="description" style="padding:20px 20px 0px; box-sizing:border-box;-moz-box-sizing:border-box;"><?php _e('Slider is always Linear Responsive till next Defined Grid size has been hit.', REVSLIDER_TEXTDOMAIN);?></span>
 								</div>
 							</div>
 							<div class="rsp-macbook-view rsp-view-cell">
@@ -1011,14 +1114,20 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 								</div>
 								<div class="slide-size-wrapper">
 									<span class="rs-preset-label"><?php _e('Layer Grid Size', REVSLIDER_TEXTDOMAIN);?></span>
-									<span class="relpos"><input name="width_notebook" type="text" style="width:120px" class="textbox-small" value="<?php echo $width_notebook;?>"><span class="pxfill">px</span></span>
-									<span class="rs-preset-label label-multiple">x</span>
-									<span class="relpos"><input name="height_notebook" type="text" style="width:120px" class="textbox-small" value="<?php echo $height_notebook;?>"><span class="pxfill">px</span></span>
+									<span class="rs-width-height-wrapper">
+										<span class="relpos"><input name="width_notebook" type="text" style="width:120px" class="textbox-small" value="<?php echo $width_notebook;?>"><span class="pxfill">px</span></span>
+										<span class="rs-preset-label label-multiple">x</span>
+										<span class="relpos"><input name="height_notebook" type="text" style="width:120px" class="textbox-small" value="<?php echo $height_notebook;?>"><span class="pxfill">px</span></span>
+									</span>
+									<span class="rs-width-height-alternative" style="display:none">
+										<span class="rs-preset-label"><?php _e('Auto Sizes', REVSLIDER_TEXTDOMAIN);?></span>
+									</span>
 									<span class="tp-clearfix" style="margin-bottom:15px"></span>
 									<span class="rs-preset-label" style="display:inline-block; margin-right:15px;"><?php _e('Custom Grid Size', REVSLIDER_TEXTDOMAIN);?></span>
 									<span style="text-align:left">
 										<input type="checkbox"  class="tp-moderncheckbox" id="enable_custom_size_notebook" name="enable_custom_size_notebook" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'enable_custom_size_notebook', 'off'), "on");?>>
 									</span>
+									<span class="description" style="padding:0px 20px 0px; box-sizing:border-box;-moz-box-sizing:border-box;"><?php _e('<br>If not defined, the next bigger Layer Grid Size is the basic of Linear Responsive calculations.', REVSLIDER_TEXTDOMAIN);?></span>
 								</div>
 							</div>
 							<div class="rsp-tablet-view rsp-view-cell">
@@ -1044,14 +1153,20 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 								</div>
 								<div class="slide-size-wrapper">
 									<span class="rs-preset-label"><?php _e('Layer Grid Size', REVSLIDER_TEXTDOMAIN);?></span>
-									<span class="relpos"><input name="width_tablet" type="text" style="width:120px" class="textbox-small" value="<?php echo $width_tablet;?>"><span class="pxfill">px</span></span>
-									<span class="rs-preset-label label-multiple">x</span>
-									<span class="relpos"><input name="height_tablet" type="text" style="width:120px" class="textbox-small" value="<?php echo $height_tablet;?>"><span class="pxfill">px</span></span>
+									<span class="rs-width-height-wrapper">
+										<span class="relpos"><input name="width_tablet" type="text" style="width:120px" class="textbox-small" value="<?php echo $width_tablet;?>"><span class="pxfill">px</span></span>
+										<span class="rs-preset-label label-multiple">x</span>
+										<span class="relpos"><input name="height_tablet" type="text" style="width:120px" class="textbox-small" value="<?php echo $height_tablet;?>"><span class="pxfill">px</span></span>
+									</span>
+									<span class="rs-width-height-alternative" style="display:none">
+										<span class="rs-preset-label"><?php _e('Auto Sizes', REVSLIDER_TEXTDOMAIN);?></span>
+									</span>
 									<span class="tp-clearfix" style="margin-bottom:15px"></span>
 									<span class="rs-preset-label" style="display:inline-block; margin-right:15px;"><?php _e('Custom Grid Size', REVSLIDER_TEXTDOMAIN);?></span>
 									<span style="text-align:left">
 										<input type="checkbox"  class="tp-moderncheckbox" id="enable_custom_size_tablet" name="enable_custom_size_tablet" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'enable_custom_size_tablet', 'off'), "on");?>>
 									</span>
+									<span class="description" style="padding:0px 20px 0px; box-sizing:border-box;-moz-box-sizing:border-box;"><?php _e('<br>If not defined, the next bigger Layer Grid Size is the basic of Linear Responsive calculations.', REVSLIDER_TEXTDOMAIN);?></span>
 								</div>
 
 							</div>
@@ -1079,14 +1194,20 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 								</div>
 								<div class="slide-size-wrapper">
 									<span class="rs-preset-label"><?php _e('Layer Grid Size', REVSLIDER_TEXTDOMAIN);?></span>
-									<span class="relpos"><input name="width_mobile" type="text" style="width:120px" class="textbox-small" value="<?php echo $width_mobile;?>"><span class="pxfill">px</span></span>
-									<span class="rs-preset-label label-multiple">x</span>
-									<span class="relpos"><input name="height_mobile" type="text" style="width:120px" class="textbox-small" value="<?php echo $height_mobile;?>"><span class="pxfill">px</span></span>
+									<span class="rs-width-height-wrapper">
+										<span class="relpos"><input name="width_mobile" type="text" style="width:120px" class="textbox-small" value="<?php echo $width_mobile;?>"><span class="pxfill">px</span></span>
+										<span class="rs-preset-label label-multiple">x</span>
+										<span class="relpos"><input name="height_mobile" type="text" style="width:120px" class="textbox-small" value="<?php echo $height_mobile;?>"><span class="pxfill">px</span></span>
+									</span>
+									<span class="rs-width-height-alternative" style="display:none">
+										<span class="rs-preset-label"><?php _e('Auto Sizes', REVSLIDER_TEXTDOMAIN);?></span>
+									</span>
 									<span class="tp-clearfix" style="margin-bottom:15px"></span>
 									<span class="rs-preset-label" style="display:inline-block; margin-right:15px;"><?php _e('Custom Grid Size', REVSLIDER_TEXTDOMAIN);?></span>
 									<span style="text-align:left">
 										<input type="checkbox"  class="tp-moderncheckbox" id="enable_custom_size_iphone" name="enable_custom_size_iphone" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'enable_custom_size_iphone', 'off'), "on");?>>
 									</span>
+									<span class="description" style="padding:0px 20px 0px; box-sizing:border-box;-moz-box-sizing:border-box;"><?php _e('<br>If not defined, the next bigger Layer Grid Size is the basic of Linear Responsive calculations.', REVSLIDER_TEXTDOMAIN);?></span>
 								</div>
 							</div>
 							<div style="clear:both;float:none"></div>
@@ -1098,39 +1219,56 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 						<!-- VISUAL ADVANCED SIZING -->
 						<div class="inside" id="visual-sizing" style="display:none; padding:25px 20px;">
 							<div id="fullscreen-advanced-sizing">
-								<div style="text-align:center">
-									<span class="rs-preset-label noopacity " style="display:inline-block;margin-right:20px"><?php _e("FullScreen Align Force", REVSLIDER_TEXTDOMAIN);?> </span>
-									<input type="checkbox"  class="tp-moderncheckbox withlabel" id="full_screen_align_force" name="full_screen_align_force" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'full_screen_align_force', 'off'), "on");?>>
-									<span class="description"><?php _e("Layers align within the full slider instead of the layer grid.", REVSLIDER_TEXTDOMAIN);?></span>
-								</div>
-								<div style="clear:both;float:none; height:25px"></div>
+								<span class="one-half-container" style="vertical-align:top">
+									
+									<span class="rs-preset-label noopacity "><?php _e("Minimal Height of Slider (Optional)", REVSLIDER_TEXTDOMAIN);?></span>
+									<span style="clear:both;float:none; height:25px;display:block"></span>
+								
+									<span style="text-align:left; display:none;">
+										<span class="rs-preset-label noopacity " style="display:inline-block;margin-right:20px"><?php _e("FullScreen Align Force", REVSLIDER_TEXTDOMAIN);?> </span>
+										<input type="checkbox"  class="tp-moderncheckbox withlabel" id="full_screen_align_force" name="full_screen_align_force" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'full_screen_align_force', 'off'), "on");?>>
+										<span class="description"><?php _e("Layers align within the full slider instead of the layer grid.", REVSLIDER_TEXTDOMAIN);?></span>
+									</span>
+									
+									<span class="slidertitlebox limitedtablebox">
+										<span class="one-half-container">
+											<input placeholder="<?php _e("Min. Height", REVSLIDER_TEXTDOMAIN);?>" type="text" class="text-sidebar" id="fullscreen_min_height" name="fullscreen_min_height" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "fullscreen_min_height", "");?>">
+											<i class="input-edit-icon"></i>
+											<span class="description"><?php _e("The minimum height of the Slider in FullScreen mode.", REVSLIDER_TEXTDOMAIN);?></span>
+										</span>
+									</span>
+									<span style="clear:both;float:none; height:25px;display:block"></span>
 
-								<span class="rs-preset-label noopacity "><?php _e("Increase/Decrease Fullscreen Height", REVSLIDER_TEXTDOMAIN);?></span>
-								<div style="clear:both;float:none; height:25px"></div>
+									<span style="text-align:left; padding:0px 20px;">
+										<span class="rs-preset-label noopacity " style="display:inline-block;margin-right:20px"><?php _e("Disable Force FullWidth", REVSLIDER_TEXTDOMAIN);?> </span>
+										<input type="checkbox"  class="tp-moderncheckbox withlabel" id="autowidth_force" name="autowidth_force" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'autowidth_force', 'off'), "on");?>>
+										<span class="description" style="padding:0px 20px;"><?php _e("Disable the FullWidth Force function, and allow to float the Fullheight slider horizontal.", REVSLIDER_TEXTDOMAIN);?></span>
+									</span>
 
-								<div class="slidertitlebox limitedtablebox">
-									<span class="one-full-container">
-										<input placeholder="<?php _e("Containers", REVSLIDER_TEXTDOMAIN);?>" type="text" class="text-sidebar" id="fullscreen_offset_container" name="fullscreen_offset_container" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "fullscreen_offset_container", "");?>">
-										<i class="input-edit-icon"></i>
-										<span class="description"><?php _e("Example: #header or .header, .footer, #somecontainer | Height of Slider will be decreased with the height of these Containers to fit perfect in the screen.", REVSLIDER_TEXTDOMAIN);?></span>
+								</span>
+
+								<span class="one-half-container" style="vertical-align:top">
+									<span class="rs-preset-label noopacity "><?php _e("Increase/Decrease Fullscreen Height (Optional)", REVSLIDER_TEXTDOMAIN);?></span>
+									<span style="clear:both;float:none; height:25px;display:block"></span>
+
+									<span class="slidertitlebox limitedtablebox">
+										<span class="one-full-container">
+											<input placeholder="<?php _e("Containers", REVSLIDER_TEXTDOMAIN);?>" type="text" class="text-sidebar" id="fullscreen_offset_container" name="fullscreen_offset_container" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "fullscreen_offset_container", "");?>">
+											<i class="input-edit-icon"></i>
+											<span class="description"><?php _e("Example: #header or .header, .footer, #somecontainer | Height of Slider will be decreased with the height of these Containers to fit perfect in the screen.", REVSLIDER_TEXTDOMAIN);?></span>
+										</span>
 									</span>
-								</div>
-								<div style="clear:both;float:none; height:25px"></div>
-								<div class="slidertitlebox limitedtablebox">
-									<span class="one-full-container">
-										<input placeholder="<?php _e("PX or %", REVSLIDER_TEXTDOMAIN);?>" type="text" class="text-sidebar" id="fullscreen_offset_size" name="fullscreen_offset_size" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "fullscreen_offset_size", "");?>">
-										<i class="input-edit-icon"></i>
-										<span class="description"><?php _e("Decrease/Increase height of Slider. Can be used with px and %. Positive/Negative values allowed. Example: 40px or 10%", REVSLIDER_TEXTDOMAIN);?></span>
+									<span style="clear:both;float:none; height:25px;display:block"></span>
+									<span class="slidertitlebox limitedtablebox">
+										<span class="one-full-container">
+											<input placeholder="<?php _e("PX or %", REVSLIDER_TEXTDOMAIN);?>" type="text" class="text-sidebar" id="fullscreen_offset_size" name="fullscreen_offset_size" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "fullscreen_offset_size", "");?>">
+											<i class="input-edit-icon"></i>
+											<span class="description"><?php _e("Decrease/Increase height of Slider. Can be used with px and %. Positive/Negative values allowed. Example: 40px or 10%", REVSLIDER_TEXTDOMAIN);?></span>
+										</span>
 									</span>
-								</div>
-								<div style="clear:both;float:none; height:25px"></div>
-								<div class="slidertitlebox limitedtablebox">
-									<span class="one-half-container">
-										<input placeholder="<?php _e("Min. Height", REVSLIDER_TEXTDOMAIN);?>" type="text" class="text-sidebar" id="fullscreen_min_height" name="fullscreen_min_height" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "fullscreen_min_height", "");?>">
-										<i class="input-edit-icon"></i>
-										<span class="description"><?php _e("The minimum height of the Slider in FullScreen mode.", REVSLIDER_TEXTDOMAIN);?></span>
-									</span>
-								</div>
+									<span style="clear:both;float:none; height:25px;display:block"></span>
+									
+								</span>
 							</div>
 							<div id="normal-advanced-sizing">
 
@@ -1150,9 +1288,14 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 									</span>
 									
 									<span class="one-third-container" style="vertical-align:top">
-										<input placeholder="<?php _e("Min. Height", REVSLIDER_TEXTDOMAIN);?>" type="text" class="text-sidebar" style="padding:11px 45px 11px 15px; line-height:26px" id="min_height" name="min_height" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "min_height", "");?>">
+										<input placeholder="<?php _e("Min. Heigh (Optional)", REVSLIDER_TEXTDOMAIN);?>" type="text" class="text-sidebar" style="padding:11px 45px 11px 15px; line-height:26px" id="min_height" name="min_height" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "min_height", "");?>">
 										<i class="input-edit-icon"></i>
 										<span class="description"><?php _e("The minimum height of the Slider in FullWidth or Auto mode.", REVSLIDER_TEXTDOMAIN);?></span>
+										<span class="rs-show-on-auto">
+											<input placeholder="<?php _e("Max. Width (Optional)", REVSLIDER_TEXTDOMAIN);?>" type="text" class="text-sidebar" style="padding:11px 45px 11px 15px; margin-top: 20px; line-height:26px" id="max_width" name="max_width" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "max_width", "");?>">
+											<i class="input-edit-icon" style="top: 99px;"></i>
+											<span class="description"><?php _e("The maximum width of the Slider in Auto mode.", REVSLIDER_TEXTDOMAIN);?></span>
+										</span>
 									</span>
 								</div>
 							</div>
@@ -1168,6 +1311,8 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 									jQuery('#removethisbuttonarea').remove();
 								})
 
+								jQuery('#show_advanced_navigation').click();
+
 								jQuery('input[name="slider_type"]').on("change",function() {
 									var s_fs = jQuery('#slider_type_3').attr("checked")==="checked";
 									if (s_fs) {
@@ -1176,6 +1321,13 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 									} else {
 										jQuery('#normal-advanced-sizing').show();
 										jQuery('#fullscreen-advanced-sizing').hide();
+									}
+									
+									var s_fs = jQuery('#slider_type_1').attr("checked")==="checked";
+									if (s_fs) {
+										jQuery('.rs-show-on-auto').show();
+									}else{
+										jQuery('.rs-show-on-auto').hide();
 									}
 								});
 
@@ -1188,16 +1340,17 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 										s.t  = jQuery('#enable_custom_size_tablet').attr('checked')==="checked";
 										s.m  = jQuery('#enable_custom_size_iphone').attr('checked')==="checked";
 
+										
 
 										s.w_d = jQuery('input[name="width"]');
-										s.w_n = jQuery('input[name="width_notebook"]');
-										s.w_t = jQuery('input[name="width_tablet"]');
-										s.w_m = jQuery('input[name="width_mobile"]');
+										s.w_n = s.n ? jQuery('input[name="width_notebook"]') : s.w_d;
+										s.w_t = s.t ? jQuery('input[name="width_tablet"]') : s.n ? s.w_n : s.w_d;
+										s.w_m = s.m ? jQuery('input[name="width_mobile"]') : s.t ? s.w_t : s.n ? s.w_n : s.w_d;
 
 										s.h_d = jQuery('input[name="height"]');
-										s.h_n = jQuery('input[name="height_notebook"]');
-										s.h_t = jQuery('input[name="height_tablet"]');
-										s.h_m = jQuery('input[name="height_mobile"]');
+										s.h_n = s.n ? jQuery('input[name="height_notebook"]') : s.h_d;
+										s.h_t = s.t ? jQuery('input[name="height_tablet"]') : s.n ? s.h_n : s.h_d;
+										s.h_m = s.m ? jQuery('input[name="height_mobile"]') : s.t ? s.h_t : s.n ? s.h_n : s.h_d;
 									return s;
 								}
 
@@ -1285,6 +1438,7 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 										o.mh = 0;
 									}
 
+									
 									setLayoutDesign(jQuery('.rsp-device-imac'), s.w_d.val(), s.h_d.val(), 1400,900,1,o.dw,o.dm,o.dh,0);
 									setLayoutDesign(jQuery('.rsp-device-macbook'), s.w_n.val(), s.h_n.val(), 1200,770,1.166,o.nw,o.nm,o.nh,0);
 									setLayoutDesign(jQuery('.rsp-device-ipad'), s.w_t.val(), s.h_t.val(), 768,1024,1.78,o.tw,o.tm,o.th,6);
@@ -1294,21 +1448,28 @@ $_width_mobile = (isset($arrValues['width_mobile'])) ? $arrValues['width_mobile'
 								jQuery('.slide-size-wrapper .tp-moderncheckbox').on("change",function() {
 										var bt = jQuery(this),
 											bp = bt.closest('.slide-size-wrapper'),
+											cw = bp.find('.rs-width-height-alternative'),
+											aw = bp.find('.rs-width-height-wrapper'),
 											s = get_preview_resp_sizes();
 
 
 										if (bt.attr('checked')==="checked") {
 											if (bt.data('oldstatus')==="unchecked" || bt.data('oldstatus') ===undefined) {
 												bp.removeClass("disabled").find('input[type="text"]').removeAttr("disabled");
+												aw.show();
+												cw.hide();
 												bp.find('input[type="text"]').each(function() {
 													var inp = jQuery(this);
 													if (inp.data('oldval')!==undefined) inp.val(inp.data('oldval'));
 												});
+
 											}
 											bt.data('oldstatus',"checked");
 										} else {
 											if (bt.data('oldstatus')==="checked" || bt.data('oldstatus') ===undefined) {
 												bp.addClass("disabled").find('input[type="text"]').attr("disabled","disabled");
+												aw.hide();
+												cw.show();												
 												bp.find('input[type="text"]').each(function() {
 													var inp = jQuery(this);
 													inp.data('oldval',inp.val());
@@ -1433,7 +1594,7 @@ if (isset($linksEditSlides)) {
 						<span id="loader_update" class="loader_round" style="display:none;background-color:#27AE60 !important; color:#fff;padding: 4px 5px 5px 25px;margin-right: 5px;"><?php _e("updating...", REVSLIDER_TEXTDOMAIN);?> </span>
 						<span id="update_slider_success" class="success_message"></span>
 						<a style="width:125px" class='button-primary revred' id="button_delete_slider" href='javascript:void(0)' ><i class="revicon-trash"></i><?php _e("Delete Slider", REVSLIDER_TEXTDOMAIN);?></a>
-						<a style="width:125px" class='button-primary revyellow' id="button_close_slider_edit"  href='<?php echo self::getViewUrl("sliders")?>' ><i class="revicon-cancel"></i><?php _e("Close", REVSLIDER_TEXTDOMAIN);?></a>
+						<a style="width:125px" class='button-primary revyellow' id="button_close_slider_edit"  href='<?php echo self::getViewUrl("sliders")?>' ><i class="eg-icon-th-large"></i><?php _e("All Sliders", REVSLIDER_TEXTDOMAIN);?></a>
 						<a style="width:125px" class="button-primary revgray" href="javascript:void(0)"  id="button_preview_slider" title="<?php _e("Preview Slider", REVSLIDER_TEXTDOMAIN);?>"><i class="revicon-search-1"></i><?php _e("Preview", REVSLIDER_TEXTDOMAIN);?></a>
 					</div>
 				</div>
@@ -1537,10 +1698,26 @@ if (isset($linksEditSlides)) {
 						 tla = jQuery('.toolbar-navigation-left'),
 						 tra = jQuery('.toolbar-navigation-right');
 
+
 					// DRAW SHADOWS
 					jQuery('.shadowTypes').css({display:"none"});
 					tslideprev.removeClass("tp-shadow1").removeClass("tp-shadow2").removeClass("tp-shadow3").removeClass("tp-shadow4").removeClass("tp-shadow5").removeClass("tp-shadow6");
-					tslideprev.addClass('tp-shadow'+jQuery('#shadow_type').val());
+
+					// MAKE ddd_IF NEEDED
+					if (jQuery('#ddd_parallax').attr('checked') && jQuery('#use_parallax').attr('checked')) {
+						punchgs.TweenLite.to(tslideprev,0.5,{transformPerspective:800, rotationY:30,rotationX:10,scale:0.8});
+						if (jQuery('#ddd_parallax_shadow').attr('checked')) {
+							tslideprev.css({boxShadow:"0 45px 100px rgba(0, 0, 0, 0.4)"})
+						} else {
+							tslideprev.css({boxShadow:"none"})
+						}
+					} else {
+						punchgs.TweenLite.to(tslideprev,0.5,{transformPerspective:800, rotationY:0,rotationX:0,scale:1});						
+						tslideprev.addClass('tp-shadow'+jQuery('#shadow_type').val());
+						tslideprev.css({boxShadow:"none"})
+					}
+					
+
 
 
 
@@ -1582,9 +1759,10 @@ if (isset($linksEditSlides)) {
 
 					function removeClasses(obj,cs) {
 						var classes = cs.split(",");
-						jQuery.each(classes,function(index,c) {
-							obj.removeClass("tbn-"+c);
-						});
+						if (classes)
+							jQuery.each(classes,function(index,c) {
+								obj.removeClass("tbn-"+c);
+							});
 					}
 
 					jQuery('.toolbar-sliderpreview').removeClass("outer-left").removeClass("outer-right").removeClass("outer-top").removeClass("outer-bottom").removeClass("inner");
@@ -1713,10 +1891,10 @@ if (isset($linksEditSlides)) {
 				});
 			</script>
 
-				<form name="form_slider_params" id="form_slider_params" onkeypress="return event.keyCode != 13;">
 
-					<!-- ALL SETTINGS -->
-					<div class="settings_wrapper closeallothers">
+				<!-- ALL SETTINGS -->
+				<div class="settings_wrapper closeallothers" id="form_slider_params_wrap">
+					<form name="form_slider_params" id="form_slider_params" onkeypress="return event.keyCode != 13;">
 
 						<!-- GENERAL SETTINGS -->
 
@@ -1756,6 +1934,13 @@ if (isset($linksEditSlides)) {
 										<input type="checkbox"  class="tp-moderncheckbox withlabel" id="next_slide_on_window_focus" name="next_slide_on_window_focus" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'next_slide_on_window_focus', 'off'), "on");?>>
 										<div class="clearfix"></div>
 									</div>
+									
+									<div>
+										<!-- BLUR ON FOCUS -->
+										<span id="label_disable_focus_listener" class="label" origtitle="<?php _e("This will disable the blur/focus behavior of the browser.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Disable Blur/Focus behavior", REVSLIDER_TEXTDOMAIN);?> </span>
+										<input type="checkbox"  class="tp-moderncheckbox withlabel" id="disable_focus_listener" name="disable_focus_listener" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, 'disable_focus_listener', 'off'), "on");?>>
+										<div class="clearfix"></div>
+									</div>
 								</div><!-- end of GENERAL MISC -->
 
 								<!-- GENERAL DEFAULTS -->
@@ -1772,10 +1957,10 @@ if (isset($linksEditSlides)) {
 									<span ><?php _e("ms", REVSLIDER_TEXTDOMAIN);?></span>
 									<div class="clear"></div>
 									<div id="reset-to-default-inputs">
-										<input type="checkbox" class="rs-ingore-save rs-reset-slide-setting" name="reset-transitions" /> <span id="label_def-transitions" origtitle="<?php _e("Default transition by creating a new slide.", REVSLIDER_TEXTDOMAIN);?>" class="label"><?php _e('Transitions', REVSLIDER_TEXTDOMAIN);?></span>
-										<select id="def-transitions" name="def-transitions" style="max-width:105px" class="withlabel">
+										<input type="checkbox" class="rs-ingore-save rs-reset-slide-setting" name="reset-slide_transition" /> <span id="label_def-slide_transition" origtitle="<?php _e("Default transition by creating a new slide.", REVSLIDER_TEXTDOMAIN);?>" class="label"><?php _e('Transitions', REVSLIDER_TEXTDOMAIN);?></span>
+										<select id="def-slide_transition" name="def-slide_transition" style="max-width:105px" class="withlabel">
 											<?php
-											$def_trans = RevSliderFunctions::getVal($arrFieldsParams, 'def-transition', 'fade');
+											$def_trans = RevSliderFunctions::getVal($arrFieldsParams, 'def-slide_transition', 'fade');
 											foreach ($transitions as $handle => $name) {
 												$not = (strpos($handle, 'notselectable') !== false) ? ' disabled="disabled"' : '';
 												$sel = ($def_trans == $handle) ? ' selected="selected"' : '';
@@ -1796,7 +1981,7 @@ if (isset($linksEditSlides)) {
 										$bg_image_size = RevSliderFunctions::getVal($arrFieldsParams, 'def-image_source_type', 'full');
 										?>
 										<input type="checkbox" class="rs-ingore-save rs-reset-slide-setting" name="reset-image_source_type" /> <span id="label_def-image_source_type" class="label" origtitle="<?php _e("Default main image source size by creating a new slide.", REVSLIDER_TEXTDOMAIN);?>" ><?php _e('Image Source Size', REVSLIDER_TEXTDOMAIN);?></span>
-										<select name="image_source_type">
+										<select name="def-image_source_type">
 											<?php
 											foreach ($img_sizes as $imghandle => $imgSize) {
 												$sel = ($bg_image_size == $imghandle) ? ' selected="selected"' : '';
@@ -1812,7 +1997,7 @@ if (isset($linksEditSlides)) {
 										$bgFitY = RevSliderFunctions::getVal($arrFieldsParams, 'def-bg_fit_y', '100');
 										?>
 										<input type="checkbox" class="rs-ingore-save rs-reset-slide-setting" name="reset-background_fit" /> <span id="label_background_fit" origtitle="<?php _e("Default background size by creating a new slide.", REVSLIDER_TEXTDOMAIN);?>"  class="label"><?php _e('Background Fit', REVSLIDER_TEXTDOMAIN);?></span>
-										<select id="background_fit" name="def-background_fit" style="max-width: 105px;" class="withlabel">
+										<select id="def-background_fit" name="def-background_fit" style="max-width: 105px;" class="withlabel">
 											<option value="cover"<?php selected($bgFit, 'cover');?>>cover</option>
 											<option value="contain"<?php selected($bgFit, 'contain');?>>contain</option>
 											<option value="percentage"<?php selected($bgFit, 'percentage');?>>(%, %)</option>
@@ -1850,7 +2035,7 @@ if (isset($linksEditSlides)) {
 											echo 'display: none;';
 										}
 										?>width:60px;margin-right:10px" value="<?php echo $bgPositionX;?>" />
-										<input type="text" name="def-bg_position_y" style="<?php if ($bgPosition != 'percentage') {
+										<input type="text" name="def-bg_position_y" style="<?php if ($bgPosition != 'percentage') { 
 											echo 'display: none;';
 										}
 										?>width:60px;margin-right:10px" value="<?php echo $bgPositionY;?>" />
@@ -1868,7 +2053,7 @@ if (isset($linksEditSlides)) {
 										</select>
 										<div class="clear"></div>
 
-										<?php $kenburn_effect = RevSliderFunctions::getVal($arrFieldsParams, 'def-kenburn_effect', 'off');?>
+										<?php $kenburn_effect = RevSliderFunctions::getVal($arrFieldsParams, 'def-kenburn_effect', 'off'); ?>
 										<input type="checkbox" class="rs-ingore-save rs-reset-slide-setting" name="reset-kenburn_effect" />
 										<span id="def-kenburn_effect" origtitle="<?php _e("Default Ken/Burn setting by creating a new slide.", REVSLIDER_TEXTDOMAIN);?>" class="label"><?php _e('Ken Burns / Pan Zoom:', REVSLIDER_TEXTDOMAIN);?></span>
 										<input type="checkbox" class="tp-moderncheckbox withlabel" id="def-kenburn_effect" name="def-kenburn_effect" data-unchecked="off" <?php checked($kenburn_effect, 'on');?>>
@@ -1972,11 +2157,6 @@ if (isset($linksEditSlides)) {
 										<input type="text" name="def-kb_start_offset_y" value="<?php echo intval($kb_start_offset_y);?>" />
 										<div class="clear"></div>
 										
-										<?php $kb_start_rotate = RevSliderFunctions::getVal($arrFieldsParams, 'def-kb_start_rotate', '0');?>
-										<input type="checkbox" class="rs-ingore-save rs-reset-slide-setting" name="reset-kb_start_rotate" /> <span id="label_kb_end_fit" class="label"><?php _e('End Offset Y:', REVSLIDER_TEXTDOMAIN);?></span>
-										<input type="text" name="def-kb_start_rotate" value="<?php echo intval($kb_start_rotate);?>" />
-										<div class="clear"></div>
-										
 										<?php $kb_end_offset_x = RevSliderFunctions::getVal($arrFieldsParams, 'def-kb_end_offset_x', '0');?>
 										<input type="checkbox" class="rs-ingore-save rs-reset-slide-setting" name="reset-kb_end_offset_x" /> <span id="label_kb_end_fit" class="label"><?php _e('End Offset X:', REVSLIDER_TEXTDOMAIN);?></span>
 										<input type="text" name="def-kb_end_offset_x" value="<?php echo intval($kb_end_offset_x);?>" />
@@ -1987,8 +2167,13 @@ if (isset($linksEditSlides)) {
 										<input type="text" name="def-kb_end_offset_y" value="<?php echo intval($kb_end_offset_y);?>" />
 										<div class="clear"></div>
 										
+										<?php $kb_start_rotate = RevSliderFunctions::getVal($arrFieldsParams, 'def-kb_start_rotate', '0');?>
+										<input type="checkbox" class="rs-ingore-save rs-reset-slide-setting" name="reset-kb_start_rotate" /> <span id="label_kb_end_fit" class="label"><?php _e('Start Rotate:', REVSLIDER_TEXTDOMAIN);?></span>
+										<input type="text" name="def-kb_start_rotate" value="<?php echo intval($kb_start_rotate);?>" />
+										<div class="clear"></div>
+										
 										<?php $kb_end_rotate = RevSliderFunctions::getVal($arrFieldsParams, 'def-kb_end_rotate', '0');?>
-										<input type="checkbox" class="rs-ingore-save rs-reset-slide-setting" name="reset-kb_end_rotate" /> <span id="label_kb_end_fit" class="label"><?php _e('End Offset Y:', REVSLIDER_TEXTDOMAIN);?></span>
+										<input type="checkbox" class="rs-ingore-save rs-reset-slide-setting" name="reset-kb_end_rotate" /> <span id="label_kb_end_fit" class="label"><?php _e('End Rotate:', REVSLIDER_TEXTDOMAIN);?></span>
 										<input type="text" name="def-kb_end_rotate" value="<?php echo intval($kb_end_rotate);?>" />
 										<div class="clear"></div>
 										
@@ -2007,10 +2192,17 @@ if (isset($linksEditSlides)) {
 
 								<!-- GENERAL FIRST SLIDE -->
 								<div id="general-firstslide" style="display:none">
-									<span id="label_start_with_slide" class="label" origtitle="<?php _e("Start from a different slide instead of the first slide. I.e. good for preview / edit mode.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Alternative 1st Slide", REVSLIDER_TEXTDOMAIN);?> </span>
-									<input type="text" class="text-sidebar withlabel" id="start_with_slide" name="start_with_slide" value="1">
+									<span id="label_start_with_slide_enable" class="label" origtitle="<?php _e("Activate Alternative 1st Slide.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Activate Alt. 1st Slide", REVSLIDER_TEXTDOMAIN);?></span>
+									<input type="checkbox" class="tp-moderncheckbox withlabel" id="start_with_slide_enable" name="start_with_slide_enable" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, "start_with_slide_enable", "off"), "on");?>>
 									<div class="clear"></div>
-
+									
+									<?php $start_with_slide = intval(RevSliderFunctions::getVal($arrFieldsParams, 'start_with_slide', '1'));?>
+									<div id="start_with_slide_row">
+										<span id="label_start_with_slide" class="label" origtitle="<?php _e("Start from a different slide instead of the first slide. I.e. good for preview / edit mode.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Alternative 1st Slide", REVSLIDER_TEXTDOMAIN);?> </span>
+										<input type="text" class="text-sidebar withlabel" id="start_with_slide" name="start_with_slide" value="<?php echo $start_with_slide; ?>">
+										<div class="clear"></div>
+									</div>
+									
 									<span id="label_first_transition_active" class="label" origtitle="<?php _e("If active, it will overwrite the first slide transition. Use it to get special transition for the first slide.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("First Transition Active", REVSLIDER_TEXTDOMAIN);?> </span>
 									<input type="checkbox" class="tp-moderncheckbox withlabel" id="first_transition_active" name="first_transition_active" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, "first_transition_active", "off"), "on");?>>
 									<div class="clear"></div>
@@ -2236,18 +2428,19 @@ if (isset($linksEditSlides)) {
 
 								<!-- VISUAL APPEARANCE -->
 								<div id="visual-appearance" style="display:block">
-									<span class="label" id="label_shadow_type" origmedia='show' origtitle="<?php _e("The Shadow display underneath the banner.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Shadow Type", REVSLIDER_TEXTDOMAIN);?> </span>
-									<select id="shadow_type"  class="withlabel" name="shadow_type">
-										<option value="0" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "0");?>><?php _e("No Shadow", REVSLIDER_TEXTDOMAIN);?></option>
-										<option value="1" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "1");?>>1</option>
-										<option value="2" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "2");?>>2</option>
-										<option value="3" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "3");?>>3</option>
-										<option value="4" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "4");?>>4</option>
-										<option value="5" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "5");?>>5</option>
-										<option value="6" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "6");?>>6</option>
-									</select>
-									<div class="clear"></div>
-
+									<div class="hide_on_ddd_parallax">
+										<span class="label " id="label_shadow_type" origmedia='show' origtitle="<?php _e("The Shadow display underneath the banner.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Shadow Type", REVSLIDER_TEXTDOMAIN);?> </span>
+										<select id="shadow_type"  class="withlabel" name="shadow_type">
+											<option value="0" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "0");?>><?php _e("No Shadow", REVSLIDER_TEXTDOMAIN);?></option>
+											<option value="1" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "1");?>>1</option>
+											<option value="2" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "2");?>>2</option>
+											<option value="3" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "3");?>>3</option>
+											<option value="4" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "4");?>>4</option>
+											<option value="5" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "5");?>>5</option>
+											<option value="6" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'shadow_type', '0'), "6");?>>6</option>
+										</select>
+										<div class="clear"></div>
+									</div>
 									<span class="label" id="label_background_dotted_overlay" origmedia="show" origtitle="<?php _e("Show a dotted overlay over the slides.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Dotted Overlay Size", REVSLIDER_TEXTDOMAIN);?> </span>
 									<select id="background_dotted_overlay" name="background_dotted_overlay" class="withlabel">
 										<option value="none" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'background_dotted_overlay', 'none'), "none");?>><?php _e("none", REVSLIDER_TEXTDOMAIN);?></option>
@@ -2430,13 +2623,20 @@ if (isset($linksEditSlides)) {
 									 // TAB CHANGES
 									 jQuery('.main-options-small-tabs').find('li').click(function() {
 									 	var li = jQuery(this),
-									 		ul = li.closest('.main-options-small-tabs');
+									 		ul = li.closest('.main-options-small-tabs'),
+									 		ref = li.data('content');
 
 										jQuery(ul.find('.selected').data('content')).hide();
 									 	ul.find('.selected').removeClass("selected");
 
-									 	jQuery(li.data('content')).show();
+									 	jQuery(ref).show();
 									 	li.addClass("selected");
+
+									 	if (ref=='#navigation-arrows' || ref=='#navigation-bullets' || ref=='#navigation-tabs'|| ref=='#navigation-thumbnails')									 		
+									 		jQuery('#navigation-miniimagedimensions').show();
+									 	else
+									 		if (!jQuery('#navigation-settings-wrapper>h3').hasClass("box_closed")) 
+									 			jQuery('#navigation-miniimagedimensions').hide();
 									 })
 								});
 							</script>
@@ -2767,19 +2967,19 @@ if (isset($linksEditSlides)) {
 										</select>
 										<div class="clear"></div>
 
-										<h4><?php _e("Thumbnail Size", REVSLIDER_TEXTDOMAIN);?></h4>
+										<h4><?php _e("Thumbnail Container Size", REVSLIDER_TEXTDOMAIN);?></h4>
 
-										<span id="label_thumb_width" class="label"  origtitle="<?php _e("The basic Width of one Thumbnail.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Thumb Width", REVSLIDER_TEXTDOMAIN);?></span>
+										<span id="label_thumb_width" class="label"  origtitle="<?php _e("The basic Width of one Thumbnail Container.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Container Width", REVSLIDER_TEXTDOMAIN);?></span>
 										<input type="text" class="text-sidebar withlabel" id="thumb_width" name="thumb_width" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "thumb_width", "100");?>">
 										<span><?php _e("px", REVSLIDER_TEXTDOMAIN);?></span>
 										<div class="clear"></div>
 
-										<span id="label_thumb_height" class="label"  origtitle="<?php _e("The basic Height of one Thumbnail.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Thumb Height", REVSLIDER_TEXTDOMAIN);?></span>
+										<span id="label_thumb_height" class="label"  origtitle="<?php _e("The basic Height of one Thumbnail.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Container Height", REVSLIDER_TEXTDOMAIN);?></span>
 										<input type="text" class="text-sidebar withlabel" id="thumb_height" name="thumb_height" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "thumb_height", "50");?>">
 										<span><?php _e("px", REVSLIDER_TEXTDOMAIN);?></span>
 										<div class="clear"></div>
 
-										<span id="label_thumb_width_min" class="label"  origtitle="<?php _e("The minimum width of the auto resized thumbs. Between Max and Min width the sizes are auto calculated).", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Min Thumb Width", REVSLIDER_TEXTDOMAIN);?></span>
+										<span id="label_thumb_width_min" class="label"  origtitle="<?php _e("The minimum width of the auto resized thumbs. Between Max and Min width the sizes are auto calculated).", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Min Container Width", REVSLIDER_TEXTDOMAIN);?></span>
 										<input type="text" class="text-sidebar withlabel" id="thumb_width_min" name="thumb_width_min" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "thumb_width_min", "100");?>">
 										<span><?php _e("px", REVSLIDER_TEXTDOMAIN);?></span>
 										<div class="clear"></div>
@@ -3087,6 +3287,23 @@ if (isset($linksEditSlides)) {
 									<div class="clear"></div>
 
 								</div><!-- END KEYBOARD NAVIGATION -->
+								
+								<!-- PREVIEW IMAGE SIZES -->									
+								<div id="navigation-miniimagedimensions" style="border-top:1px solid #f1f1f1; margin:20px -20px 0px; padding:0px 20px">
+									<h4><?php _e("Preview Image Size", REVSLIDER_TEXTDOMAIN);?></h4>
+
+									<span id="label_previewimage_width" class="label"  origtitle="<?php _e("The basic Width of one Preview Image.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Preview Image Width", REVSLIDER_TEXTDOMAIN);?></span>
+									<input type="text" class="text-sidebar withlabel" id="previewimage_width" name="previewimage_width" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "previewimage_width", RevSliderFunctions::getVal($arrFieldsParams, "thumb_width", 100));?>">
+									<span><?php _e("px", REVSLIDER_TEXTDOMAIN);?></span>
+									<div class="clear"></div>
+
+									<span id="label_previewimage_height" class="label"  origtitle="<?php _e("The basic Height of one Preview Image.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Preview Image Height", REVSLIDER_TEXTDOMAIN);?></span>
+									<input type="text" class="text-sidebar withlabel" id="previewimage_height" name="previewimage_height" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "previewimage_height", RevSliderFunctions::getVal($arrFieldsParams, "thumb_height", 50));?>">
+									<span><?php _e("px", REVSLIDER_TEXTDOMAIN);?></span>
+									<div class="clear"></div>
+									
+									<div class="clear"></div>
+								</div>
 							</div>
 							<script>
 								jQuery('#navigation-settings-wrapper input, #navigation-settings-wrapper select').on("change",drawToolBarPreview);
@@ -3428,36 +3645,83 @@ if (isset($linksEditSlides)) {
 
 							<div class="setting_box-arrow"></div>
 
-							<span><?php _e('Parallax', REVSLIDER_TEXTDOMAIN);?></span>
+							<span><?php _e('Parallax & 3D', REVSLIDER_TEXTDOMAIN);?></span>
 							</h3>
 
 							<div class="inside" style="display:none">
-								<span class="label" id="label_use_parallax" origtitle="<?php _e("Enabling this, will give you new options in the slides to create a unique parallax effect", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Enable Parallax", REVSLIDER_TEXTDOMAIN);?> </span>
+								<span class="label" id="label_use_parallax" origtitle="<?php _e("Enabling this, will give you new options in the slides to create a unique parallax effect", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Enable Parallax / 3D", REVSLIDER_TEXTDOMAIN);?> </span>
 								<input type="checkbox" class="tp-moderncheckbox withlabel" id="use_parallax" name="use_parallax" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, "use_parallax", "off"), "on");?>>
 								<div class="clear"></div>
 
 								<div id="parallax_settings_row">
+
 									<span id="label_disable_parallax_mobile" class="label" origtitle="<?php _e("If set to on, parallax will be disabled on mobile devices to save performance", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Disable on Mobile", REVSLIDER_TEXTDOMAIN);?> </span>
 									<input type="checkbox" class="tp-moderncheckbox withlabel" id="disable_parallax_mobile" name="disable_parallax_mobile" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, "disable_parallax_mobile", "off"), "on");?>>
 									<div class="clear"></div>
 
+									<span class="label" id="label_ddd_parallax" origtitle="<?php _e("Enabling this, will build a ddd_Rotating World of your Slides.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("3D", REVSLIDER_TEXTDOMAIN);?> </span>
+									<input type="checkbox" class="tp-moderncheckbox withlabel" id="ddd_parallax" name="ddd_parallax" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, "ddd_parallax", "off"), "on");?>>
+									<div class="clear"></div>
+
+									
+									
+									<div class="show_on_ddd_parallax">
+										<h4><?php _e("3D Settings", REVSLIDER_TEXTDOMAIN);?></h4>
+										<div class="withsublabels">
+											<span class="label" id="label_ddd_parallax_shadow" origtitle="<?php _e("Enabling 3D Shadow", REVSLIDER_TEXTDOMAIN);?>"><?php _e("3D Shadow", REVSLIDER_TEXTDOMAIN);?> </span>
+											<input type="checkbox" class="tp-moderncheckbox withlabel" id="ddd_parallax_shadow" name="ddd_parallax_shadow" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, "ddd_parallax_shadow", "off"), "on");?>>
+											<div class="clear"></div>
+
+											<span class="label" id="label_ddd_parallax_bgfreeze" origtitle="<?php _e("BG 3D Disabled", REVSLIDER_TEXTDOMAIN);?>"><?php _e("3D Background Disabled", REVSLIDER_TEXTDOMAIN);?> </span>
+											<input type="checkbox" class="tp-moderncheckbox withlabel" id="ddd_parallax_bgfreeze" name="ddd_parallax_bgfreeze" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, "ddd_parallax_bgfreeze", "off"), "on");?>>
+											<div class="clear"></div>
+
+											<span class="label" id="label_ddd_parallax_overflow" origtitle="<?php _e("If option is enabled, all slides and Layers are cropped by the Slider sides.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Slider Overflow Hidden", REVSLIDER_TEXTDOMAIN);?> </span>
+											<input type="checkbox" class="tp-moderncheckbox withlabel" id="ddd_parallax_overflow" name="ddd_parallax_overflow" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, "ddd_parallax_overflow", "off"), "on");?>>
+											<div class="clear"></div>
+
+											<span class="label" id="label_ddd_parallax_layer_overflow" origtitle="<?php _e("If option enabled, Layers are cropped by the Grid Layer Dimensions to avoid Floated 3d Texts and hide Elements outside of the Slider.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Layers Overflow Hidden", REVSLIDER_TEXTDOMAIN);?> </span>
+											<input type="checkbox" class="tp-moderncheckbox withlabel" id="ddd_parallax_layer_overflow" name="ddd_parallax_layer_overflow" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, "ddd_parallax_layer_overflow", "off"), "on");?>>
+											<div class="clear"></div>
+
+
+											<!--<span class="label" id="label_ddd_parallax_path" origtitle="<?php _e("Select the Events which should trigger the 3D Animation.  Mouse - Mouse Movements will rotate the Slider, Static Paths will set Single or Animated 3d Rotations per Slides (Edit these paths via the Slide Editor), and both will allow you to use both in the same Time.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("3D Path", REVSLIDER_TEXTDOMAIN);?> </span>
+											<select id="ddd_parallax_path" class="withlabel"  name="ddd_parallax_path" style="max-width:110px">
+												<option value="mouse" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'ddd_parallax_path', 'mouse'), "mouse");?>><?php _e("Mouse Based", REVSLIDER_TEXTDOMAIN);?></option>
+												<option value="static" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'ddd_parallax_path', 'mouse'), "static");?>><?php _e("Static Path (Set Slide by Slide)", REVSLIDER_TEXTDOMAIN);?></option>
+												<option value="both" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, 'ddd_parallax_path', 'mouse'), "both");?>><?php _e("Both", REVSLIDER_TEXTDOMAIN);?></option>												
+											</select>
+											<div class="clear"></div>-->
+
+											<span class="label" id="label_ddd_parallax_zcorrection" origtitle="<?php _e("Solves issues in Safari Browser. It will move layers along z-axis if BG Freeze enabled to avoid 3d Rendering issues", REVSLIDER_TEXTDOMAIN);?>"><?php _e("3D Crop Fix (z)", REVSLIDER_TEXTDOMAIN);?> </span>
+											<input type="text" class="text-sidebar withlabel" id="ddd_parallax_zcorrection" name="ddd_parallax_zcorrection" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "ddd_parallax_zcorrection", "65");?>">									
+											<span ><?php _e("px", REVSLIDER_TEXTDOMAIN);?></span>
+											<div class="clear"></div>
+
+										</div>
+									</div>
+
+									
+
 									
 									<h4><?php _e("Mouse Sensibility", REVSLIDER_TEXTDOMAIN);?></h4>
 									<div class="withsublabels">
-										<span id="label_parallax_type" class="label" origtitle="<?php _e("Defines on what event type the parallax should react to", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Event", REVSLIDER_TEXTDOMAIN);?></span>
-										<select id="parallax_type" name="parallax_type"  class="withlabel">
-											<option value="mouse" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, "parallax_type", "mouse"), "mouse");?>><?php _e("Mouse Move", REVSLIDER_TEXTDOMAIN);?></option>
-											<option value="scroll" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, "parallax_type", "mouse"), "scroll");?>><?php _e("Scroll Position", REVSLIDER_TEXTDOMAIN);?></option>
-											<option value="mouse+scroll" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, "parallax_type", "mouse"), "mouse+scroll");?>><?php _e("Move and Scroll", REVSLIDER_TEXTDOMAIN);?></option>
-										</select>
-										<div class="clear"></div>
+										<div class="hide_on_ddd_parallax">
+											<span id="label_parallax_type" class="label" origtitle="<?php _e("Defines on what event type the parallax should react to", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Event", REVSLIDER_TEXTDOMAIN);?></span>
+											<select id="parallax_type" name="parallax_type"  class="withlabel">
+												<option value="mouse" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, "parallax_type", "mouse"), "mouse");?>><?php _e("Mouse Move", REVSLIDER_TEXTDOMAIN);?></option>
+												<option value="scroll" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, "parallax_type", "mouse"), "scroll");?>><?php _e("Scroll Position", REVSLIDER_TEXTDOMAIN);?></option>
+												<option value="mouse+scroll" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, "parallax_type", "mouse"), "mouse+scroll");?>><?php _e("Move and Scroll", REVSLIDER_TEXTDOMAIN);?></option>
+											</select>
+											<div class="clear"></div>
 
-										<span id="label_parallax_origo" class="label" origtitle="<?php _e("Mouse Based parallax calculation Origo", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Parallax Origo", REVSLIDER_TEXTDOMAIN);?></span>
-										<select id="parallax_origo" name="parallax_origo"  class="withlabel">
-											<option value="enterpoint" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, "parallax_origo", "enterpoint"), "enterpoint");?>><?php _e("Mouse Enter Point", REVSLIDER_TEXTDOMAIN);?></option>
-											<option value="slidercenter" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, "parallax_origo", "enterpoint"), "slidercenter");?>><?php _e("Slider Center", REVSLIDER_TEXTDOMAIN);?></option>										
-										</select>
-										<div class="clear"></div>
+											<span id="label_parallax_origo" class="label" origtitle="<?php _e("Mouse Based parallax calculation Origo", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Parallax Origo", REVSLIDER_TEXTDOMAIN);?></span>
+											<select id="parallax_origo" name="parallax_origo"  class="withlabel">
+												<option value="enterpoint" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, "parallax_origo", "enterpoint"), "enterpoint");?>><?php _e("Mouse Enter Point", REVSLIDER_TEXTDOMAIN);?></option>
+												<option value="slidercenter" <?php selected(RevSliderFunctions::getVal($arrFieldsParams, "parallax_origo", "enterpoint"), "slidercenter");?>><?php _e("Slider Center", REVSLIDER_TEXTDOMAIN);?></option>										
+											</select>
+											<div class="clear"></div>
+										</div>
 
 										<span class="label" id="label_parallax_speed" origtitle="<?php _e("Parallax Speed for Mouse movents.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Animation Speed", REVSLIDER_TEXTDOMAIN);?> </span>
 										<input type="text" class="text-sidebar withlabel" id="parallax_speed" name="parallax_speed" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_speed", "400");?>">									
@@ -3465,47 +3729,77 @@ if (isset($linksEditSlides)) {
 										<div class="clear"></div>		
 									</div>							
 
-									<h4><?php _e("Parallax Levels", REVSLIDER_TEXTDOMAIN);?></h4>
+									<h4 class="hide_on_ddd_parallax"><?php _e("Parallax Levels", REVSLIDER_TEXTDOMAIN);?></h4>
+									<h4 class="show_on_ddd_parallax"><?php _e("3D Depth Levels", REVSLIDER_TEXTDOMAIN);?></h4>
+
 									<div class="withsublabels">
-										<span class="label" id="label_parallax_level_1" origtitle="<?php _e("Defines a level that can be used in Slide Editor for this Slider. Smaller value gives a smaller offset effect, higher value will increase the effect.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Level Depth 1", REVSLIDER_TEXTDOMAIN);?> </span>
+										<span class="show_on_ddd_parallax">
+											<span class="label" id="label_parallax_level_16" origtitle="<?php _e("Defines the Strength of the 3D Rotation on the Background and Layer Groups.  The Higher the Value the stronger the effect.  All other Depth will offset this default value !", REVSLIDER_TEXTDOMAIN);?>"><span><?php _e("Default 3D Depth", REVSLIDER_TEXTDOMAIN);?></span> </span>
+											<input type="text" class="text-sidebar withlabel" id="parallax_level_16" name="parallax_level_16" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_16", "55");?>">
+											<span class="clear"></span>
+										</span>
+
+										<span class="label" id="label_parallax_level_1" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 1", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 1", REVSLIDER_TEXTDOMAIN);?></span></span>
 										<input type="text" class="text-sidebar withlabel" id="parallax_level_1" name="parallax_level_1" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_1", "5");?>">									
 										<div class="clear"></div>
 
-										<span class="label" id="label_parallax_level_2" origtitle="<?php _e("Defines a level that can be used in Slide Editor for this Slider. Smaller value gives a smaller offset effect, higher value will increase the effect.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Level Depth 2", REVSLIDER_TEXTDOMAIN);?> </span>
+										<span class="label" id="label_parallax_level_2" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 2", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 2", REVSLIDER_TEXTDOMAIN);?></span> </span>
 										<input type="text" class="text-sidebar withlabel" id="parallax_level_2" name="parallax_level_2" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_2", "10");?>">
 										<div class="clear"></div>
 
-										<span class="label" id="label_parallax_level_3" origtitle="<?php _e("Defines a level that can be used in Slide Editor for this Slider. Smaller value gives a smaller offset effect, higher value will increase the effect.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Level Depth 3", REVSLIDER_TEXTDOMAIN);?> </span>
+										<span class="label" id="label_parallax_level_3" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 3", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 3", REVSLIDER_TEXTDOMAIN);?></span> </span>
 										<input type="text" class="text-sidebar withlabel " id="parallax_level_3" name="parallax_level_3" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_3", "15");?>">
 										<div class="clear"></div>
 
-										<span class="label" id="label_parallax_level_4" origtitle="<?php _e("Defines a level that can be used in Slide Editor for this Slider. Smaller value gives a smaller offset effect, higher value will increase the effect.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Level Depth 4", REVSLIDER_TEXTDOMAIN);?> </span>
+										<span class="label" id="label_parallax_level_4" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 4", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 4", REVSLIDER_TEXTDOMAIN);?></span> </span>
 										<input type="text" class="text-sidebar withlabel" id="parallax_level_4" name="parallax_level_4" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_4", "20");?>">
 										<div class="clear"></div>
 
-										<span class="label" id="label_parallax_level_5" origtitle="<?php _e("Defines a level that can be used in Slide Editor for this Slider. Smaller value gives a smaller offset effect, higher value will increase the effect.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Level Depth 5", REVSLIDER_TEXTDOMAIN);?> </span>
+										<span class="label" id="label_parallax_level_5" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 5", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 5", REVSLIDER_TEXTDOMAIN);?></span> </span>
 										<input type="text" class="text-sidebar withlabel" id="parallax_level_5" name="parallax_level_5" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_5", "25");?>">
 										<div class="clear"></div>
 										
-										<span class="label" id="label_parallax_level_6" origtitle="<?php _e("Defines a level that can be used in Slide Editor for this Slider. Smaller value gives a smaller offset effect, higher value will increase the effect.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Level Depth 6", REVSLIDER_TEXTDOMAIN);?> </span>
+										<span class="label" id="label_parallax_level_6" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 6", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 6", REVSLIDER_TEXTDOMAIN);?></span> </span>
 										<input type="text" class="text-sidebar withlabel" id="parallax_level_6" name="parallax_level_6" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_6", "30");?>">
 										<div class="clear"></div>
 
-										<span class="label" id="label_parallax_level_7" origtitle="<?php _e("Defines a level that can be used in Slide Editor for this Slider. Smaller value gives a smaller offset effect, higher value will increase the effect.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Level Depth 7", REVSLIDER_TEXTDOMAIN);?> </span>
+										<span class="label" id="label_parallax_level_7" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 7", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 7", REVSLIDER_TEXTDOMAIN);?></span> </span>
 										<input type="text" class="text-sidebar withlabel" id="parallax_level_7" name="parallax_level_7" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_7", "35");?>">
 										<div class="clear"></div>
 
-										<span class="label" id="label_parallax_level_8" origtitle="<?php _e("Defines a level that can be used in Slide Editor for this Slider. Smaller value gives a smaller offset effect, higher value will increase the effect.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Level Depth 8", REVSLIDER_TEXTDOMAIN);?> </span>
+										<span class="label" id="label_parallax_level_8" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 8", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 8", REVSLIDER_TEXTDOMAIN);?></span> </span>
 										<input type="text" class="text-sidebar withlabel" id="parallax_level_8" name="parallax_level_8" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_8", "40");?>">
 										<div class="clear"></div>
 
-										<span class="label" id="label_parallax_level_9" origtitle="<?php _e("Defines a level that can be used in Slide Editor for this Slider. Smaller value gives a smaller offset effect, higher value will increase the effect.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Level Depth 9", REVSLIDER_TEXTDOMAIN);?> </span>
+										<span class="label" id="label_parallax_level_9" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 9", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 9", REVSLIDER_TEXTDOMAIN);?></span> </span>
 										<input type="text" class="text-sidebar withlabel" id="parallax_level_9" name="parallax_level_9" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_9", "45");?>">
 										<div class="clear"></div>
 
-										<span class="label" id="label_parallax_level_10" origtitle="<?php _e("Defines a level that can be used in Slide Editor for this Slider. Smaller value gives a smaller offset effect, higher value will increase the effect.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Level Depth 10", REVSLIDER_TEXTDOMAIN);?> </span>
-										<input type="text" class="text-sidebar withlabel" id="parallax_level_10" name="parallax_level_10" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_10", "50");?>">
+										<span class="label" id="label_parallax_level_10" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 10", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 10", REVSLIDER_TEXTDOMAIN);?></span> </span>
+										<input type="text" class="text-sidebar withlabel" id="parallax_level_10" name="parallax_level_10" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_10", "46");?>">
 										<div class="clear"></div>
+
+										<span class="label" id="label_parallax_level_11" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 11", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 11", REVSLIDER_TEXTDOMAIN);?></span> </span>
+										<input type="text" class="text-sidebar withlabel" id="parallax_level_11" name="parallax_level_11" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_11", "47");?>">
+										<div class="clear"></div>
+
+										<span class="label" id="label_parallax_level_12" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 12", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 12", REVSLIDER_TEXTDOMAIN);?></span> </span>
+										<input type="text" class="text-sidebar withlabel" id="parallax_level_12" name="parallax_level_12" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_12", "48");?>">
+										<div class="clear"></div>
+
+										<span class="label" id="label_parallax_level_13" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 13", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 13", REVSLIDER_TEXTDOMAIN);?></span> </span>
+										<input type="text" class="text-sidebar withlabel" id="parallax_level_13" name="parallax_level_13" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_13", "49");?>">
+										<div class="clear"></div>
+
+										<span class="label" id="label_parallax_level_14" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 14", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 14", REVSLIDER_TEXTDOMAIN);?></span> </span>
+										<input type="text" class="text-sidebar withlabel" id="parallax_level_14" name="parallax_level_14" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_14", "50");?>">
+										<div class="clear"></div>
+
+										<span class="label" id="label_parallax_level_15" origtitle="<?php _e("Defines the strength of the effect. The higher the value, the stronger the effect. In 3D World the smaller Value comes to the front, and the Higher Value goes to the Background. Set for BG in 3D World the highest value always. Elements with higher z-index should get smaller values to make the effect perfect.", REVSLIDER_TEXTDOMAIN);?>"><span class="hide_on_ddd_parallax"><?php _e("Level Depth 15", REVSLIDER_TEXTDOMAIN);?></span><span class="show_on_ddd_parallax"><?php _e("Depth 15", REVSLIDER_TEXTDOMAIN);?></span> </span>
+										<input type="text" class="text-sidebar withlabel" id="parallax_level_15" name="parallax_level_15" value="<?php echo RevSliderFunctions::getVal($arrFieldsParams, "parallax_level_15", "51");?>">
+										<div class="clear"></div>
+
+										
 									</div>
 								</div>
 							</div>
@@ -3513,15 +3807,32 @@ if (isset($linksEditSlides)) {
 							<script>
 								jQuery('#use_parallax').on("change",function() {
 										var sbi = jQuery(this);
-
+										drawToolBarPreview();
 										if (sbi.attr("checked") === "checked") {
 											jQuery('#parallax_settings_row').show();
-
+											jQuery('#ddd_parallax').change();
 										} else {
 											jQuery('#parallax_settings_row').hide();
+											jQuery('.hide_on_ddd_parallax').show();
+											jQuery('.show_on_ddd_parallax').hide();
 										}
 								});
+								jQuery('#ddd_parallax').on("change",function() {
+									drawToolBarPreview();
+									var sbi = jQuery(this);
+									if (sbi.attr("checked") === "checked" && jQuery('#use_parallax').attr("checked")=== "checked") {
+											jQuery('.hide_on_ddd_parallax').hide();
+											jQuery('.show_on_ddd_parallax').show();
+										} else {
+											jQuery('.hide_on_ddd_parallax').show();
+											jQuery('.show_on_ddd_parallax').hide();
+										}									
+								});
+
+								jQuery('#ddd_parallax_shadow').on("change",drawToolBarPreview);
+
 								jQuery('#use_parallax').change();
+								jQuery('#ddd_parallax').change();
 							</script>
 
 						</div>
@@ -3610,18 +3921,18 @@ if (isset($linksEditSlides)) {
 
 
 					<!-- FALLBACKS -->
-					<div class="setting_box">
+					<div class="setting_box" id="phandlings">
 						<h3 class="box_closed"><i class="rs-rp-accordion-icon eg-icon-medkit"></i>
 
 						<div class="setting_box-arrow"></div>
 
-						<span><?php _e('Problem Handlings', REVSLIDER_TEXTDOMAIN);?></span>
+						<span class="phandlingstitle"><?php _e('Problem Handlings', REVSLIDER_TEXTDOMAIN);?></span>
 						</h3>
 
 						<div class="inside" style="display:none;">
 							<ul class="main-options-small-tabs" style="display:inline-block; ">
 								<li data-content="#problem-fallback" class="selected"><?php _e('Fallbacks', REVSLIDER_TEXTDOMAIN);?></li>
-								<li data-content="#problem-troubleshooting" class=""><?php _e('Troubleshooting', REVSLIDER_TEXTDOMAIN);?></li>
+								<li id="phandling_menu" data-content="#problem-troubleshooting" class=""><?php _e('Troubleshooting', REVSLIDER_TEXTDOMAIN);?></li>
 							</ul>
 							<div id="problem-fallback">
 								<span id="label_simplify_ie8_ios4" class="label" origtitle="<?php _e("Simplyfies the Slider on IOS4 and IE8", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Simplify on IOS4/IE8", REVSLIDER_TEXTDOMAIN);?> </span>
@@ -3666,9 +3977,11 @@ if (isset($linksEditSlides)) {
 								</select>
 								<div class="clear"></div>
 
-								<div id="label_jquery_debugmode" class="label" origtitle="<?php _e("Turns on / off visible Debug Mode on Front End.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Debug Mode", REVSLIDER_TEXTDOMAIN);?> </div>
+								<div id="label_jquery_debugmode" class="label phandlingstitle" origtitle="<?php _e("Turns on / off visible Debug Mode on Front End.", REVSLIDER_TEXTDOMAIN);?>"><?php _e("Debug Mode", REVSLIDER_TEXTDOMAIN);?> </div>
 								<input type="checkbox" class="tp-moderncheckbox withlabel" id="jquery_debugmode" name="jquery_debugmode" data-unchecked="off" <?php checked(RevSliderFunctions::getVal($arrFieldsParams, "jquery_debugmode", "off"), "on");?>>
 								<div class="clear"></div>
+
+								<div style="margin-top:15px"><a href="http://www.themepunch.com/faq/troubleshooting-tips-for-5-0/" target="_blank"><?php _e("Follow FAQ for Troubleshooting", REVSLIDER_TEXTDOMAIN);?></a></div>
 							</div>
 						</div>
 						 <script>
@@ -3683,12 +3996,118 @@ if (isset($linksEditSlides)) {
 										break;
 									}
 							});
+
+							jQuery('#jquery_debugmode').on("change",function() {
+								if (jQuery(this).attr("checked")==="checked")
+									jQuery('#phandlings').addClass("debugmodeon");
+								else
+									jQuery('#phandlings').removeClass("debugmodeon");
+							});
+
+							if (jQuery('#jquery_debugmode').attr("checked")==="checked")
+									jQuery('#phandlings').addClass("debugmodeon");
+								else
+									jQuery('#phandlings').removeClass("debugmodeon");
+
 							jQuery('#show_alternative_type').change();
 						</script>
 					</div>
 
+					<div class="setting_box rs-cm-refresh">
+						<h3 class="box_closed"><i class="rs-rp-accordion-icon eg-icon-font"></i>
+							<div class="setting_box-arrow"></div>
+							<span><?php _e('Google Fonts', REVSLIDER_TEXTDOMAIN);?></span>
+						</h3>
 
-					<!-- IMPORT / EXPORT SETTINGS -->
+						<div class="inside" style="display:none">
+
+							<div class="rs-gf-listing">
+								<?php
+								$subsets = RevSliderFunctions::getVal($arrFieldsParams, 'subsets', array());
+								
+								$gf = array();
+								if ($is_edit) {
+									if(!empty($sliderID)) {
+										$gf = $slider->getUsedFonts();
+									}
+								}
+								if(!empty($gf)){
+									echo '<h4 style="margin-top:0px;margin-bottom:8px">'.__('Dynamically Registered Google Fonts', REVSLIDER_TEXTDOMAIN).'</h4>';
+									
+									foreach($gf as $mgf => $mgv){
+										echo '<div class="single-google-font-item">';
+										echo '<span class="label font-name-label">'.$mgf.':';
+										if(!empty($mgv['variants'])){
+											$mgfirst = true;
+											foreach($mgv['variants'] as $mgvk => $mgvv){
+												if(!$mgfirst) echo ',';
+												echo $mgvk;
+												$mgfirst = false;
+											}
+										}	
+										echo '</span>';
+										echo '<div class="single-font-setting-wrapper">';
+										if(!empty($mgv['slide'])){
+											echo '<span class="label">Used in Slide:</span>';
+											echo '<select class="google-font-slide-link-list">';
+											echo '<option value="blank">Edit Slide(s)</option>';
+											foreach($mgv['slide'] as $mgskey => $mgsval){
+												echo '<option value="'.self::getViewUrl(RevSliderAdmin::VIEW_SLIDE,'id='.$mgsval['id'].'&slider='.intval($sliderID)).'">'.__('Edit:', REVSLIDER_TEXTDOMAIN).' '.esc_attr($mgsval['title']).'</option>';
+											}
+											echo '</select>';
+											
+										}
+										
+										if(!empty($mgv['subsets'])){
+											echo '<div class="clear"></div>';
+											
+											foreach($mgv['subsets'] as $ssk => $ssv){
+												echo '<span class="label subsetlabel">'.$ssv.'</span>';
+												echo '<input class="tp-moderncheckbox" type="checkbox" data-useval="true" value="'.esc_attr($mgf.'+'.$ssv).'" name="subsets[]" ';
+												if(array_search(esc_attr($mgf.'+'.$ssv), $subsets) !== false){
+													echo 'checked="checked"';
+												}
+												echo '> ';
+											}
+										}
+										echo '</div>';
+										echo '</div>';
+									}
+								} else {
+									echo '<h4 style="margin-top:0px;">'.__('No dynamic fonts registered', REVSLIDER_TEXTDOMAIN).'</h4>';
+								}
+								
+								?>
+							</div>
+							<script>
+								jQuery('.google-font-slide-link-list').on('change', function() {
+									var t = jQuery(this),
+										v = t.find('option:selected').val();
+
+									if (v!="blank") {
+										var win = window.open(v,'_blank');
+										if (win) {
+											win.focus();
+										} else {
+											alert('<?php _e('Link to Slide Editor is Blocked ! Please Allow Pop Ups for this Site !', REVSLIDER_TEXTDOMAIN); ?>');
+										}
+									}
+									t.val("blank");
+									
+								});
+							</script>
+							<h4><?php _e("Deprecated Google Font Import",REVSLIDER_TEXTDOMAIN);?></h4>
+							<div id="rs-google-fonts">
+							
+							</div>
+							<!--p><a class="button-primary revblue" id="add_new_google_font" original-title=""><i class="revicon-cog"></i><?php _e('Add New Font', REVSLIDER_TEXTDOMAIN); ?></a></p-->
+							<!--i style="font-size:10px;color:#777"><?php _e('Copy the Google Font Family from <a href="http://www.google.com/fonts" target="_blank">http://www.google.com/fonts</a> like: <strong>Open+Sans:400,700,600</strong>', REVSLIDER_TEXTDOMAIN); ?></i-->
+						</div>
+					</div>
+
+				</form>
+			
+				<!-- IMPORT / EXPORT SETTINGS -->
 				<?php
 				if ($is_edit) {
 					?>
@@ -3705,10 +4124,10 @@ if (isset($linksEditSlides)) {
 							</ul>
 
 							<div id="import-import">
-								<form action="<?php echo RevSliderBase::$url_ajax?>" enctype="multipart/form-data" method="post">
+								<form name="import_slider_form" id="rs_import_slider_form" action="<?php echo RevSliderBase::$url_ajax; ?>" enctype="multipart/form-data" method="post">
 									<input type="hidden" name="action" value="revslider_ajax_action">
 									<input type="hidden" name="client_action" value="import_slider">
-									<input type="hidden" name="sliderid" value="<?php echo $sliderID;?>">
+									<input type="hidden" name="sliderid" value="<?php echo $sliderID; ?>">
 									<input type="hidden" name="nonce" value="<?php echo wp_create_nonce("revslider_actions");?>">
 									<input type="file" name="import_file" class="input_import_slider" style="width:100%; font-size:12px;">
 									<div style="width:100%;height:25px"></div>
@@ -3725,7 +4144,7 @@ if (isset($linksEditSlides)) {
 									<div class="tp-clearfix"></div>
 
 									<div class="divide5"></div>
-									<input type="submit" style="width:100%" class='button-primary revgreen' value="<?php _e('Import Slider', REVSLIDER_TEXTDOMAIN); ?>">
+									<input type="submit" style="width:100%" class="button-primary revgreen" id="rs-submit-import-form" value="<?php _e('Import Slider', REVSLIDER_TEXTDOMAIN); ?>">
 								</form>
 								<div class="divide20"></div>
 								<div class="revred api-desc" style="padding:8px;color:#fff;font-weight:600;font-size:12px"><?php _e("Note! Style templates will be updated if they exist. Importing slider, will delete all the current slider settings and slides and replacing it with the imported content.", REVSLIDER_TEXTDOMAIN)?></div>
@@ -3733,9 +4152,7 @@ if (isset($linksEditSlides)) {
 							</div>
 
 							<div id="import-export" style="display:none">
-
 								<a id="button_export_slider" class='button-primary revgreen' href='javascript:void(0)' style="width:100%;text-align:center;" ><?php _e("Export Slider", REVSLIDER_TEXTDOMAIN)?></a> <div style="display: none;"><input type="checkbox" name="export_dummy_images"> <?php _e("Export with Dummy Images", REVSLIDER_TEXTDOMAIN)?></div>
-
 							</div>
 
 							<div id="import-replace" style="display:none">
@@ -3916,25 +4333,7 @@ if (isset($linksEditSlides)) {
 						</div>
 						<?php
 }?>	<!-- END OF API SETTINGS -->
-				
-				
-					<div class="setting_box rs-cm-refresh">
-						<h3 class="box_closed"><i class="rs-rp-accordion-icon eg-icon-font"></i>
-							<div class="setting_box-arrow"></div>
-							<span><?php _e('Google Fonts', REVSLIDER_TEXTDOMAIN);?></span>
-						</h3>
-						<div class="inside" style="display:none">
-							<div id="rs-google-fonts">
-							
-							</div>
-							<p><a class="button-primary revblue" id="add_new_google_font" original-title=""><i class="revicon-cog"></i><?php _e('Add New Font', REVSLIDER_TEXTDOMAIN); ?></a></p>
-							<i style="font-size:10px;color:#777"><?php _e('Copy the Google Font Family from <a href="http://www.google.com/fonts" target="_blank">http://www.google.com/fonts</a> like: <strong>Open+Sans:400,700,600</strong>', REVSLIDER_TEXTDOMAIN); ?></i>
-						</div>
-					</div>
-
 				</div>
-
-			</form>
 
 			<!-- THE TOOLBAR FUN -->
 			<div id="form_toolbar">
@@ -4001,7 +4400,7 @@ if (isset($linksEditSlides)) {
 				});
 
 
-				jQuery('#background_fit').change(function(){
+				jQuery('#def-background_fit').change(function(){
 					if(jQuery(this).val() == 'percentage'){
 						jQuery('input[name="def-bg_fit_x"]').show();
 						jQuery('input[name="def-bg_fit_y"]').show();
@@ -4260,7 +4659,7 @@ if (isset($linksEditSlides)) {
 					return previewNav(navtype,mclass,the_css,the_markup,settings);
 					
 				}
-  				// THE AMAZGIN TOOL TIP FUN
+  				// THE AMAZING TOOL TIP FUN
   				jQuery('#form_slider_params').find('.label, .withlabel').each(function() {
   					var lbl = jQuery(this);
 
@@ -4434,12 +4833,7 @@ if (isset($linksEditSlides)) {
 		<span id="loader_update_t" class="loader_round" style="display:none;background-color:#27AE60 !important; color:#fff;padding: 5px 5px 6px 25px;margin-right: 5px;"><?php _e("updating...", REVSLIDER_TEXTDOMAIN);?> </span>
 		<span id="update_slider_success_t" class="success_message"></span>
 	</div>
-	<div class="rs-toolbar-delete">
-		<a class='button-primary revred' id="button_delete_slider_t"  href='javascript:void(0)' ><i class="revicon-trash"></i><?php _e("Delete Slider", REVSLIDER_TEXTDOMAIN);?></a>
-	</div>
-	<div class="rs-toolbar-close">
-		<a class='button-primary revyellow' id="button_close_slider_edit_t" href='<?php echo self::getViewUrl("sliders");?>'><i class="revicon-cancel"></i><?php _e("Close", REVSLIDER_TEXTDOMAIN);?></a>
-	</div>
+	
 	<?php
 if (isset($linksEditSlides)) {
 	?>
@@ -4451,6 +4845,12 @@ if (isset($linksEditSlides)) {
 ?>
 	<div class="rs-toolbar-preview">
 		<a class="button-primary revgray" href="javascript:void(0)"  id="button_preview_slider_t" ><i class="revicon-search-1"></i><?php _e("Preview", REVSLIDER_TEXTDOMAIN);?></a>
+	</div>
+	<div class="rs-toolbar-delete">
+		<a class='button-primary revred' id="button_delete_slider_t"  href='javascript:void(0)' ><i class="revicon-trash"></i><?php _e("Delete Slider", REVSLIDER_TEXTDOMAIN);?></a>
+	</div>
+	<div class="rs-toolbar-close">
+		<a class='button-primary revyellow' id="button_close_slider_edit_t" href='<?php echo self::getViewUrl("sliders");?>'><i class="eg-icon-th-large"></i><?php _e("All Sliders", REVSLIDER_TEXTDOMAIN);?></a>
 	</div>
 </div>
 

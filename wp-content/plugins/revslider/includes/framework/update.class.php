@@ -37,7 +37,7 @@ class RevSliderUpdate {
 	
 		$this->_check_updates();
 
-		if(!isset($transient->response)) {
+		if(isset($transient) && !isset($transient->response)) {
 			$transient->response = array();
 		}
 
@@ -185,7 +185,10 @@ class RevSliderUpdate {
 			$version_info = wp_remote_retrieve_body( $response );
 			
 			if ( $response_code != 200 || is_wp_error( $version_info ) ) {
+				update_option('revslider-connection', false);
 				return false;
+			}else{
+				update_option('revslider-connection', true);
 			}
 			
 			$version_info = json_decode($version_info);

@@ -35,6 +35,13 @@ if( !defined( 'ABSPATH') ) exit();
 					$rowClass = "class='row_alt'";
 					$numReal = $slider->getNumRealSlides();
 					$slider_type = 'posts';
+					//check if we are woocommerce
+					if($slider->getParam("source_type","gallery") == 'woocommerce'){
+						$strSource = __('WooCommerce',REVSLIDER_TEXTDOMAIN);
+						$preicon ="revicon-doc";
+						$rowClass = "class='row_alt'";
+						$slider_type = 'woocommerce';
+					}
 				}elseif($isFromStream !== false){
 					$strSource = __('Social',REVSLIDER_TEXTDOMAIN);
 					$preicon ="revicon-doc";
@@ -119,7 +126,7 @@ if( !defined( 'ABSPATH') ) exit();
 				<div class="tls-main-metas">
 					
 					<span class="tls-firstslideimage <?php echo $first_slide_image_thumb['class']; ?>" style="<?php echo $first_slide_image_thumb['style']; ?>;<?php if (!empty($first_slide_image_thumb['url'])) {?>background-image:url( <?php echo $first_slide_image_thumb['url']; ?>) <?php } ?>"></span>
-					<span class="tls-grad-bg tls-bg-top"></span>				
+					<a href="<?php echo $editSlidesLink; ?>" class="tls-grad-bg tls-bg-top"></a>				
 					<span class="tls-source"><?php echo "<i class=".$preicon."></i>".$strSource; ?></span>
 					<span class="tls-star"><a href="javascript:void(0);" class="rev-toogle-fav" id="reg-toggle-id-<?php echo $id; ?>"><i class="eg-icon-star<?php echo ($is_favorite) ? '' : '-empty'; ?>"></i></a></span>
 					<span class="tls-slidenr"><?php echo $numSlides; if($numReal !== '') echo ' ('.$numReal.')'; ?></span>
@@ -133,7 +140,7 @@ if( !defined( 'ABSPATH') ) exit();
 						</span>
 						<a class="button-primary tls-settings" href='<?php echo $editLink; ?>'><i class="revicon-cog"></i></a>
 						<a class="button-primary tls-editslides" href='<?php echo $editSlidesLink; ?>'><i class="revicon-pencil-1"></i></a>
-						<span class="button-primary tls-showmore"><i class="eg-icon-plus"></i></span>
+						<span class="button-primary tls-showmore"><i class="eg-icon-down-open"></i></span>
 						
 					</span>
 					
@@ -176,19 +183,40 @@ if( !defined( 'ABSPATH') ) exit();
 	}
 	?>
 	<li class="tls-slide tls-addnewslider">
-		<div class="tls-main-metas">
-			<span class="tls-new-icon-wrapper">
-				<i class="tls-new-icon eg-icon-plus"></i>
+		<a href='<?php echo $addNewLink; ?>'>
+			<span class="tls-main-metas">
+				<span class="tls-new-icon-wrapper">
+					<span class="slider_list_add_buttons add_new_slider_icon"></span>
+				</span>
+				<span class="tls-title-wrapper">			
+					<span class="tls-title"><?php _e("New Slider",REVSLIDER_TEXTDOMAIN); ?></span>					
+				</span>
 			</span>
-			<span class="tls-title-wrapper">			
-				<span class="tls-title"><?php _e("New Slider",REVSLIDER_TEXTDOMAIN); ?></span>					
+		</a>
+	</li>
+	<li class="tls-slide tls-addnewslider">
+		<a href="javascript:void(0);" id="button_import_template_slider">
+			<span class="tls-main-metas">
+				<span class="tls-new-icon-wrapper add_new_template_icon_wrapper">
+					<i class="slider_list_add_buttons add_new_template_icon"></i>
+				</span>
+				<span class="tls-title-wrapper">			
+					<span class="tls-title"><?php _e("Add Slider Template",REVSLIDER_TEXTDOMAIN); ?></span>					
+				</span>
 			</span>
-		</div>
-		<div class="tls-hover-metas">
-			<a class="button-primary revblue"  href='<?php echo $addNewLink; ?>'><i class="eg-icon-plus"></i><?php _e("Create New Slider",REVSLIDER_TEXTDOMAIN); ?> </a>
-			<a class="button-primary revblue"  href="javascript:void(0);" id="button_import_template_slider"><i class="eg-icon-plus"></i><?php _e("Add Template Slider",REVSLIDER_TEXTDOMAIN); ?> </a>
-			<a class="button-primary revgreen" href="javascript:void(0);" id="button_import_slider"><i class="eg-icon-forward-1"></i><?php _e("Import Slider",REVSLIDER_TEXTDOMAIN)?> </a>
-		</div>
+		</a>
+	</li>
+	<li class="tls-slide tls-addnewslider">
+		<a href="javascript:void(0);" id="button_import_slider">
+			<span class="tls-main-metas">
+				<span class="tls-new-icon-wrapper">
+					<i class="slider_list_add_buttons  add_new_import_icon"></i>
+				</span>
+				<span class="tls-title-wrapper">			
+					<span class="tls-title"><?php _e("Import Slider",REVSLIDER_TEXTDOMAIN); ?></span>					
+				</span>
+			</span>
+		</a>		
 	</li>
 </ul>	
 <script>

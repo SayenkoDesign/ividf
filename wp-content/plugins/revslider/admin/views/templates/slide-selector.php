@@ -72,7 +72,7 @@ if($the_slidertype == 'hero'){
 								foreach($all_slides as $c_slide){
 									$c_params = $c_slide->getParams();
 									?>
-									<option value="<?php echo $c_slide->getID(); ?>"><?php echo RevSliderFunctions::getVal($c_params, 'title', 'Slide').' (ID: '.$c_slide->getID().')'; ?></option>
+									<option value="<?php echo $c_slide->getID(); ?>"><?php echo stripslashes(RevSliderFunctions::getVal($c_params, 'title', 'Slide')).' (ID: '.$c_slide->getID().')'; ?></option>
 									<?php
 								}
 								?>
@@ -106,6 +106,11 @@ if($the_slidertype == 'hero'){
 
 				$c_isvisible = $t_slide->getParam('state', 'published');
 
+				$c_thumb_for_admin = $t_slide->getParam('thumb_for_admin', 'off');
+				$c_real_thumbURL = $t_slide->getParam('slide_thumb','');
+
+
+
 				$c_bgStyle = ' ';
 				if($c_bgFit == 'percentage'){
 					$c_bgStyle .= "background-size: ".$c_bgFitX.'% '.$c_bgFitY.'%;';
@@ -128,6 +133,9 @@ if($the_slidertype == 'hero'){
 					switch($slider_type){
 						case 'posts':
 							$c_urlImageForView = RS_PLUGIN_URL.'public/assets/assets/sources/post.png';
+						break;
+						case 'woocommerce':
+							$c_urlImageForView = RS_PLUGIN_URL.'public/assets/assets/sources/wc.png';
 						break;
 						case 'facebook':
 							$c_urlImageForView = RS_PLUGIN_URL.'public/assets/assets/sources/fb.png';
@@ -157,6 +165,9 @@ if($the_slidertype == 'hero'){
 					$c_bg_fullstyle =' style="background-color:'.$c_bgColor.';" ';
 				if ($c_bgType == 'trans')
 					$c_bg_extraClass = 'mini-transparent';
+
+				if ($c_thumb_for_admin=="on")
+					$c_bg_fullstyle =' style="background-image:url('.$c_real_thumbURL.');background-size:cover;background-position:center center" ';
 
 				/* END OF BG SETTINGS */
 				$slidecounter++;
@@ -217,7 +228,7 @@ if($the_slidertype == 'hero'){
 					<div class="slide-link-content">		
 						<span class="slide-link">
 							<span class="slide-link-nr">#<?php echo $slidecounter; ?></span>
-							<input class="slidetitleinput" name="slidetitle" value="<?php echo $title; ?>" />
+							<input class="slidetitleinput" name="slidetitle" value="<?php echo stripslashes($title); ?>" />
 							<span class="slidelint-edit-button"></span>
 						</span>						
 						<div class="slide-link-toolbar">							
@@ -303,6 +314,26 @@ if($the_slidertype == 'hero'){
 			}
 		});
 		
+		jQuery('.slidetitleinput').on("change",function() {
+			var titleinp = jQuery(this),
+				slide_title = titleinp.val(),
+				slide_id = jQuery(this).closest('li').attr('id').replace('slidelist_item_', '');
+			
+			oldslidetitle = slide_title;
+			titleinp.blur();
+			if(UniteAdminRev.sanitize_input(slide_title) == ''){
+				alert('<?php _e('Slide name should not be empty', REVSLIDER_TEXTDOMAIN); ?>');
+				return false;
+			}
+			
+			var data = {slideID:slide_id,slideTitle:slide_title};
+			
+			UniteAdminRev.ajaxRequest('change_slide_title', data, function(response){});
+			
+			if(jQuery(this).closest('li').hasClass('selected')){ //set input field to new value
+				jQuery('input[name="title"]').val(slide_title);
+			}
+		})
 		
 		jQuery('.slidelint-edit-button').click(function() {
 			var titleinp = jQuery(this).siblings('.slidetitleinput'),
@@ -329,8 +360,11 @@ if($the_slidertype == 'hero'){
 		// OPEN THE TEMPLATE LIST ON CLICK OF ADD SLIDE TEMPLATE
 		jQuery('#rs_copy_slide_from_slider').click(function() {
 			jQuery('#template_area').addClass("show");
+			scrollTA();
 			return true;
 		});
 
 	});
+	
+	
 </script>

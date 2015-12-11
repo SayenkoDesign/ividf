@@ -34,6 +34,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 		parent::__construct();
 	}
 	
+	
 	/**
 	 * 
 	 * init slide by db record
@@ -42,7 +43,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 		
 		$this->id = $record["id"];
 		$this->sliderID = $record["slider_id"];
-		$this->slideOrder = @$record["slide_order"];
+		$this->slideOrder = (isset($record["slide_order"])) ? $record["slide_order"] : '';
 		
 		$params = $record["params"];
 		$params = (array)json_decode($params);
@@ -147,7 +148,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 	 * 
 	 * init by another slide
 	 */
-	private function initBySlide(RevSlide $slide){
+	public function initBySlide(RevSliderSlide $slide){
 		
 		$this->id = "template";
 		$this->templateID = $slide->getID();
@@ -218,7 +219,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 		
 		$this->params["title"] = RevSliderFunctions::getVal($this->postData, 'name');
 		
-		if(@$this->params['enable_link'] == "true" && @$this->params['link_type'] == "regular"){
+		if(isset($this->params['enable_link']) && $this->params['enable_link'] == "true" && isset($this->params['link_type']) && $this->params['link_type'] == "regular"){
 			$link = RevSliderFunctions::getVal($this->postData, 'link');
 			$this->params["link"] = str_replace(array("%link%", '{{link}}'), $link, $this->params["link"]);
 		}
@@ -277,7 +278,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 
 		$this->params["title"] = RevSliderFunctions::getVal($this->postData, 'title');
 		
-		if(@$this->params['enable_link'] == "true" && @$this->params['link_type'] == "regular"){
+		if(isset($this->params['enable_link']) && $this->params['enable_link'] == "true" && isset($this->params['link_type']) && $this->params['link_type'] == "regular"){
 			$link = 'https://twitter.com/'.$additions['twitter_user'].'/status/'.RevSliderFunctions::getVal($this->postData, 'id_str');
 			$this->params["link"] = str_replace(array("%link%", '{{link}}'), $link, $this->params["link"]);
 		}
@@ -414,7 +415,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 		
 		$link = RevSliderFunctions::getVal($this->postData, 'link');
 		
-		if(@$this->params['enable_link'] == "true" && @$this->params['link_type'] == "regular"){
+		if(isset($this->params['enable_link']) && $this->params['enable_link'] == "true" && isset($this->params['link_type']) && $this->params['link_type'] == "regular"){
 			$this->params["link"] = str_replace(array("%link%", '{{link}}'), $link, $this->params["link"]);
 		}
 
@@ -471,7 +472,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 		$this->id = RevSliderFunctions::getVal($this->postData, 'id');
 		$this->params["title"] = RevSliderFunctions::getVal($this->postData, 'title');
 		
-		if(@$this->params['enable_link'] == "true" && @$this->params['link_type'] == "regular"){
+		if(isset($this->params['enable_link']) && $this->params['enable_link'] == "true" && isset($this->params['link_type']) && $this->params['link_type'] == "regular"){
 			$link = 'http://flic.kr/p/'.$this->base_encode(RevSliderFunctions::getVal($this->postData, 'id'));
 			$this->params["link"] = str_replace(array("%link%", '{{link}}'), $link, $this->params["link"]);
 		}
@@ -500,8 +501,8 @@ class RevSliderSlide extends RevSliderElementsBase{
 				'original'		=>	RevSliderFunctions::getVal($this->postData, 'url_o')
 			);
 			
-			$this->imageUrl = @$is[$imgResolution];
-			$this->imageThumb = @$is['thumbnail'];
+			$this->imageUrl = (isset($is[$imgResolution])) ? $is[$imgResolution] : '';
+			$this->imageThumb = (isset($is['thumbnail'])) ? $is['thumbnail'] : '';
 			
 			//if(empty($this->imageUrl))
 			//	return(false);
@@ -543,7 +544,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 		}
 		
 		
-		if(@$this->params['enable_link'] == "true" && @$this->params['link_type'] == "regular"){
+		if(isset($this->params['enable_link']) && $this->params['enable_link'] == "true" && isset($this->params['link_type']) && $this->params['link_type'] == "regular"){
 			
 			if($link !== '') $link = '//youtube.com/watch?v='.$link;
 			
@@ -585,8 +586,8 @@ class RevSliderSlide extends RevSliderElementsBase{
 				}
 			}
 			
-			$this->imageUrl = @$is[$imgResolution];
-			$this->imageThumb = @$is['medium'];
+			$this->imageUrl = (isset($is[$imgResolution])) ? $is[$imgResolution] : '';
+			$this->imageThumb = (isset($is['medium'])) ? $is['medium'] : '';
 			
 			//if(empty($this->imageUrl))
 			//	return(false);
@@ -619,7 +620,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 		$this->id = RevSliderFunctions::getVal($this->postData, 'id');
 		$this->params["title"] = RevSliderFunctions::getVal($this->postData, 'title');
 		
-		if(@$this->params['enable_link'] == "true" && @$this->params['link_type'] == "regular"){
+		if(isset($this->params['enable_link']) && $this->params['enable_link'] == "true" && isset($this->params['link_type']) && $this->params['link_type'] == "regular"){
 			$link = RevSliderFunctions::getVal($this->postData, 'url');
 			$this->params["link"] = str_replace(array("%link%", '{{link}}'), $link, $this->params["link"]);
 		}
@@ -643,8 +644,8 @@ class RevSliderSlide extends RevSliderElementsBase{
 			}
 			
 			
-			$this->imageUrl = @$is[$imgResolution];
-			$this->imageThumb = @$is['thumbnail'];
+			$this->imageUrl = (isset($is[$imgResolution])) ? $is[$imgResolution] : '';
+			$this->imageThumb = (isset($is['thumbnail'])) ? $is['thumbnail'] : '';
 			
 			//if(empty($this->imageUrl))
 			//	return(false);
@@ -736,12 +737,17 @@ class RevSliderSlide extends RevSliderElementsBase{
 		switch($stream_type){
 			case 'facebook':
 				foreach($img_sizes as $img_handle => $img_name){
+					if(!isset($attr['img_urls'])) $attr['img_urls'] = array();
+					if(!isset($attr['img_urls'][$img_handle])) $attr['img_urls'][$img_handle] = array();
+					if(!isset($attr['img_urls'][$img_handle]['url'])) $attr['img_urls'][$img_handle]['url'] = '';
+					if(!isset($attr['img_urls'][$img_handle]['tag'])) $attr['img_urls'][$img_handle]['tag'] = '';
+						
 					if($additions['fb_type'] == 'album'){
-						$text = str_replace(array('%image_url_'.$img_handle.'%', '{{image_url_'.$img_handle.'}}'), @$attr['img_urls'][$img_handle]['url'], $text);
-						$text = str_replace(array('%image_'.$img_handle.'%', '{{image_'.$img_handle.'}}'), @$attr['img_urls'][$img_handle]['tag'], $text);
+						$text = str_replace(array('%image_url_'.$img_handle.'%', '{{image_url_'.$img_handle.'}}'), $attr['img_urls'][$img_handle]['url'], $text);
+						$text = str_replace(array('%image_'.$img_handle.'%', '{{image_'.$img_handle.'}}'), $attr['img_urls'][$img_handle]['tag'], $text);
 					}else{
-						$text = str_replace(array('%image_url_'.$img_handle.'%', '{{image_url_'.$img_handle.'}}'), @$attr['img_urls']['url'], $text);
-						$text = str_replace(array('%image_'.$img_handle.'%', '{{image_'.$img_handle.'}}'), @$attr['img_urls']['tag'], $text);
+						$text = str_replace(array('%image_url_'.$img_handle.'%', '{{image_url_'.$img_handle.'}}'), $attr['img_urls']['url'], $text);
+						$text = str_replace(array('%image_'.$img_handle.'%', '{{image_'.$img_handle.'}}'), $attr['img_urls']['tag'], $text);
 					}
 				}
 			break;
@@ -753,8 +759,13 @@ class RevSliderSlide extends RevSliderElementsBase{
 			case 'instagram':
 			case 'flickr':
 				foreach($img_sizes as $img_handle => $img_name){
-					$text = str_replace(array('%image_url_'.$img_handle.'%', '{{image_url_'.$img_handle.'}}'), @$attr['img_urls'][$img_handle]['url'], $text);
-					$text = str_replace(array('%image_'.$img_handle.'%', '{{image_'.$img_handle.'}}'), @$attr['img_urls'][$img_handle]['tag'], $text);
+					if(!isset($attr['img_urls'])) $attr['img_urls'] = array();
+					if(!isset($attr['img_urls'][$img_handle])) $attr['img_urls'][$img_handle] = array();
+					if(!isset($attr['img_urls'][$img_handle]['url'])) $attr['img_urls'][$img_handle]['url'] = '';
+					if(!isset($attr['img_urls'][$img_handle]['tag'])) $attr['img_urls'][$img_handle]['tag'] = '';
+					
+					$text = str_replace(array('%image_url_'.$img_handle.'%', '{{image_url_'.$img_handle.'}}'), $attr['img_urls'][$img_handle]['url'], $text);
+					$text = str_replace(array('%image_'.$img_handle.'%', '{{image_'.$img_handle.'}}'), $attr['img_urls'][$img_handle]['tag'], $text);
 				}
 			break;
 		}
@@ -813,7 +824,11 @@ class RevSliderSlide extends RevSliderElementsBase{
 					$author_name_raw = RevSliderFunctions::getVal($this->postData, 'from');
 					$attr['author_name'] = $author_name_raw->name;
 					$likes_data = RevSliderFunctions::getVal($this->postData, 'likes');
-					$attr['likes'] = count(RevSliderFunctions::getVal($likes_data, 'data'));
+					
+					$likes_data = RevSliderFunctions::getVal($likes_data, 'summary');
+					$likes_data = RevSliderFunctions::getVal($likes_data, 'total_count');
+					
+					$attr['likes'] = intval($likes_data);
 					$img = $this->get_facebook_timeline_image();
 					$attr['img_urls'] = array(
 						'url' => $img,
@@ -1053,7 +1068,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 	 * 
 	 * init slide by post data
 	 */
-	public function initByPostData($postData, RevSlide $slideTemplate, $sliderID){
+	public function initByPostData($postData, RevSliderSlide $slideTemplate, $sliderID){
 		
 		$this->postData = $postData;
 		
@@ -1065,10 +1080,14 @@ class RevSliderSlide extends RevSliderElementsBase{
 		if(!empty($slideTemplateID) && is_numeric($slideTemplateID)){
 				//init by local template, if fail, init by global (slider) template
 			try{
-				
-				$slideTemplateLocal = new RevSlide();
-				$slideTemplateLocal->initByID($slideTemplateID);
-				$this->initBySlide($slideTemplateLocal);
+				//check if slide exists
+				$slideTemplateLocal = new RevSliderSlide();
+				if($slideTemplateLocal->isSlideByID($slideTemplateID)){
+					$slideTemplateLocal->initByID($slideTemplateID);
+					$this->initBySlide($slideTemplateLocal);
+				}else{
+					$this->initBySlide($slideTemplate);
+				}
 			}
 			catch(Exception $e){
 				$this->initBySlide($slideTemplate);
@@ -1083,7 +1102,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 		$this->id = $postID;
 		$this->params["title"] = RevSliderFunctions::getVal($postData, "post_title");
 		
-		if(@$this->params['enable_link'] == "true" && @$this->params['link_type'] == "regular"){
+		if(isset($this->params['enable_link']) && $this->params['enable_link'] == "true" && isset($this->params['link_type']) && $this->params['link_type'] == "regular"){
 			$link = get_permalink($postID);
 			$this->params["link"] = str_replace(array("%link%", '{{link}}'), $link, $this->params["link"]);
 			$this->params["link"] = str_replace('-', '_REVSLIDER_', $this->params["link"]);
@@ -1222,22 +1241,36 @@ class RevSliderSlide extends RevSliderElementsBase{
 	
 	public function set_post_data($text, $attr, $post_id){
 		$img_sizes = RevSliderBase::get_all_image_sizes();
+		$title = (isset($attr['title'])) ? $attr['title'] : '';
+		$excerpt = (isset($attr['excerpt'])) ? $attr['excerpt'] : '';
+		$alias = (isset($attr['alias'])) ? $attr['alias'] : '';
+		$content = (isset($attr['content'])) ? $attr['content'] : '';
+		$link = (isset($attr['link'])) ? $attr['link'] : '';
+		$postDate = (isset($attr['postDate'])) ? $attr['postDate'] : '';
+		$dateModified = (isset($attr['dateModified'])) ? $attr['dateModified'] : '';
+		$authorName = (isset($attr['authorName'])) ? $attr['authorName'] : '';
+		$numComments = (isset($attr['numComments'])) ? $attr['numComments'] : '';
+		$catlist = (isset($attr['catlist'])) ? $attr['catlist'] : '';
+		$taglist = (isset($attr['taglist'])) ? $attr['taglist'] : '';
 		
-		$text = str_replace(array('%title%', '{{title}}'), @$attr['title'], $text);
-		$text = str_replace(array('%excerpt%', '{{excerpt}}'), @$attr['excerpt'], $text);
-		$text = str_replace(array('%alias%', '{{alias}}'), @$attr['alias'], $text);
-		$text = str_replace(array('%content%', '{{content}}'), @$attr['content'], $text);
-		$text = str_replace(array('%link%', '{{link}}'), @$attr['link'], $text);
-		$text = str_replace(array('%date%', '{{date}}'), @$attr['postDate'], $text);
-		$text = str_replace(array('%date_modified%', '{{date_modified}}'), @$attr['dateModified'], $text);
-		$text = str_replace(array('%author_name%', '{{author_name}}'), @$attr['authorName'], $text);
-		$text = str_replace(array('%num_comments%', '{{num_comments}}'), @$attr['numComments'], $text);
-		$text = str_replace(array('%catlist%', '{{catlist}}'), @$attr['catlist'], $text);
-		$text = str_replace(array('%taglist%', '{{taglist}}'), @$attr['taglist'], $text);
+		$text = str_replace(array('%title%', '{{title}}'), $title, $text);
+		$text = str_replace(array('%excerpt%', '{{excerpt}}'), $excerpt, $text);
+		$text = str_replace(array('%alias%', '{{alias}}'), $alias, $text);
+		$text = str_replace(array('%content%', '{{content}}'), $content, $text);
+		$text = str_replace(array('%link%', '{{link}}'), $link, $text);
+		$text = str_replace(array('%date%', '{{date}}'), $postDate, $text);
+		$text = str_replace(array('%date_modified%', '{{date_modified}}'), $dateModified, $text);
+		$text = str_replace(array('%author_name%', '{{author_name}}'), $authorName, $text);
+		$text = str_replace(array('%num_comments%', '{{num_comments}}'), $numComments, $text);
+		$text = str_replace(array('%catlist%', '{{catlist}}'), $catlist, $text);
+		$text = str_replace(array('%taglist%', '{{taglist}}'), $taglist, $text);
 		
 		foreach($img_sizes as $img_handle => $img_name){
-			$text = str_replace(array('%featured_image_url_'.$img_handle.'%', '{{featured_image_url_'.$img_handle.'}}'), @$attr['img_urls'][$img_handle]['url'], $text);
-			$text = str_replace(array('%featured_image_'.$img_handle.'%', '{{featured_image_'.$img_handle.'}}'), @$attr['img_urls'][$img_handle]['tag'], $text);
+			$url = (isset($attr['img_urls']) && isset($attr['img_urls'][$img_handle]) && isset($attr['img_urls'][$img_handle]['url'])) ? $attr['img_urls'][$img_handle]['url'] : '';
+			$tag = (isset($attr['img_urls']) && isset($attr['img_urls'][$img_handle]) && isset($attr['img_urls'][$img_handle]['tag'])) ? $attr['img_urls'][$img_handle]['tag'] : '';
+			
+			$text = str_replace(array('%featured_image_url_'.$img_handle.'%', '{{featured_image_url_'.$img_handle.'}}'), $url, $text);
+			$text = str_replace(array('%featured_image_'.$img_handle.'%', '{{featured_image_'.$img_handle.'}}'), $tag, $text);
 		}
 		
 		//process meta tags:
@@ -1286,6 +1319,83 @@ class RevSliderSlide extends RevSliderElementsBase{
 					$text = str_replace(array($eventPlaceholder, $eventPlaceholderNew), $eventValue , $text);
 				}
 			}
+		}
+		
+		if(RevSliderWooCommerce::isWooCommerceExists()){
+			$product = get_product($post_id);
+			
+			$wc_full_price = $product->get_price_html();
+			$wc_price = wc_price($product->get_price());
+			$wc_price_no_cur = $product->get_price();
+			$wc_stock = $product->get_total_stock();
+			$wc_rating = $product->get_rating_html();
+			$wc_star_rating = '<div class="rs-starring">';
+			preg_match_all('#<strong class="rating">.*?</span>#', $wc_rating, $match);
+			if(!empty($match) && isset($match[0]) && isset($match[0][0])){
+				$wc_star_rating .= str_replace($match[0][0], '', $wc_rating);
+			}
+			$wc_star_rating .= '</div>';
+			$wc_categories = $product->get_categories(',');
+			$wc_add_to_cart = $product->add_to_cart_url();
+			$wc_add_to_cart_button = '';
+			
+			
+			$wc_sku = $product->get_sku();
+			$wc_stock_quantity = $product->get_stock_quantity();
+			$wc_rating_count = $product->get_rating_count();
+			$wc_review_count = $product->get_review_count();
+			$wc_tags = $product->get_tags();
+			
+			
+			if(strpos($text, 'wc_add_to_cart_button') !== false){
+				$suffix               	= defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+				$ajax_cart_en			= get_option( 'woocommerce_enable_ajax_add_to_cart' ) == 'yes' ? true : false;
+				$assets_path          	= str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ) . '/assets/';
+				$frontend_script_path 	= $assets_path . 'js/frontend/';
+				
+				if ( $ajax_cart_en ){
+					wp_enqueue_script( 'wc-add-to-cart', $frontend_script_path . 'add-to-cart' . $suffix . '.js', array( 'jquery' ), WC_VERSION, true );
+					
+					global $wc_is_localized;
+					if($wc_is_localized === false){ //load it only one time
+						wp_localize_script( 'wc-add-to-cart', 'wc_add_to_cart_params', apply_filters( 'wc_add_to_cart_params', array(
+							'ajax_url'                => WC()->ajax_url(),
+							'ajax_loader_url'         => apply_filters( 'woocommerce_ajax_loader_url', $assets_path . 'images/ajax-loader@2x.gif' ),
+							'i18n_view_cart'          => esc_attr__( 'View Cart', 'woocommerce' ),
+							'cart_url'                => get_permalink( wc_get_page_id( 'cart' ) ),
+							'is_cart'                 => is_cart(),
+							'cart_redirect_after_add' => get_option( 'woocommerce_cart_redirect_after_add' )
+						) ) );
+						$wc_is_localized = true;
+					}
+				}
+				$wc_add_to_cart_button = apply_filters( 'woocommerce_loop_add_to_cart_link',
+									sprintf( '<a href="%s" rel="nofollow" data-product_id="%s" data-product_sku="%s" class="button %s product_type_%s">%s</a>',
+										esc_url( $product->add_to_cart_url() ),
+										esc_attr( $product->id ),
+										esc_attr( $product->get_sku() ),
+										$product->is_purchasable() ? 'add_to_cart_button' : '',
+										esc_attr( $product->product_type ),
+										esc_html( $product->add_to_cart_text() )
+									),
+								$product );
+			}
+			
+			$text = str_replace(array('%wc_full_price%', '{{wc_full_price}}'), $wc_full_price, $text);
+			$text = str_replace(array('%wc_price%', '{{wc_price}}'), $wc_price, $text);
+			$text = str_replace(array('%wc_price_no_cur%', '{{wc_price_no_cur}}'), $wc_price_no_cur, $text);
+			$text = str_replace(array('%wc_stock%', '{{wc_stock}}'), $wc_stock, $text);
+			$text = str_replace(array('%wc_rating%', '{{wc_rating}}'), $wc_rating, $text);
+			$text = str_replace(array('%wc_star_rating%', '{{wc_star_rating}}'), $wc_star_rating, $text);
+			$text = str_replace(array('%wc_categories%', '{{wc_categories}}'), $wc_categories, $text);
+			$text = str_replace(array('%wc_add_to_cart%', '{{wc_add_to_cart}}'), $wc_add_to_cart, $text);
+			$text = str_replace(array('%wc_add_to_cart_button%', '{{wc_add_to_cart_button}}'), $wc_add_to_cart_button, $text);
+			$text = str_replace(array('%wc_sku%', '{{wc_sku}}'), $wc_sku, $text);
+			$text = str_replace(array('%wc_stock_quantity%', '{{wc_stock_quantity}}'), $wc_stock_quantity, $text);
+			$text = str_replace(array('%wc_rating_count%', '{{wc_rating_count}}'), $wc_rating_count, $text);
+			$text = str_replace(array('%wc_review_count%', '{{wc_review_count}}'), $wc_review_count, $text);
+			$text = str_replace(array('%wc_tags%', '{{wc_tags}}'), $wc_tags, $text);
+			
 		}
 		
 		return $text;
@@ -1591,6 +1701,13 @@ class RevSliderSlide extends RevSliderElementsBase{
 	 */
 	public function getID(){
 		return($this->id);
+	}
+	
+	/**
+	 * get slide title
+	 */
+	public function getTitle(){
+		return($this->getParam("title","Slide"));
 	}
 	
 	
@@ -2422,6 +2539,7 @@ class RevSliderSlide extends RevSliderElementsBase{
 		$bgStyle .= "background-repeat: ".$bgRepeat.";";
 		
 		$thumb = '';
+		$thumb_on = RevSliderBase::getVar($params, "thumb_for_admin", 'off');
 		
 		switch($slider_type){
 			case 'gallery':
@@ -2436,9 +2554,18 @@ class RevSliderSlide extends RevSliderElementsBase{
 				}else{
 					$thumb = RevSliderFunctionsWP::getUrlAttachmentImage($imageID,RevSliderFunctionsWP::THUMB_MEDIUM);
 				}
+				
+				if($thumb_on == 'on'){
+					$thumb = RevSliderBase::getVar($params, "slide_thumb", '');
+				}
+				
 			break;
 			case 'posts':
 				$thumb = RS_PLUGIN_URL.'public/assets/assets/sources/post.png';
+				$bgStyle = 'background-size: cover;';
+			break;
+			case 'woocommerce':
+				$thumb = RS_PLUGIN_URL.'public/assets/assets/sources/wc.png';
 				$bgStyle = 'background-size: cover;';
 			break;
 			case 'facebook':
@@ -2472,17 +2599,25 @@ class RevSliderSlide extends RevSliderElementsBase{
 		$bg_fullstyle ='';
 		$bg_extraClass='';
 		$data_urlImageForView='';
-
-		if($bgType=="image" || $bgType=="streamvimeo" || $bgType=="streamyoutube" || $bgType=="streaminstagram") {
+	
+		//if($bgType=="image" || $bgType=="streamvimeo" || $bgType=="streamyoutube" || $bgType=="streaminstagram" || $bgType=="html5") {
 			$data_urlImageForView = $thumb;
 			$bg_fullstyle = $bgStyle;
+		//}
+		
+		if($bgType=="solid"){
+			if($thumb_on == 'off'){
+				$bg_fullstyle ='background-color:'.$bgColor.';';
+				$data_urlImageForView = '';
+			}else{
+				$bg_fullstyle = 'background-size: cover;';
+			}
 		}
-
-		if($bgType=="solid")
-			$bg_fullstyle ='background-color:'.$bgColor.';';
-			
-		if($bgType=="trans" || $bgType=="transparent")
+		
+		if($bgType=="trans" || $bgType=="transparent"){
 			$bg_extraClass = 'mini-transparent';
+			$bg_fullstyle = 'background-size: inherit; background-repeat: repeat;';
+		}
 		
 		return array(
 			'url' => $data_urlImageForView,
@@ -2532,6 +2667,71 @@ class RevSliderSlide extends RevSliderElementsBase{
 	}
 	
 	
+	/**
+	 * get all used fonts in the current Slide
+	 * @since: 5.1.0
+	 */
+	public function getUsedFonts($full = false){
+		$this->validateInited();
+		
+		$op = new RevSliderOperations();
+		$fonts = array();
+		
+		
+		$all_fonts = $op->getArrFontFamilys();
+		
+		if(!empty($this->arrLayers)){
+			foreach($this->arrLayers as $key=>$layer){
+				$def = (array) RevSliderFunctions::getVal($layer, 'deformation', array());
+				$font = RevSliderFunctions::getVal($def, 'font-family', '');
+				$static = (array) RevSliderFunctions::getVal($layer, 'static_styles', array());
+				
+				foreach($all_fonts as $f){
+					if($f['label'] == $font && $f['type'] == 'googlefont'){
+						if(!isset($fonts[$f['label']])){
+							$fonts[$f['label']] = array('variants' => array(), 'subsets' => array());
+						}
+						if($full){ //if full, add all.
+							//switch the variants around here!
+							$mv = array();
+							if(!empty($f['variants'])){
+								foreach($f['variants'] as $fvk => $fvv){
+									$mv[$fvv] = $fvv;
+								}
+							}
+							$fonts[$f['label']] = array('variants' => $mv, 'subsets' => $f['subsets']);
+						}else{ //Otherwise add only current font-weight plus italic or not
+							$fw = (array) RevSliderFunctions::getVal($static, 'font-weight', '400'); 
+							$fs = RevSliderFunctions::getVal($def, 'font-style', '');
+							
+							if($fs == 'italic'){
+								foreach($fw as $mf => $w){
+									//we check if italic is available at all for the font!
+									if($w == '400'){
+										if(array_search('italic', $f['variants']) !== false)
+											$fw[$mf] = 'italic';
+									}else{
+										if(array_search($w.'italic', $f['variants']) !== false)
+											$fw[$mf] = $w.'italic';
+									}
+								}
+							}
+							
+							foreach($fw as $mf => $w){
+								$fonts[$f['label']]['variants'][$w] = true;
+							}
+							
+							$fonts[$f['label']]['subsets'] = $f['subsets']; //subsets always get added, needs to be done then by the Slider Settings
+						}
+						break;
+					}
+				}
+			}
+		}
+		
+		return $fonts;
+	}
+	
 	
 	/**
 	 * replace all css classes in all layers
@@ -2567,7 +2767,9 @@ class RevSliderSlide extends RevSliderElementsBase{
 		$this->validateInited();
 		
 		foreach($values as $key => $val){
-			$this->params[esc_attr($key)] = esc_attr($val);
+			if($key !== 'sliderid'){
+				$this->params[esc_attr($key)] = esc_attr($val);
+			}
 		}
 		
 		$this->updateParamsInDB();

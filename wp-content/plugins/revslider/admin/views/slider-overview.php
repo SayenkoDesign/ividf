@@ -167,8 +167,90 @@ $stable_version = get_option('revslider-stable-version', '4.1');
 			<span class="slideravailableversion"><?php _e("Latest Available Version",REVSLIDER_TEXTDOMAIN); ?>: <?php echo $latest_version; ?></span><a class='button-primary revblue' href='?page=revslider&checkforupdates=true' id="rev_check_version"><?php _e("Check Version",REVSLIDER_TEXTDOMAIN); ?> </a>
 			
 		</div>
+		
+	<?php
+	}
+	?>
+		<div style="width:100%;height:50px"></div>
+		
+		<div class="title_line nobgnopd"><div class="view_title"><?php _e("Requirements & Recommendations",REVSLIDER_TEXTDOMAIN); ?></div></div>
+		<div class="valid_big_padding" style="border-top:1px solid #e5e5e5; padding:15px 15px 15px 80px; position:relative;overflow:hidden;background:#fff;">
+			<div class="revgray valid_big_border" style="background:#3d566e;left:0px;top:0px;position:absolute;height:100%;padding:27px 10px;"><i style="color:#fff !important;font-size:25px" class="eg-icon-thumbs-up"></i></div>
+			<span class="slideravailableversion"><?php _e('Uploads folder writable:', REVSLIDER_TEXTDOMAIN); ?></span><?php
+			//check if uploads folder can be written into
+			$dir = wp_upload_dir();
+			if(wp_is_writable($dir['basedir'].'/')){
+				echo '<i class="revgreenicon eg-icon-ok-squared"></i>';
+			}else{
+				echo '<i class="revredicon eg-icon-info-circled"></i><span style="margin-left:15px">'. __('Please set the write permission (755) to your wp-content/uploads folders.', REVSLIDER_TEXTDOMAIN).'</span>';
+			}
+			?><br>
+			<span class="slideravailableversion"><?php _e('Contact ThemePunch Server:', REVSLIDER_TEXTDOMAIN); ?></span><?php
+			$can_connect = get_option('revslider-connection', false);
+			if($can_connect){
+				echo '<i class="revgreenicon eg-icon-ok-squared"></i>';
+			}else{
+				echo '<i class="revredicon eg-icon-info-circled"></i><span style="margin-left:15px">'. __('Please make sure that your server can connect to updates.themepunch.tools and templates.themepunch.tools programmatically.', REVSLIDER_TEXTDOMAIN).'</span>';;
+			}
+			?> <a class='button-primary revblue' href='?page=revslider&checkforupdates=true' id="rev_check_version_1" style="margin-left:15px"><?php _e("Check Now",REVSLIDER_TEXTDOMAIN); ?></a><br>
+			<span class="slideravailableversion"><?php _e('Memory Limit:', REVSLIDER_TEXTDOMAIN); ?></span><?php
+			$mem_limit = ini_get('memory_limit');
+			$mem_limit_byte = wp_convert_hr_to_bytes($mem_limit);
 
+			if($mem_limit_byte < 268435456){
+				//not good
+				echo '<i style="margin-right:15px" class="revredicon eg-icon-info-circled"></i>';
+			} else {
+				echo '<i style="margin-right:15px"class="revgreenicon eg-icon-ok-squared"></i>';
+			}
 
+			echo __('Currently:', REVSLIDER_TEXTDOMAIN).' '.$mem_limit;
+
+			if($mem_limit_byte < 268435456){
+				//not good
+				echo '<span style="margin-left:15px">'. __('Recommended 256M', REVSLIDER_TEXTDOMAIN).'</span>';
+			} 
+			?><br>
+			<span class="slideravailableversion"><?php _e('Upload Max. Filesize:', REVSLIDER_TEXTDOMAIN); ?></span><?php
+			$upload_max_filesize = ini_get('upload_max_filesize');
+			$upload_max_filesize_byte = wp_convert_hr_to_bytes($upload_max_filesize);
+			
+			if($upload_max_filesize_byte < 33554432){
+				//not good
+				echo '<i style="margin-right:15px" class="revredicon eg-icon-info-circled"></i>';
+			} else {
+				echo '<i style="margin-right:15px"class="revgreenicon eg-icon-ok-squared"></i>';
+			}
+
+			echo __('Currently:', REVSLIDER_TEXTDOMAIN).' '.$upload_max_filesize;
+			
+			if($upload_max_filesize_byte < 33554432){
+				echo '<span style="margin-left:15px">'. __('Recommended 32M', REVSLIDER_TEXTDOMAIN).'</span>';
+			}
+			?><br>
+			<span class="slideravailableversion"><?php _e('Max. Post Size:', REVSLIDER_TEXTDOMAIN); ?></span><?php
+			$post_max_size = ini_get('post_max_size');
+			$post_max_size_byte = wp_convert_hr_to_bytes($post_max_size);
+			
+			
+			if($post_max_size_byte < 33554432){
+				//not good
+				echo '<i style="margin-right:15px" class="revredicon eg-icon-info-circled"></i>';
+			} else {
+				echo '<i style="margin-right:15px"class="revgreenicon eg-icon-ok-squared"></i>';
+			}
+
+			echo __('Currently:', REVSLIDER_TEXTDOMAIN).' '.$post_max_size;
+			
+			if($post_max_size_byte < 33554432){
+				echo '<span style="margin-left:15px">'. __('Recommended 32M', REVSLIDER_TEXTDOMAIN).'</span>';
+			}
+
+			?>
+		</div>
+	<?php
+	if(!$revSliderAsTheme){
+		?>
 		<!--
 		ACTIVATE THIS PRODUCT
 		-->
@@ -280,7 +362,7 @@ $stable_version = get_option('revslider-stable-version', '4.1');
 			</tr>
 		</table>
 		<br><br>
-		<input type="submit" class="button-primary revblue tp-be-button" value="<?php _e("Import Slider",REVSLIDER_TEXTDOMAIN); ?>">
+		<input type="submit" class="button-primary revblue tp-be-button rev-import-slider-button" style="display: none;" value="<?php _e("Import Slider",REVSLIDER_TEXTDOMAIN); ?>">
 	</form>
 </div>
 
