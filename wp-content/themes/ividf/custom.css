@@ -3,6 +3,10 @@
     display: none;
 }
 
+.om_theme .wpb_content_element.reduce-margin-top {
+    margin-top: -40px;
+}
+
 .page-id-3103 #gform_2 input[type=text], .page-id-3103 #gform_2 textarea {
     box-sizing: border-box;
     color: #FFF;
@@ -26,4 +30,29 @@
 .page-id-3103 #gform_2 :-ms-input-placeholder {
     color: #FFf;
     opacity:1;
+}
+.question-form .gform_wrapper {
+    margin-bottom: 0;
+}
+.question-form form {
+    max-width: 600px;
+}
+.question-form .wpb_wrapper {
+    margin-left: 10px;
+}
+
+@media all and (max-width: 769px) {
+    .om_theme .wpb_content_element.reduce-margin-top {
+        margin-top: -30px;
+    }
+    .vc_separator.vc_sep_width_50 {
+        width: 100%;
+        text-align: center;
+    }
+    .vc_separator .vc_sep_holder {
+        display: none !important;
+    }
+    .vc_separator h4 {
+        white-space: normal !important;
+    }
 }

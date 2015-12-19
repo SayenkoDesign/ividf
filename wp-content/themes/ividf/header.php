@@ -15,7 +15,8 @@
     
 	<?php wp_head(); ?>
    
-    
+    <link rel="stylesheet" href="http://inventiondevfund.com/wp-content/themes/ividf/fonts/stylesheet.css" type="text/css" charset="utf-8" />
+
 </head>
 <body <?php body_class( array( OM_THEME_SHORT_PREFIX .'theme', OM_THEME_PREFIX. 'theme' ) ) ?>>
 <!--[if lt IE 8]><p class="chromeframe"><?php _e('You are using an <strong>outdated</strong> browser. Please, <a href="http://browsehappy.com/">upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.','om_theme'); ?></p><![endif]-->
@@ -72,7 +73,14 @@
 							}?>							                            				
 							<?php			
 							//menu
-							$menu_id = get_post_meta($wp_query->post->ID, 'alt_menu')[0];
+							$alt_menu = get_post_meta($wp_query->post->ID, 'alt_menu');
+							if($alt_menu) {
+								$menu_id = get_post_meta($wp_query->post->ID, 'alt_menu')[0];
+								$menu_obj = wp_get_nav_menu_object($menu_id);
+								$show_mobile_toggle = $menu_obj->count > 1;
+							} else {
+								$show_mobile_toggle = true;
+							}
 							$menu = wp_nav_menu( array(
 								'theme_location' => 'primary-menu',
 								'menu' => $menu_id,
@@ -113,11 +121,15 @@
 													<div class="container-inner">
 														<div class="logo-menu-wrapper">
 															<?php echo om_esc_wpcf($logo); ?>
-                                                            <div class="toggle">
-                                                            	<span></span>	
-                                                            </div>
+															<?php if ($show_mobile_toggle) :?>
+                                                            	<div class="toggle">
+                                                            		<span></span>
+                                                            	</div>
+															<?php endif; ?>
                                                             <span class="mobile_letstalk">
-                                                                <a href="<?php get_site_url(); ?>/contact-us/"> Let’s Talk </a>
+                                                                <a href="<?php echo get_post_meta($wp_query->post->ID, 'alt_url')[0] ?: site_url('/contact-us'); ?>">
+																	<?php echo get_post_meta($wp_query->post->ID, 'alt_text')[0] ?: "Let’s Talk"; ?>
+																</a>
                                                             </span>
                                                             
                                                             <div class="header-mobile-menu">

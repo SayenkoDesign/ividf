@@ -97,7 +97,11 @@ add_filter( 'network_site_url', 'wpe_filter_site_url', 0, 3 );
  */
 function wpe_filter_site_url( $url, $path, $scheme, $blog_id = 1 ) {
 	// Filter the login_post scheme
-	if ( $scheme == 'login_post' ) {
+	$changeme = array('login_post');
+	if ('4.4' === get_bloginfo('version')) { // XXX possible regression in 4.4 release 
+		$changeme[] = 'login';
+	}
+	if ( in_array($scheme, $changeme ) ) {
 		$url = add_query_arg( array( 'wpe-login'=> PWP_NAME ) , $url );
 	}
 	// Filter comment posts - from wp-includes/comment-template.php form action string

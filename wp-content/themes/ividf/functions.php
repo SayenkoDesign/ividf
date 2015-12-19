@@ -485,19 +485,24 @@ add_action( 'admin_menu', 'remove_menus' );
  *	Menu stuffs
  *************************************************************************************/
 add_action( 'add_meta_boxes', function() {
-	add_meta_box('alt_menu_sectionid', __('Menu'), 'alt_menu_meta_box_view', 'post', 'side', 'high');
-	add_meta_box('alt_menu_sectionid', __('Menu'), 'alt_menu_meta_box_view', 'page', 'side', 'high');
+	add_meta_box('alt_menu_sectionid', __('Page Override'), 'alt_menu_meta_box_view', 'post', 'side', 'high');
+	add_meta_box('alt_menu_sectionid', __('Page Override'), 'alt_menu_meta_box_view', 'page', 'side', 'high');
 });
 
 function alt_menu_meta_box_view($post) {
 	wp_nonce_field( 'alt_menu_save_meta_box_data', 'alt_menu_meta_box_view_nonce' );
-	$value = esc_attr(get_post_meta( $post->ID, 'alt_menu', true ));
-	$label = __('Select a menu for this page');
+	$value_menu = esc_attr(get_post_meta( $post->ID, 'alt_menu', true ));
+	$value_text = esc_attr(get_post_meta( $post->ID, 'alt_text', true ));
+	$value_url = esc_attr(get_post_meta( $post->ID, 'alt_url', true ));
 
+	$label_menu = __('Select a menu for this page');
+	$label_url = __('Mobile Menu Button URL');
+	$label_text = __('Mobile Menu Button Text');
+	$label_empty = __('Leave empty for theme default');
 
 	$menus = get_terms('nav_menu', array('hide_empty' => false));
 	if(!$menus){
-		$select = __("No menus have been built");
+		$select_menu = __("No menus have been built");
 	} else {
 		if(!is_array($menus)) {
 			$menus = [$menus];
@@ -508,18 +513,22 @@ function alt_menu_meta_box_view($post) {
 		array_unshift($menus, $default);
 		$options = '';
 		foreach($menus as $menu) {
-			if($value == $menu->term_id || (!$value && $menu->term_id == 0)) {
+			if($value_menu == $menu->term_id || (!$value_menu && $menu->term_id == 0)) {
 				$options .= '<option value="' . $menu->term_id . '" selected="selected">' . $menu->name . '</option>';
 			} else {
 				$options .= '<option value="' . $menu->term_id . '">' . $menu->name . '</option>';
 			}
 		}
-		$select = '<select id="alt_menu" name="alt_menu" class="postbox">' . $options . '</select>';
+		$select_menu = '<select id="alt_menu" name="alt_menu" class="postbox">' . $options . '</select>';
 	}
 
 	echo <<<HTML
-		<p><strong>$label</strong></p>
-		$select
+		<p><strong>$label_menu</strong></p>
+		$select_menu
+		<p>$label_text <br/> <small>$label_empty</small></p>
+		<input id="alt_text" name="alt_text" type="text" value="$value_text"/>
+		<p>$label_url <br/> <small>$label_empty</small></p>
+		<input id="alt_url" name="alt_url" type="text" value="$value_url"/>
 HTML;
 }
 
@@ -545,8 +554,12 @@ function alt_menu_save_meta_box_data( $post_id ) {
 		}
 	}
 
-	$my_data = sanitize_text_field( $_POST['alt_menu'] );
-	update_post_meta( $post_id, 'alt_menu', $my_data );
+	$alt_menu = sanitize_text_field( $_POST['alt_menu'] );
+	$alt_text = sanitize_text_field( $_POST['alt_text'] );
+	$alt_url = sanitize_text_field( $_POST['alt_url'] );
+	update_post_meta( $post_id, 'alt_menu', $alt_menu );
+	update_post_meta( $post_id, 'alt_text', $alt_text );
+	update_post_meta( $post_id, 'alt_url', $alt_url );
 }
 add_action( 'save_post', 'alt_menu_save_meta_box_data' );
 ?>
