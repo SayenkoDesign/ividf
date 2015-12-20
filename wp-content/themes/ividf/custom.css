@@ -58,3 +58,18 @@
         white-space: normal !important;
     }
 }
+
+/** traditional snacks **/
+.page-id-3159 div.om-wpb_row:nth-child(3):before {
+    content: " ";
+    width:100%;
+    height: 21px;
+    background-image: url("img/cloud.png");
+    background-repeat: repeat-x;
+    display: block;
+    border-bottom:8px solid #FFF;
+}
+
+.page-id-3159 .vc_om-counter-title {
+    font-family: "Raleway", sans-serif !important;
+}
