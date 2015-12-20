@@ -7,27 +7,29 @@
     margin-top: -40px;
 }
 
-.page-id-3103 #gform_2 input[type=text], .page-id-3103 #gform_2 textarea {
+
+/** form **/
+.page-id-3103 #gform_2 input[type=text], .page-id-3103 #gform_2 textarea,
+.page-id-3159 #gform_2 input[type=text], .page-id-3159 #gform_2 textarea{
     box-sizing: border-box;
     color: #FFF;
     border-color: #FFF;
     padding: 12px;
     background-color: rgba(255,255,255,0.3);
 }
-
-.page-id-3103 #gform_2 ::-webkit-input-placeholder {
+.page-id-3103 #gform_2 ::-webkit-input-placeholder, .page-id-3159 #gform_2 ::-webkit-input-placeholder{
     color: #FFf;
     opacity:1;
 }
-.page-id-3103 #gform_2 :-moz-placeholder { /* Firefox 18- */
+.page-id-3103 #gform_2 :-moz-placeholder, .page-id-3159 #gform_2 :-moz-placeholder { /* Firefox 18- */
     color: #FFf;
     opacity:1;
 }
-.page-id-3103 #gform_2 ::-moz-placeholder {  /* Firefox 19+ */
+.page-id-3103 #gform_2 ::-moz-placeholder, .page-id-3159 #gform_2 ::-moz-placeholder {  /* Firefox 19+ */
     color: #FFf;
     opacity:1;
 }
-.page-id-3103 #gform_2 :-ms-input-placeholder {
+.page-id-3103 #gform_2 :-ms-input-placeholder, .page-id-3159 #gform_2 :-ms-input-placeholder {
     color: #FFf;
     opacity:1;
 }
