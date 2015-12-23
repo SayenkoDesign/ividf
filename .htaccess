@@ -43,3 +43,6 @@ ExpiresByType image/x-icon "access 1 year"
 </IfModule>
 ## EXPIRES CACHING ##
 AddHandler application/x-httpd-php56 .php .php5 .php4 .php3 .php2
+
+Header add Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Credentials true

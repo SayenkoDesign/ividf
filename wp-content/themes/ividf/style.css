@@ -564,7 +564,7 @@ q { font-style: italic; }
  @media only screen and (max-width: 1365px) {
 .primary-menu a { padding-left: 15px; padding-right: 15px; }
 .primary-menu > li > a > .primary-menu-line { left: 15px; right: 15px; }
-.primary-menu > li > a { font-size: 120%; }
+.primary-menu > li > a { font-size: 94%; }
 .primary-menu > li > ul { font-size: 100%; }
 }
  @media only screen and (max-width: 1024px) {
