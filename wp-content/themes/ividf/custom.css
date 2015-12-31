@@ -75,6 +75,14 @@
 .page-id-3159 .header-slider {
     border-bottom: none;
 }
+
+.page-id-3159 nav .talk a,
+.page-id-3159.om_theme .vc_btn3.vc_btn3-size-xlg
+.page-id-3159.om_theme .vc_btn3.vc_btn3-style-3d,
+.page-id-3159.om_theme .vc_btn3.vc_btn3-style-flat,
+.page-id-3159 input[type="button"], .page-id-3159 input[type="submit"], .page-id-3159 input[type="reset"]{
+    font-family: "CubanoRegular", sans-serif !important;
+}
 .page-id-3159 div.om-wpb_row:nth-child(3):before {
     content: " ";
     width:100%;
