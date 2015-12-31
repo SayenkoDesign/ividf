@@ -1,3 +1,10 @@
+.logo-menu-wrapper .logo-box {
+    padding-right: 30px;
+}
+.header-layout-1 .primary-menu > li > a, .header-layout-3 .primary-menu > li > a {
+    padding: 10px;
+}
+
 .cubano {
     font-family: "CubanoRegular", sans-serif !important;
 }
