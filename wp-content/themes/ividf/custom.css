@@ -96,3 +96,9 @@
 .page-id-3159 .vc_om-counter-title {
     font-family: "Raleway", sans-serif !important;
 }
+
+@media (max-width: 600px) {
+    .page-id-3159 h2 {
+        font-size: 24px !important;
+    }
+}
