@@ -107,45 +107,45 @@ function wr2x_admin_init() {
 		$sizes["$name"] = sprintf( "<div style='float: left; text-align: right; margin-right: 5px; width: 20px;'>%s</div> <b>%s</b> <small>(Normal: %dx%d, Retina: %dx%d)</small>", wr2x_size_shortname( $name ), $name, $attr['width'], $attr['height'], $attr['width'] * 2, $attr['height'] * 2 );
 
 	$fields = array(
-        'wr2x_basics' => array(
-			       array(
-                'name' => 'ignore_sizes',
-                'label' => __( 'Disabled Sizes', 'wp-retina-2x' ),
-                'desc' => __( '<br />The selected sizes will not have their retina equivalent generated.', 'wp-retina-2x' ),
-                'type' => 'multicheck',
-                'options' => $sizes
-            ),
-            array(
-                'name' => 'auto_generate',
-                'label' => __( 'Auto Generate', 'wp-retina-2x' ),
-                'desc' => __( 'Generate retina images automatically when images are uploaded or re-generated.<br /><small>The \'Disabled Sizes\' will be skipped.</small>', 'wp-retina-2x' ),
-                'type' => 'checkbox',
-                'default' => true
-            ),
-            array(
-                'name' => 'disable_responsive',
-                'label' => __( 'Disable Responsive<br/>(WP 4.4+)', 'wp-retina-2x' ),
-                'desc' => __( 'Disable the Responsive Images feature of WordPress 4.4+.<br /><small>This feature can be quite messy for many websites as it creates a src-set automatically with all your image sizes in it. You can disable it completely here and get back control over your HTML as it is in the editor (while keeping the plugin adding Retina support, of course).</small>', 'wp-retina-2x' ),
-                'type' => 'checkbox',
-                'default' => false
-            ),
-            array(
-                'name' => 'disable_medium_large',
-                'label' => __( 'Disable Medium Large<br/>(WP 4.4+)', 'wp-retina-2x' ),
-                'desc' => __( 'Disable the image size called "Medium Large" created by in WordPress 4.4+.<br /><small>You probably don\'t need this and it creates additional images. Be careful however, future themes might use it.</small>', 'wp-retina-2x' ),
-                'type' => 'checkbox',
-                'default' => false
-            ),
-            array(
-                'name' => 'full_size',
-                'label' => __( 'Full Size Retina (Pro)', 'wp-retina-2x' ),
-                'desc' => __( 'Retina for the full-size image will be considered required.<br /><small>Checks for Full-Size retina will be enabled and upload features made available.</small>', 'wp-retina-2x' ),
-                'type' => 'checkbox',
-                'default' => false
-            )
+    'wr2x_basics' => array(
+         array(
+            'name' => 'ignore_sizes',
+            'label' => __( 'Disabled Sizes', 'wp-retina-2x' ),
+            'desc' => __( '<br />The selected sizes will not have their retina equivalent generated.', 'wp-retina-2x' ),
+            'type' => 'multicheck',
+            'options' => $sizes
         ),
+        array(
+            'name' => 'auto_generate',
+            'label' => __( 'Auto Generate', 'wp-retina-2x' ),
+            'desc' => __( 'Generate retina images automatically when images are uploaded or re-generated.<br /><small>The \'Disabled Sizes\' will be skipped.</small>', 'wp-retina-2x' ),
+            'type' => 'checkbox',
+            'default' => true
+        ),
+        array(
+            'name' => 'disable_responsive',
+            'label' => __( 'Disable Responsive<br/>(WP 4.4+)', 'wp-retina-2x' ),
+            'desc' => __( 'Disable the Responsive Images feature of WordPress 4.4+.<br /><small>This feature can be quite messy for many websites as it creates a src-set automatically with all your image sizes in it. You can disable it completely here and get back control over your HTML as it is in the editor (while keeping the plugin adding Retina support, of course).</small>', 'wp-retina-2x' ),
+            'type' => 'checkbox',
+            'default' => false
+        ),
+        array(
+            'name' => 'disable_medium_large',
+            'label' => __( 'Disable Medium Large<br/>(WP 4.4+)', 'wp-retina-2x' ),
+            'desc' => __( 'Disable the image size called "Medium Large" created by in WordPress 4.4+.<br /><small>You probably don\'t need this and it creates additional images. Be careful however, future themes might use it.</small>', 'wp-retina-2x' ),
+            'type' => 'checkbox',
+            'default' => false
+        ),
+        array(
+            'name' => 'full_size',
+            'label' => __( 'Full Size Retina (Pro)', 'wp-retina-2x' ),
+            'desc' => __( 'Retina for the full-size image will be considered required.<br /><small>Checks for Full-Size retina will be enabled and upload features made available.</small>', 'wp-retina-2x' ),
+            'type' => 'checkbox',
+            'default' => false
+        )
+    ),
 		'wr2x_advanced' => array(
-			array(
+		    array(
                 'name' => 'method',
                 'label' => __( 'Method', 'wp-retina-2x' ),
                 'desc' => __( '<br />In all cases (including "None"), Retina support will be added to the Responsive Images created by WP 4.4.<br />Check the <a href="http://apps.meow.fr/wp-retina-2x/retina-methods/">Retina Methods</a> page if you want to know more about those methods.', 'wp-retina-2x' ),
@@ -164,7 +164,6 @@ function wr2x_admin_init() {
           					'Retina-Images' => __( "Retina-Images<br /><small>This sets up a server handler for the images. Basically, the server sends retina images to retina devices under the same filenames. Depending on your install, it might be tricky to use, please make sur you check the official page of <a href='https://github.com/Retina-Images/Retina-Images/' target='_blank'>Retina-Images</a>. The .htaccess is modified automatically by WP Retina 2x but needs to be checked. <b>For advanced users only.</b></small><br />", 'wp-retina-2x' ),
 
           					'none' => __( "None", 'wp-retina-2x' ),
-
                 )
             ),
             array(

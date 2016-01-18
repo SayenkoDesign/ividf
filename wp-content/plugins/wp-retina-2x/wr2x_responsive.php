@@ -19,6 +19,8 @@ function wr2x_wp_calculate_image_srcset( $srcset, $size ) {
   $count = 0;
   $total = 0;
   $retinized_srcset = $srcset;
+  if ( empty( $srcset ) )
+    return $srcset;
   foreach ( $srcset as $s => $cfg ) {
     $total++;
     $retina = wr2x_get_retina_from_url( $cfg['url'] );

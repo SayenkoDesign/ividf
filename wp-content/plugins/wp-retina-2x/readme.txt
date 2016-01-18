@@ -3,8 +3,8 @@ Contributors: TigrouMeow
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H2S7S3G4XMJ6J
 Tags: retina, images, image, responsive, admin, attachment, media, files, iphone, ipad, high-dpi
 Requires at least: 3.5
-Tested up to: 4.4
-Stable tag: 4.4.0
+Tested up to: 4.4.1
+Stable tag: 4.4.3
 
 Make your website look beautiful and crisp on modern displays by creating and displaying retina images. WP 4.4+ is also supported and enhanced.
 
@@ -12,9 +12,11 @@ Make your website look beautiful and crisp on modern displays by creating and di
 
 This plugin creates the image files required by the High-DPI devices and displays them to your visitors accordingly. Your website will look beautiful and crisp on every device! The retina images will be generated for you automatically - though you can also do it manually - and served to the retina devices.
 
-It supports different methods to serve the images to your visitors, for instance: PictureFill (future HTML standard + its JS polyfill), Retina.js (JS only), IMG Rewrite (on-the-fly HTML rewrite) and Retina-Images (server handler). A lazy-loading option is available as well. Pick the one that works best with your hosting and WordPress environment. Multi-site are also supported.
-
 From version 4.4, WordPress has support for Responsive Images. WP Retina 2x handles this well and nicely adds the retina images in the src-set created by WordPress. The HTML for the images not handled by WP 4.4 will also be handled by the plugin. Moreover, the plugin also has two options specific to WP 4.4+. One is to disable the Responsive Image support, the second one is to disable the additional image size called Medium Large.
+
+The concept of retina for full-size image is a feature that only exists with this plugin and can't be simulate easily without it.
+
+It supports different methods to serve the images to your visitors, for instance: PictureFill (future HTML standard + its JS polyfill), Retina.js (JS only), IMG Rewrite (on-the-fly HTML rewrite) and Retina-Images (server handler). A lazy-loading option is available as well. Pick the one that works best with your hosting and WordPress environment. Multi-site are also supported.
 
 The plugin is very fast and optimized. It doesn't create anything in the database. In most cases, it doesn't even require any configuration. More information and tutorial available one http://apps.meow.fr/wp-retina-2x/.
 
@@ -27,6 +29,13 @@ PS: The plugin cannot add retina support to your CSS, and therefore your CSS bac
 3. Check if it works! - if it doesn't, read the FAQ, the tutorial, and check the forums.
 
 == Changelog ==
+
+= 4.4.3 =
+* Update: During bulk, doesn't stop in case of errors anymore but display an errors counter.
+
+= 4.4.1 =
+* Update: Ignore Responsive Images support if the media ID is not existent (in case of broken HTML).
+* Info: If you like the plugin, please leave a little review: https://wordpress.org/support/view/plugin-reviews/wp-retina-2x#postform. Thanks a lot and have a nice and happy end of year.
 
 = 4.4.0 =
 * Info: Please read my blog post about WP 4.4 + Retina on http://apps.meow.fr/wordpress-4-4-retina/.

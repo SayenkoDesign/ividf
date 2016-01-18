@@ -24,28 +24,52 @@ function wr2x_admin_head() {
 		var current;
 		var maxPhpSize = <?php echo (int)ini_get('upload_max_filesize') * 1000000; ?>;
 		var ids = [];
+		var errors = 0;
 		var ajax_action = "generate"; // generate | delete
 
 		function wr2x_display_please_refresh() {
-			jQuery('#wr2x_progression').html("<?php echo _e( "<a href='?page=wp-retina-2x&view=issues&refresh=true'>Refresh</a> this page.", 'wp-retina-2x' ); ?>");
+			wr2x_refresh_progress_status();
+			jQuery('#wr2x_progression').html(jQuery('#wr2x_progression').html() + " - <?php echo _e( "<a href='?page=wp-retina-2x&view=issues&refresh=true'>Refresh</a> this page.", 'wp-retina-2x' ); ?>");
+		}
+
+		function wr2x_refresh_progress_status() {
+			var errortext = "";
+			if ( errors > 0 ) {
+				errortext = ' - ' + errors + ' error(s)';
+			}
+			jQuery('#wr2x_progression').text(current + "/" + ids.length +
+				" (" + Math.round(current / ids.length * 100) + "%)" + errortext);
 		}
 
 		function wr2x_do_next () {
 			var data = { action: 'wr2x_' + ajax_action, attachmentId: ids[current - 1] };
-			jQuery('#wr2x_progression').text(current + "/" + ids.length + " (" + Math.round(current / ids.length * 100) + "%)");
+			wr2x_refresh_progress_status();
 			jQuery.post(ajaxurl, data, function (response) {
-				reply = jQuery.parseJSON(response);
-				if (reply.success = false) {
-					alert('Error: ' + reply.message);
-					return;
+				try {
+					reply = jQuery.parseJSON(response);
 				}
-				wr2x_refresh_media_sizes(reply.results);
-				if (reply.results_full) {
-					wr2x_refresh_full(reply.results_full);
+				catch (e) {
+					reply = null;
+				}
+				if ( !reply || !reply.success )
+					errors++;
+				else {
+					wr2x_refresh_media_sizes(reply.results);
+					if (reply.results_full)
+						wr2x_refresh_full(reply.results_full);
 				}
 				if (++current <= ids.length)
 					wr2x_do_next();
 				else {
+					current--;
+					wr2x_display_please_refresh();
+				}
+			}).fail(function () {
+				errors++;
+				if (++current <= ids.length)
+					wr2x_do_next();
+				else {
+					current--;
 					wr2x_display_please_refresh();
 				}
 			});
@@ -54,6 +78,7 @@ function wr2x_admin_head() {
 		function wr2x_do_all () {
 			current = 1;
 			ids = [];
+			errors = 0;
 			var data = { action: 'wr2x_list_all', issuesOnly: 0 };
 			jQuery('#wr2x_progression').text("<?php _e( "Wait...", 'wp-retina-2x' ); ?>");
 			jQuery.post(ajaxurl, data, function (response) {
@@ -441,7 +466,6 @@ function wr2x_wp_ajax_wr2x_retina_details() {
 }
 
 function wr2x_wp_ajax_wr2x_generate() {
-
 	if ( !isset( $_POST['attachmentId'] ) ) {
 		echo json_encode(
 			array(
