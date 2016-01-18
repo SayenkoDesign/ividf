@@ -74,7 +74,7 @@
 							<?php			
 							//menu
 							$alt_menu = get_post_meta($wp_query->post->ID, 'alt_menu');
-							if($alt_menu) {
+							if(is_array($alt_menu) && $alt_menu[0] != '0') {
 								$menu_id = get_post_meta($wp_query->post->ID, 'alt_menu')[0];
 								$menu_obj = wp_get_nav_menu_object($menu_id);
 								$show_mobile_toggle = $menu_obj->count > 1;
