@@ -757,7 +757,23 @@ jQuery(function($){
 		}
 	}
 
-	
+	jQuery('' +
+			'.page-id-3103 a.vc_btn3, ' +
+			'.page-id-3103 .rev-btn, ' +
+			'.page-id-3159 a.vc_btn3, ' +
+			'.page-id-3323 a.vc_btn3, ' +
+			'.page-id-3324 a.vc_btn3, ' +
+			'.page-id-3361 a.vc_btn3' +
+			'').on("click", function(){
+		ga('send', {
+			hitType: 'event',
+			eventCategory: 'Button',
+			eventAction: 'Submit',
+			eventLabel: 'IVIN_Click'
+		});
+		//ga.push("send", "event", "Button", "Submit", "IVIN_Click");
+	});
+
 });
 
 /***********************************/

@@ -8,6 +8,10 @@ Modifications: Jason Cohen, Sean O'Shaughnessy
 Install this file to wp-content/object-cache.php
  */
 
+if ( !defined( 'WP_CACHE_KEY_SALT' ) ) {
+    define( 'WP_CACHE_KEY_SALT', '' );
+}
+
 function wp_cache_add($key, $data, $flag = '', $expire = 0) {
     global $wp_object_cache;
 
@@ -288,7 +292,7 @@ class WP_Object_Cache {
         $prefix = $this->prefix_for_group($group);
         $bucket = $this->bucket_for_group($group);
         $generation = $this->get_generation($bucket);
-        $key =  preg_replace( '/\s+/', '', "v1:$prefix$group:$key:$generation");
+        $key =  preg_replace( '/\s+/', '', "v1:" . WP_CACHE_KEY_SALT . "$prefix$group:$key:$generation");
 		return $this->mcrouter_prefix . $key;
     }
 
@@ -458,7 +462,7 @@ class WP_Object_Cache {
     	
     	global $memcached_servers;
     	global $mcrouter_server;
-	
+
     	// get appropriate bucket
     	if ($mcrouter_server && array_key_exists('host', $mcrouter_server) && array_key_exists('port', $mcrouter_server)) {
     		// use mcrouter host and port if the global mcrouter is set

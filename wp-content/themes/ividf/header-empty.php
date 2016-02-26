@@ -10,6 +10,9 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/html5shiv.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+
+
+
 </head>
 <body <?php body_class( array( OM_THEME_SHORT_PREFIX .'theme', OM_THEME_PREFIX. 'theme' ) ) ?>>
 <!--[if lt IE 8]><p class="chromeframe"><?php _e('You are using an <strong>outdated</strong> browser. Please, <a href="http://browsehappy.com/">upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.','om_theme'); ?></p><![endif]-->

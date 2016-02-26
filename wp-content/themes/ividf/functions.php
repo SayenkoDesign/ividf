@@ -423,6 +423,8 @@ if(!function_exists('om_google_analytics_code')) {
   ga('create', '<?php echo esc_attr($id); ?>', 'auto');
   ga('send', 'pageview');
 
+  console.log(ga);
+
 </script>
 <?php
 		}
@@ -430,9 +432,6 @@ if(!function_exists('om_google_analytics_code')) {
   }
 	add_action('wp_footer', 'om_google_analytics_code');
 }
-
-
-
 
 /**
  * Add a widget to the dashboard.

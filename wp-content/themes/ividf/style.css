@@ -2197,9 +2197,9 @@ html.touch.webkit .om-wpb_row-edge svg { /* 1 pixel gap on iPad bug fix */ margi
 
 .om_theme .vc_toggle { margin: 1em 0 0; }
 .om_theme .vc_toggle_title { padding: 0.6em 1em 0.6em 2.4em; border: 1px solid; position: relative; -webkit-transition: all 0.3s; transition: all 0.3s; }
-.om_theme .vc_toggle_title:after { content: '\e60e'; font-family: 'omFont'; position: absolute; top: 0.6em; left: 0.8em; -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); -webkit-transition: all 0.2s; transition: all 0.2s; }
+.om_theme .vc_toggle_title:after { content: '\e60e'; font-family: 'omFont'; position: absolute; top: 0.8em; left: 0.8em; -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); -webkit-transition: all 0.2s; transition: all 0.2s; }
 .om_theme .vc_toggle.vc_toggle_active .vc_toggle_title:after { -webkit-transform: rotate(0); -ms-transform: rotate(0); transform: rotate(0); }
-.om_theme .vc_toggle_title h4 { display: block; margin: 0; font-size: 100%; font-weight: normal; background: none; }
+.om_theme .vc_toggle_title h4 { display: block; margin: 0; font-size: 144%; font-weight: normal; background: none; }
 .om_theme .vc_toggle_content { margin: 0; border: 1px solid; border-top: 0; padding: 0 0.6em 0 2.4em; }
 .vc_toggle + .vc_toggle { margin-top: 0.6em; }
 /* wpb_accordion */
@@ -2825,7 +2825,14 @@ transform:rotate(360deg)
 
 
 .vc_om-teaser { position: relative; overflow: hidden; cursor: default; }
-.vc_om-teaser.om-t-align-center { text-align: center; }
+.vc_om-teaser.om-t-align-center { 
+    text-align: center; 
+    font-size: 18px;
+    font-weight: 500;
+
+}
+
+
 .vc_om-teaser.om-t-align-right { text-align: right; }
 .vc_om-teaser a.om-t-link { display: block; color: inherit; position: absolute; top: 0; left: 0; right: 0; bottom: 0; }
 .vc_om-teaser a:hover { text-decoration: none; }

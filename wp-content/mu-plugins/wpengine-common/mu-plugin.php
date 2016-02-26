@@ -79,8 +79,10 @@ if ( is_multisite() ) {
 //temporary location for login-protection script
 //@TODO should be it's own plugin probably
 
-add_filter( 'site_url', 'wpe_filter_site_url', 0, 4 );
-add_filter( 'network_site_url', 'wpe_filter_site_url', 0, 3 );
+//Some user-plugins have site_filters that don't always persist the query args that we set in wpe_filter_site_url
+//So let's up our priority to 99 (default 10) so that our filter gets run later than the other plugin filters
+add_filter( 'site_url', 'wpe_filter_site_url', 99, 4 );
+add_filter( 'network_site_url', 'wpe_filter_site_url', 99, 3 );
 /**
  * Filter the value returned for 'site_url'
  *

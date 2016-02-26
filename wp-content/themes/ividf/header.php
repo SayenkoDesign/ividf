@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
+
+
+
+
 	<meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
 	<?php if(get_option(OM_THEME_PREFIX . 'responsive') == 'true') : ?><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" /><?php endif; ?>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,6 +20,39 @@
 	<?php wp_head(); ?>
    
     <link rel="stylesheet" href="http://inventiondevfund.com/wp-content/themes/ividf/fonts/stylesheet.css" type="text/css" charset="utf-8" />
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-67833907-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+<script type="text/javascript">var switchTo5x=true;</script>
+<script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
+<script type="text/javascript" src="https://ss.sharethis.com/loader.js"></script>
+
+<script type="text/javascript">
+        stLight.options({
+                publisherGA:"UA-67833907-1"
+        });
+</script>
+
+<script type="text/javascript">stLight.options({publisher: "336c8463-bd61-4ca3-911e-be8aead2e32b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+<script>
+var options={ "publisher": "336c8463-bd61-4ca3-911e-be8aead2e32b", "position": "right", "ad": { "visible": false, "openDelay": 5, "closeDelay": 0}, "chicklets": { "items": ["linkedin", "twitter","googleplus", "facebook", "email", "sharethis"]}, "chicklets_params": { twitter:{ "st_via":"" }}};
+
+
+
+var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
+</script>
+
+<link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 
 </head>
 <body <?php body_class( array( OM_THEME_SHORT_PREFIX .'theme', OM_THEME_PREFIX. 'theme' ) ) ?>>
@@ -74,13 +111,15 @@
 							<?php			
 							//menu
 							$alt_menu = get_post_meta($wp_query->post->ID, 'alt_menu');
-							if(is_array($alt_menu) && $alt_menu[0] != '0') {
+							//echo "<!-- " . var_dump($alt_menu) . "-->";
+							if(is_array($alt_menu) && $alt_menu[0]) {
 								$menu_id = get_post_meta($wp_query->post->ID, 'alt_menu')[0];
 								$menu_obj = wp_get_nav_menu_object($menu_id);
 								$show_mobile_toggle = $menu_obj->count > 1;
 							} else {
 								$show_mobile_toggle = true;
 							}
+							//echo "<!-- " . var_dump($show_mobile_toggle) . "-->";
 							$menu = wp_nav_menu( array(
 								'theme_location' => 'primary-menu',
 								'menu' => $menu_id,
@@ -221,6 +260,9 @@
 								</div>
 							</div>
 						</div><?php */?>
+
+
+
 					</header>
 				</div>
 				

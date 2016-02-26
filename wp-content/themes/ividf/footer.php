@@ -254,5 +254,7 @@ jQuery(document).ready(function() {
 
 <?php wp_footer(); ?>
 
+
+
 </body>
 </html>
