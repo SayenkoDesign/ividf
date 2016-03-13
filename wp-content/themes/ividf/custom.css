@@ -103,3 +103,27 @@
         font-size: 24px !important;
     }
 }
+
+/** blog teaser images **/
+.link-zoom {
+    display: none;
+}
+
+.post-media .hover-image-extra .link-url {
+    margin-left: -25px;
+}
+
+/** news page fixes **/
+/**.header-layout-3 {
+    background-color: #FFF;
+}*/
+.page-title-wrapper {
+    clear: both;
+}
+.container::before, .container::after {
+    content: " ";
+    display: table;
+}
+.container::after {
+    clear: both;
+}
