@@ -1,5 +1,9 @@
 "use strict";
 
+// google chart
+// Load the Visualization API and the corechart package.
+google.charts.load('current', {'packages':['corechart']});
+
 jQuery(function($){
 
 	if(!$.browser)
@@ -774,6 +778,59 @@ jQuery(function($){
 		//ga.push("send", "event", "Button", "Submit", "IVIN_Click");
 	});
 
+	// Set a callback to run when the Google Visualization API is loaded.
+	google.charts.setOnLoadCallback(drawChart);
+
+	// Callback that creates and populates a data table,
+	// instantiates the pie chart, passes in the data and
+	// draws it.
+	function drawChart() {
+		// Create the data table.
+		var data = google.visualization.arrayToDataTable([
+			['Element', 'Bln Liters', { role: 'style' } ],
+			['Austalia', -1.5, 'stroke-color: #e75956; fill-color: #e75956; fill-opacity: 0.2'],
+			['North America', -0.2, 'stroke-color: #e75956; fill-color: #e75956; fill-opacity: 0.2'],
+			['W. Europe', 1.5, 'stroke-color: #e75956; fill-color: #e75956; fill-opacity: 0.2'],
+			['E. Europe', 3, 'stroke-color: #e75956; fill-color: #e75956; fill-opacity: 0.2'],
+			['Latin America', 4.5, 'stroke-color: #e75956; fill-color: #e75956; fill-opacity: 0.2'],
+			['Africa', 6.5, 'stroke-color: #e75956; fill-color: #e75956; fill-opacity: 0.2'],
+			['Asia', 10.8, 'stroke-color: #e75956; fill-color: #e75956; fill-opacity: 0.2']
+		]);
+
+		// Set chart options
+		var options = {
+			title: 'Compound Annual Growth in Liters 2011 to 2016',
+			titleTextStyle: {fontName: 'Raleway', fontSize: '20', fontWidth: 'normal', bold: false},
+			backgroundColor: { fill:'transparent' },
+			chartArea: {
+				left: 20,
+				width: "100%"
+			},
+			vAxis: {
+				gridlines: {color: '#FAF7E7'},
+				textStyle: {color: '#BBBBBB'}
+			},
+			hAxis: {
+				gridlines: {color: '#FAF7E7'},
+				textStyle: {color: '#BBBBBB'}
+			},
+			width: "100%",
+			height: "600",
+			bar: {
+				groupWidth: '90%'
+			},
+			legend: { position: "bottom", textStyle: {color: '#BBBBBB', fontSize: 16} },
+			colors: ['#FADEDD']
+		};
+
+		// Instantiate and draw our chart, passing in some options.
+		var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+		chart.draw(data, options);
+	}
+
+	jQuery(window).on("resize", function(){
+		drawChart();
+	})
 });
 
 /***********************************/

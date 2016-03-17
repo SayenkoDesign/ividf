@@ -260,6 +260,7 @@ if(!function_exists('om_enqueue_scripts')) {
 		}
 				
 		wp_enqueue_script('jquery');
+		wp_enqueue_script('google_charts', "https://www.gstatic.com/charts/loader.js");
 		//wp_enqueue_script('hoverIntent');
 		wp_enqueue_script('omLibraries', TEMPLATE_DIR_URI.'/js/libraries.js', array('jquery'), false, true);
 		wp_enqueue_script('superfish', TEMPLATE_DIR_URI.'/js/jquery.superfish.min.js', array('jquery'), false, true);
@@ -269,7 +270,7 @@ if(!function_exists('om_enqueue_scripts')) {
 		}
 		wp_enqueue_script('om-isotope', TEMPLATE_DIR_URI.'/js/isotope.pkgd.om.min.js', array('jquery'), false, true);
 		wp_enqueue_script('waypoints', TEMPLATE_DIR_URI.'/js/jquery.waypoints.min.js', array('jquery'), false, true);
-		wp_enqueue_script('om_custom', TEMPLATE_DIR_URI.'/js/custom.js', array('jquery','omLibraries'), OM_THEME_VERSION, true);
+		wp_enqueue_script('om_custom', TEMPLATE_DIR_URI.'/js/custom.js', array('jquery','omLibraries', 'google_charts'), OM_THEME_VERSION, true);
 		
 		if(get_option(OM_THEME_PREFIX . 'disable_smoothscroll') != 'true') {
 			wp_enqueue_script('smoothscroll', TEMPLATE_DIR_URI.'/js/jquery.smoothscroll.js', array(), false, true);
