@@ -552,6 +552,7 @@ if ( is_wpe_snapshot() ) {
 			</p>
 			<p class="table-select" style="display:none;">
 			<label>Select Tables</label>
+			<a id="wpe-add-all-tables">Add all tables</a> | <a id="wpe-remove-all-tables">Remove all tables</a>
 			<select name="tables[]" style="width:300px;" class="chzn chzn-select" multiple data-placeholder="(start typing to see a list)" >
 			<?php foreach($tables as $table) : ?>
 				<option value="<?php echo $table; ?>" <?php if('wp_options' == $table) echo 'selected'; ?>><?php echo $table; ?></option>
@@ -571,7 +572,7 @@ $can_push_staging = is_staging_gte($production_version, $staging_status['version
 
 		<?php if($can_push_staging): ?>
 			<div class="submit form-actions">
-				<p><buttom id="submit-deploy" name="submit-deploy" value="Submit" class="btn btn-primary" >Submit</button></p>
+				<p><buttom id="submit-deploy" name="submit-deploy" value="Submit" class="btn btn-primary" >Deploy to Production</button></p>
 			</div>
                 <?php else: ?>
 			<div class='alert-message alert-error'>

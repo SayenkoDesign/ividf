@@ -18,7 +18,7 @@ jQuery(document).ready(function($) {
 
 	if(filename == 'update-core.php' && $('form.upgrade').length > 0 && wpe.popup_disabled != 1 ) {
   		$('form[name="upgrade"] input[type=submit]').click(function(e) { e.preventDefault(); });
-	  	$('form[name="upgrade"] input[type=submit]').attr('onclick','wpe_validate_upgrade("upgrade");');
+		$('form[name="upgrade"] input[type=submit]').attr('onclick','wpe_validate_upgrade("upgrade", this);');
 
   		$('form[name="upgrade-plugins"] input[type=submit]').click(function(e) { e.preventDefault(); });
 	  	$('form[name="upgrade-plugins"] input[type=submit]').attr('onclick','wpe_validate_upgrade("upgrade-plugins");');
@@ -38,7 +38,7 @@ jQuery(document).ready(function($) {
 	$('#doaction').click(function(e) { e.preventDefault(); });
 	$('#doaction').attr('onclick','wpe_validate_bulk_form();');
 
-	} else if( filename == 'plugin-install.php' && wpe.popup_disabled != 1 && !has_args("tab=favorites") ) {
+	} else if( filename == 'plugin-install.php' && wpe.popup_disabled != 1 ) {
 
 		$('a.install-now').click(function(e) {
 			// Replace WordPress default confirm popup with our own bindable one
@@ -50,16 +50,20 @@ jQuery(document).ready(function($) {
 			e.preventDefault();
 			e.stopImmediatePropagation();
 		});
-
-		$(document).on('click','input[type="submit"]',function(e) {
-			if( $(this).attr('name') != 'plugin-search-input' && $(this).attr('id') != 'search-submit' ) {
-				e.preventDefault();
-				$(this).parent().attr('id','form-to-submit');
-				wpe_validate_install();
-			}
-		});
 	}
 
+	// Logic for add all tables and remove all tables buttons.
+	if ( has_args('page=wpengine-common') && has_args('tab=staging') ) {
+		$('#wpe-add-all-tables').on('click', function() {
+			$("[name='tables[]'] option").prop('selected', true);
+			$("[name='tables[]']").trigger('liszt:updated');
+		});
+
+		$('#wpe-remove-all-tables').on('click', function() {
+			$("[name='tables[]'] option").prop('selected', false);
+			$("[name='tables[]']").trigger('liszt:updated');
+		});
+	}
 });
 /*
  * Class for managing the Deploy from staging response
@@ -181,15 +185,21 @@ function has_args(str) {
 }
 
 /**
-	* Accepts the form identifier and applies the popup confirmation
-	*
-	*/
-function wpe_validate_upgrade(form) {
+ * Display backup confirmation dialog and submit the original form.
+ * @param  {string} form    The name of the form to submit when the user clicks "No thanks".
+ * @param  {object} element The element that was clicked (optional). This can be used if two forms share the same name.
+ */
+function wpe_validate_upgrade(form, element) {
 	apprise(warning, {'confirm':true,'textCancel': "Yes, open my WP Engine Dashboard in a new window.",'textOk':'No thanks, I already did this.' }, function(r) {
 		if(r != false) {
 			append = '<input type="hidden" name="upgrade" value="1" />';
-			jQuery('form[name="'+form+'"]').append(append);
-			jQuery('form[name="'+form+'"]').submit();
+			if ("undefined" !== typeof element) {
+				jQuery(element).closest("form").append(append);
+				jQuery(element).closest("form").submit();
+			} else {
+				jQuery('form[name="'+form+'"]').append(append);
+				jQuery('form[name="'+form+'"]').submit();
+			}
 		} else {
 			window.open('https://my.wpengine.com/installs/'+wpe.account+'/backup_points','_blank');
 		}

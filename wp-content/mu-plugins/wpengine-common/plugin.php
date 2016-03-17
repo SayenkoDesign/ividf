@@ -1964,7 +1964,7 @@ class WpeCommon extends WpePlugin_common {
             }
 
             // Always purge the post's own URI, along with anything similar
-            $post_parts = parse_url( post_permalink( $post_id ) );
+            $post_parts = parse_url( get_permalink( $post_id ) );
             $post_uri   = rtrim($post_parts['path'],'/')."(.*)";
             if ( ! empty( $post_parts['query'] ) ) {
                 $post_uri .= "?" . $post_parts['query'];
