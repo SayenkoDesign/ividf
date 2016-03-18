@@ -127,3 +127,50 @@
 .container::after {
     clear: both;
 }
+
+/** technologu innovations **/
+.video_hover.centered .play_icon, .video_hover.centered .play_icon {
+    background-image: url("../ividf/img/Video-Play-Icon.png");
+    background-position: 0;
+    height: 77px;
+    width: 76px;
+    position: absolute;
+    top: calc(50% - 38px);
+    left: calc(50% - 36px);
+}
+.video_hover.centered:hover .play_icon, .page-id-85 .video_hover.centered:hover .play_icon {
+    background-image: url("../ividf/img/Video-Play-Icon-Hover.png") !important;
+    background-position: 0 !important;
+    height: 77px !important;
+    width: 76px !important;
+    position: absolute !important;
+    top: calc(50% - 38px) !important;
+    left: calc(50% - 36px) !important;
+}
+
+/** about **/
+#about {
+    background-position: bottom center !important;
+}
+
+
+@media all and (min-width: 768px) and (max-width: 900px) {
+    .vc_icon_element + .wpb_text_column h1 {
+        font-size: 200% !important;
+    }
+    .vc_icon_element + .wpb_text_column h1 + h5 {
+        font-size: 16px !important;
+    }
+}
+
+/** home **/
+.heading-1 h1 {
+    font-size: 36px !important;
+    margin-bottom: 1.5em !important;
+}
+@media all and (min-width: 768px) {
+    .heading-1 h1 {
+        font-size: 52px !important;
+        margin-bottom: 1em !important;
+    }
+}
