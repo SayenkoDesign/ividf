@@ -271,7 +271,8 @@ if(!function_exists('om_enqueue_scripts')) {
 		wp_enqueue_script('om-isotope', TEMPLATE_DIR_URI.'/js/isotope.pkgd.om.min.js', array('jquery'), false, true);
 		wp_enqueue_script('waypoints', TEMPLATE_DIR_URI.'/js/jquery.waypoints.min.js', array('jquery'), false, true);
 		wp_enqueue_script('om_custom', TEMPLATE_DIR_URI.'/js/custom.js', array('jquery','omLibraries', 'google_charts'), OM_THEME_VERSION, true);
-		
+		wp_enqueue_script('youtube_google_analytics', TEMPLATE_DIR_URI.'/js/youtube-google-analytics-8.0.2/lunametrics-youtube.gtm.js', array('jquery'), OM_THEME_VERSION, true);
+
 		if(get_option(OM_THEME_PREFIX . 'disable_smoothscroll') != 'true') {
 			wp_enqueue_script('smoothscroll', TEMPLATE_DIR_URI.'/js/jquery.smoothscroll.js', array(), false, true);
 		}
