@@ -283,7 +283,7 @@ if(!function_exists('om_enqueue_scripts')) {
 		wp_register_script('typicons-loader', TEMPLATE_DIR_URI.'/libraries/typicons/loader.js', array(), false, true);
 		wp_register_script('font-awesome-loader', TEMPLATE_DIR_URI.'/libraries/fontawesome/loader.js', array(), false, true);
 
-		wp_enqueue_style('custom', TEMPLATE_DIR_URI.'/custom.css');
+		wp_enqueue_style('custom', TEMPLATE_DIR_URI.'/custom.css', [], md5(file_get_contents(TEMPLATE_DIR_URI.'/custom.css')));
   }
 
 	add_action('wp_enqueue_scripts', 'om_enqueue_scripts');

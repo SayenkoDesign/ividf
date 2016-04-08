@@ -129,14 +129,56 @@
 }
 
 /** technologu innovations **/
+.inline-images > .wpb_column {
+    text-align: center;
+    width: 100%;
+}
+.inline-images > .wpb_column > .wpb_wrapper {
+    display: inline-block;
+}
+.inline-images .wpb_single_image {
+    float: left;
+    max-width: 33.33%;
+}
+/*
+.vc_row-fluid.inline-images {
+    margin-left: 0;
+    margin-right: 0;
+}
+#inline-images .om-c-container-inner {
+    margin: 0;
+}
+.inline-images .wpb_column {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.inline-images {
+    text-align: center;
+}
+.inline-images .wpb_single_image {
+    margin: 60px 0;
+}
+.inline-images .wpb_single_image img {
+    width: 100%;
+}
+.inline-images .wpb_single_image {
+    margin: 0;
+}
+@media all and (min-width: 1200px) {
+    .vc_row-fluid.inline-images > div:first-of-type {
+        margin-left: 12.5%;
+    }
+}
+*/
+
 .video_hover.centered .play_icon, .video_hover.centered .play_icon {
-    background-image: url("../ividf/img/Video-Play-Icon.png");
-    background-position: 0;
-    height: 77px;
-    width: 76px;
-    position: absolute;
-    top: calc(50% - 38px);
-    left: calc(50% - 36px);
+    background-image: url("../ividf/img/Video-Play-Icon.png") !important;
+    background-position: 0 !important;
+    height: 77px !important;
+    width: 76px !important;
+    position: absolute !important;
+    top: calc(50% - 38px) !important;
+    left: calc(50% - 36px) !important;
 }
 .video_hover.centered:hover .play_icon, .page-id-85 .video_hover.centered:hover .play_icon {
     background-image: url("../ividf/img/Video-Play-Icon-Hover.png") !important;
