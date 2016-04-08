@@ -210,6 +210,34 @@
     font-size: 36px !important;
     margin-bottom: 1.5em !important;
 }
+
+@media all and (max-width: 767px) {
+    .ompf-preview-layout-full-hover .ompf-portfolio-thumb a .ompf-desc-wrapper,
+    .ompf-preview-layout-full-hover-2 .ompf-portfolio-thumb .ompf-desc-wrapper {
+        background-color: rgba(14,115,163,0.85);
+    }
+    .ompf-preview-layout-full-hover .ompf-portfolio-thumb .ompf-desc-wrapper,
+    .ompf-preview-layout-full-hover-2 .ompf-portfolio-thumb .ompf-desc-wrapper {
+        opacity: 1;
+    }
+    .ompf-preview-layout-full-hover .ompf-portfolio-thumb a .ompf-desc-wrapper::before {
+        opacity: 0.3;
+        -webkit-transform: scale(1, 1);
+        transform: scale(1, 1);
+    }
+    .ompf-preview-layout-full-hover .ompf-portfolio-thumb a .ompf-title {
+        top: 0;
+        opacity: 1;
+        -webkit-transition: all 0.3s;
+        transition: all 0.3s;
+    }
+    .ompf-preview-layout-full-hover .ompf-portfolio-thumb a .ompf-text {
+        top: 0;
+        opacity: 0.8;
+        -webkit-transition: all 0.3s ease 0.15s;
+        transition: all 0.3s ease 0.15s;
+    }
+}
 @media all and (min-width: 768px) {
     .heading-1 h1 {
         font-size: 52px !important;
