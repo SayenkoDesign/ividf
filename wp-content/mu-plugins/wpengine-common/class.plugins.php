@@ -13,25 +13,45 @@ if( !class_exists("PluginsConfig") ) {
 		var $skip = array();
 
 		public function __construct() {}
-		
+
 		public static function sniff() {
 			foreach( self::$plugins as $plugin => $codename ) {
-				if( is_plugin_active($plugin) ) {	
-					PluginsConfig::notify($codename);		
+				if( is_plugin_active($plugin) ) {
+					PluginsConfig::notifyActive($codename);
 				}
 			}
 		}
+
+		public static function pluginActivated($plugin) {
+			if (array_key_exists($plugin, self::$plugins)) {
+				self::notifyActive(self::$plugins[$plugin]);
+			}
+		}
+
+		public static function pluginDeactivated($plugin) {
+			if (array_key_exists($plugin, self::$plugins)) {
+				self::notifyInactive(self::$plugins[$plugin]);
+			}
+		}
+
+		private static function notifyActive($codename) {
+			self::doApiRequest('nginx-profile-add', $codename);
+		}
+
+		private static function notifyInactive($codename) {
+			self::doApiRequest('nginx-profile-remove', $codename);
+		}
 		
-		public static function notify($codename) {
+		private static function doApiRequest($method, $codename) {
 			//not using our class cuz it's throwing errors. 
 			$uri = "https://api.wpengine.com/1.2/index.php";
-			$uri = add_query_arg( array( 
-				"method"=>"nginx-profile-add", 
-				"profile"=>$codename, 
+			$uri = add_query_arg( array(
+				"method"=>$method,
+				"profile"=>$codename,
 				"location"=>"nginx-before-in-location",
 				"account_name"=>PWP_NAME,
-				"wpe_apikey"=>WPE_APIKEY 
-				), 
+				"wpe_apikey"=>WPE_APIKEY
+				),
 			$uri);
 			$resp = wp_remote_get($uri);
 			$r = json_decode($resp['body'],1);
@@ -41,7 +61,6 @@ if( !class_exists("PluginsConfig") ) {
 				error_log("WPE API [success]:  $codename ".$r['data']);
 			}
 		}
-
 	}
 }
 /*

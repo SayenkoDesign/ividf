@@ -261,4 +261,6 @@ v2.2.6
 	- Revamp the way purges are sent to varnish and cdn.
 v2.2.7
 	- Revamp backup reminder notices to work with inline ‘Shiny Updates’ in WordPress 4.2
+v2.2.8
+        - Remove unused parameter for setting up default WP user.
 

@@ -114,22 +114,6 @@ if ( WPE_CDN_DISABLE_ALLOWED && wpe_param( 'cdn-control' ) ) {
     }
 }
 
-// Process saving object cache status
-if ( wpe_param( 'object-cache-control' ) ) {
-    check_admin_referer( PWP_NAME . '-config' );
-
-	// Enabled/Disabled
-    $current_state = $this->is_object_cache_enabled();
-    $new_state     = !!$_REQUEST['object-cache-enable'];
-    if ( $current_state != $new_state ) {
-        $this->set_object_cache_enabled( $new_state );
-        WpeCommon::purge_varnish_cache();  // refresh our own cache (after CDN purge, in case that needed to clear before we access new content)
-        $message = "Object/Transient cache support is now <b>" . ($new_state ? 'enabled' : 'disabled') . "</b>.";
-    } else {
-        $message = "No change; object/transient cache support was already " . ($new_state ? 'enabled' : 'disabled') . ".";
-    }
-}
-
 // Process saving advanced info
 if ( wpe_param( 'advanced' ) ) {
     check_admin_referer( PWP_NAME . '-config' );
@@ -223,7 +207,7 @@ if ( is_wpe_snapshot() ) {
         <? } else { ?>
             <p>Your DNS should either be set to CNAME to <code><?= $site_info->name ?>.wpengine.com</code> or an A record to <code class="wpe_public_ip"><?= $site_info->public_ip ?></code>.</p>
         <? } ?>
-			<p>Your SFTP access (<i>not FTP!</i>) is at hostname <code><?= $site_info->sftp_host ?></code> or IP at <code class="wpe_sftp_ip"><?= $site_info->sftp_ip ?></code> on port <code><?= $site_info->sftp_port ?></code>. Username and password starts out the same as you specified when you signed up for your blog (which was <code><?= $site_info->name ?></code>), but can be <a href="<?php echo get_option('wpe-install-userportal','https://my.wpengine.com'); ?>" target="_blank">changed here</a>.</p>
+			<p>Your SFTP access (<i>not FTP!</i>) is at hostname <code><?= $site_info->sftp_host ?></code> or IP at <code class="wpe_sftp_ip"><?= $site_info->sftp_ip ?></code> on port <code><?= $site_info->sftp_port ?></code>. You will need to create a Username and Password in order to gain access. This can be <a href="<?php echo get_option('wpe-install-userportal','https://my.wpengine.com'); ?>" target="_blank">created here</a>.</p>
 		</div><!--.span-30-->
       		<br class="clear"/>
 
@@ -253,26 +237,20 @@ if ( is_wpe_snapshot() ) {
 				<tr valign="top">
 					<th scope="row"><label for="object-cache-enable">Object/Transient Cache</label></th>
 					<td>
-						<? if ( defined('WP_CACHE') && WP_CACHE ) { ?>
-						<select name="object-cache-enable">
-							<option value="1" <?= $this->is_object_cache_enabled() ? "selected" : "" ?> >Enabled</option>
-							<option value="0" <?= $this->is_object_cache_enabled() ? "" : "selected" ?> >Disabled</option>
-						</select>
 						<div class="description">
-         						Generally you want this enabled for maximum speed and scale, but if your site is under active development
-							or if you have a theme or plugin which is incompatible it might
-							be more convenient to have it temporarily disabled.
+						<?php if ( defined('WP_CACHE') && WP_CACHE ) { ?>
+							<p>
+								Object caching is <b><?php echo $this->is_object_cache_enabled() ? "ENABLED" : "DISABLED"; ?></b> for this install.
+								You can <a href="<?php echo esc_url("https://my.wpengine.com/installs/" . PWP_NAME . "/utilities"); ?>" title="Object caching options in WP Engine User Portal" target="_blank">update this setting in the WP Engine User Portal.</a>
+							</p>
+						<?php } else { ?>
+							<p>
+								<b>Cannot enable caching:</b> WordPress object/transient caching requires that <code>WP_CACHE</code>be defined as
+								<code>TRUE</code> inside <code>wp-config.php</code>.  Currently that define is either missing or set to <code>FALSE</code>.
+							</p>
+						<?php } ?>
 						</div>
-						<? } else { ?>
-							<b>Cannot enable caching:</b> WordPress object/transient caching requires that <code>WP_CACHE</code>
-							be defined as <code>TRUE</code> inside <code>wp-config.php</code>.  Currently that define is either
-							missing or set to <code>FALSE</code>.
-						<? } ?>
 					</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><input type="submit" name="object-cache-control" value="Save" class="button-primary" /></td>
 				</tr>
 				<? } ?>
 				<tr>
@@ -535,7 +513,7 @@ if ( is_wpe_snapshot() ) {
 		    </p>
 		</form>
 		<form class="form" id="deploy-from-staging" style="display:none;" action="" method="post">
-			<p><em>By default only your files will be copied back to LIVE. You can chose to move content by checking the tables you would like to move below. Keep in mind these tables will replace the LIVE version with the STAGING version. So for instance if you choose to move wp_posts all posts added to the LIVE site since the staging site was created will be removed. However, a checkpoint of your site will be created so you can 'undo' the changes if necessary. </em></p>
+			<p><em>By default only your files will be copied back to LIVE. You can choose to move content by checking the tables you would like to move below. Keep in mind these tables will replace the LIVE version with the STAGING version. So for instance if you choose to move wp_posts all posts added to the LIVE site since the staging site was created will be removed. However, a checkpoint of your site will be created so you can 'undo' the changes if necessary. </em></p>
 			<?php
 				//tables
 				global $wpdb;

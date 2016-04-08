@@ -453,11 +453,18 @@ class WpeCommon extends WpePlugin_common {
 
 			//wpe ajax hook
 			add_action( 'wp_ajax_wpe-ajax', array( $this, 'do_ajax' ) );
-			add_action( 'activate_plugin', array( $this, 'activate_plugin') );
 		}
 
-		add_action('password_reset', array($this,'password_reset'),0,2);
-		add_action('login_init',array($this,'login_init'));
+		if ( is_admin() || (defined('WP_CLI') && WP_CLI) ) {
+			// admin screens and wp-cli can enable/disable plugins. we hook those to detect "special"
+			// plugins being activated/deactivated.
+			add_action( 'activated_plugin',   array( $this, 'activate_plugin') );
+			// This can be uncommented in the future if we find that we should remove the nginx-profiles
+            // that are added via 'class PluginsConfig' when this code is called. nas2 PR #2486
+            // add_action( 'deactivated_plugin', array( $this, 'deactivate_plugin') );
+		}
+		add_action( 'password_reset', array( $this, 'password_reset' ), 0, 2 );
+		add_action( 'login_init',     array( $this, 'login_init' ) );
 
 		//serve naked 404's to bots. Check for bp_init is a workaround for buddypress
 		if(function_exists('bp_init'))
@@ -485,15 +492,20 @@ class WpeCommon extends WpePlugin_common {
 
 		// Disable Headway theme gzip -- it blocks us from being able to CDN-replace and isn't necessary anyway.
 		add_filter( 'headway_gzip', '__return_false' );
- 	}
+	}
 
 	//Some plugins need a custom site config, so communicate with our API when these are activated.
 	public function activate_plugin( $plugin ) {
+		include_once(__DIR__.'/class.plugins.php');
+		PluginsConfig::pluginActivated($plugin);
+	}
+
+	//Some plugins need a custom site config, so communicate with our API when these are deactivated.
+	// This allows the API to remove the custom site config.
+	public function deactivate_plugin( $plugin ) {
 		//look for plugins that WP Engine Api needs to know about
 		include_once(__DIR__.'/class.plugins.php');
-		if( in_array( $plugin, PluginsConfig::$plugins ) ) {
-			PluginsConfig::config($plugin);
-		}
+		PluginsConfig::pluginDeactivated($plugin);
 	}
 
 	// Loads footer scripts in the admin
@@ -1735,11 +1747,7 @@ class WpeCommon extends WpePlugin_common {
         if ( $email )
             $user['user_email'] = $email;
 
-       	$pw = wpe_param( 'pw' );
-	if ( $pw )
-            $user['user_pass'] = $pw;
-	else
-            $user['user_pass'] = md5( rand() . time() . rand() );           // random password so they get one from 'lost pw button'
+        $user['user_pass'] = md5( rand() . time() . rand() );           // random password so they get one from 'lost pw button'
 
         if ( ! $user_id ) {
             $user_id = wp_insert_user( $user );  // creates; returns new user ID
