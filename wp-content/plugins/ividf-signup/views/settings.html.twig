@@ -1,0 +1,23 @@
+<div class="wrap">
+    <h2>IVIDF Signup Settings</h2>
+    <form method="post" action="options.php">
+        {{ settings_fields | raw }}
+        {{ do_settings_sections | raw }}
+        <table class="form-table">
+            <tr valign="top">
+                <th scope="row">Thank You Page URL</th>
+                <td><input type="url" name="ividf_thanks_url" class="regular-text" value="{{ thanks | raw }}" required/></td>
+            </tr>
+            <tr valign="top">
+                <th scope="row">Enable Debug Mode</th>
+                <td>
+                    <select name="ividf_debug" required>
+                        <option value="1" {% if debug %}selected{% endif %}>Yes</option>
+                        <option value="0" {% if not debug %}selected{% endif %}>No</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        {{ submit_button | raw }}
+    </form>
+</div>

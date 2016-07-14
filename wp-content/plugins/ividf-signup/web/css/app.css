@@ -1,0 +1,107 @@
+.ivin-signup-form {
+    color: #FFF;
+}
+.ivin-signup-form .vc_row {
+    margin-bottom: 1em;
+    margin-left:0;
+    margin-right:0;
+}
+.ivin-signup-form .vc_row .vc_col-sm-6, .ivin-signup-form .vc_row .vc_col-sm-12 {
+    padding: 0 !important;
+}
+.ivin-signup-form .vc_row .vc_col-sm-6:first-of-type {
+    margin-bottom: 1em;
+}
+.ivin-signup-form input[type=text],
+.ivin-signup-form input[type=email],
+.ivin-signup-form input[type=password] {
+    box-sizing: border-box;
+    background-color: #FFF;
+    width: 100%;
+    background-image: url('icons.png');
+    background-repeat: no-repeat;
+    background-position: 5px center;
+    padding-left: 32px;
+}
+.ivin-signup-form select {
+    box-sizing: border-box;
+    background-color: #FFF;
+    width: 100%;
+}
+.ivin-signup-form input[type=submit] {
+    background-color: rgb(123, 193, 66);
+}
+.ivin-signup-form input[type=submit]:hover, .ivin-signup-form input[type=submit]:active {
+    background-color: #FFF;
+    color: rgb(123, 193, 66);
+}
+
+.ivin-signup-form input[name=first_name], .ivin-signup-form input[name=last_name] {
+    background-position: 5px 0;
+}
+.ivin-signup-form input[name=email] {
+    background-position: 5px -170px;
+}
+.ivin-signup-form input[name=invention_ids] {
+    background-position: 5px -36px;
+}
+.ivin-signup-form select {
+    padding: 6px 10px 6px 32px;
+    font-size: 100%;
+    font-family: Raleway;
+}
+.ivin-signup-form select option:disabled, .ivin-signup-form select option.disabled {
+    color: rgb(129, 124, 118);
+}
+.ivin-signup-form .country-icon {
+     content: "";
+     display: block;
+    padding-top: 4px;
+     width: 32px;
+     height: 32px;
+     background-image: url('icons.png');
+     background-repeat: no-repeat;
+     background-position: 5px -127px;
+     position: absolute;
+ }
+
+.ivin-signup-form input.error {
+    color: #ec5840;
+    border-color: rgba(53,53,53,0.15);
+    box-shadow: none;
+}
+.ivin-signup-form label.error {
+    font-size: 12px;
+    box-sizing: border-box;
+    display: block;
+    color: #FFF;
+    background-color: #ec5840;
+    width: 100%;
+    padding: 6px 11px;
+    margin-bottom: 1em;
+}
+
+.ivin-signup-form hr {
+    background-color: rgb(123, 193, 66);
+    color: rgb(123, 193, 66);
+    border-color: rgb(123, 193, 66);
+    margin: 0;
+}
+
+.ivin-signup-form small a {
+    color: #FFF;
+    text-decoration: underline;
+}
+.ivin-signup-form small a:hover {
+    text-decoration: none;
+}
+
+@media (min-width: 768px) {
+    .ivin-signup-form .vc_row .vc_col-sm-6:first-of-type {
+        padding-right: 15px !important;
+        margin-bottom: 0;
+    }
+    .ivin-signup-form .vc_row .vc_col-sm-6:last-of-type {
+        padding-left: 15px !important;
+    }
+}

@@ -1,0 +1,80 @@
+<form action="{{ action | raw }}" method="post" class="ivin-signup-form" id="ivin-signup-form">
+    <input name="action" value="ivin_signup" type="hidden" required>
+    {{ nonce | raw }}
+    <div class="vc_row">
+        <div class="vc_col-sm-6">
+            <input name="first_name" type="text" placeholder="First Name*" {% if previous['first_name'] is defined %}value="{{ previous['first_name'] }}"{% endif %} required>
+        </div>
+        <div class="vc_col-sm-6">
+            <input name="last_name" type="text" placeholder="Last Name*" {% if previous['last_name'] is defined %}value="{{ previous['last_name'] }}"{% endif %} required>
+        </div>
+    </div>
+    <div class="vc_row">
+        <div class="vc_col-sm-6">
+            <input name="email"
+                    type="email"
+                    placeholder="Email*"
+                    {% if previous['email'] is defined %}value="{{ previous['email'] }}"{% endif %}
+                    data-previous="{% if previous['email'] is defined %}{{ previous['email'] }}{% endif %}"
+                    required
+            >
+        </div>
+        <div class="vc_col-sm-6">
+            <div class="country-icon"></div>
+            <select name="home_country" required>
+                <option value="" class="disabled" disabled {% if previous['home_country'] is not defined or not previous['home_country'] %}selected{% endif %}>Select Country</option>
+                {% for country in countries %}
+                    <option value="{{ country | raw }}" {% if previous['home_country'] is defined and previous['home_country'] == country %}selected{% endif %}>{{ country | raw }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+    <div class="vc_row">
+        <div class="vc_col-sm-6">
+            <input name="password" id="password" type="password" placeholder="Password*" required>
+        </div>
+        <div class="vc_col-sm-6">
+            <input name="password_confirmation" type="password" placeholder="Confirm Password*" required>
+        </div>
+    </div>
+    <div class="vc_row">
+        <div class="vc_col-sm-12">
+            <label><input name="worked_before" type="checkbox" {% if previous['worked_before'] is defined and previous['worked_before'] %}checked{% endif %}> I have worked with Intellectual Ventures before</label>
+        </div>
+    </div>
+    <div class="vc_row invention_ids_row">
+        <div class="vc_col-sm-12">
+            <label><input name="invention_ids" type="text" value="{{ previous['invention_ids']|default('') }}" placeholder="Invention IDs (Ex: IL-123456)"></label>
+            <p>
+                <small>
+                    Enter multiple invention IDs separated by commas that were assigned to your invention(s) by Intellectual Ventures.
+                    This is not the same as a patent ID from a patent office.
+                </small>
+            </p>
+            <p>
+                <small>
+                    This info will be used to match up your IVIN account to a known record in our records.
+                    However, this match-up is not immediate so it may take a little time for this info to show up on your profile.
+                </small>
+            </p>
+        </div>
+    </div>
+    <div class="vc_row">
+        <div class="vc_col-sm-12">
+            <hr>
+        </div>
+    </div>
+    <div class="vc_row">
+        <div class="vc_col-sm-12">
+            <small>
+                By clicking <strong>Accept Terms and Continue</strong> below, you represent and warrant that you have read and understood the
+                <a href="https://ivin.intven.com/terms_and_conditions" target="_blank">Terms and Conditions</a> of Use and agree to be bound by them.
+            </small>
+        </div>
+    </div>
+    <div class="vc_row">
+        <div class="vc_col-sm-12">
+            <input type="submit" value="Accept Terms and Continue" />
+        </div>
+    </div>
+</form>
