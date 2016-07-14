@@ -1,3 +1,6 @@
+.logo-menu-wrapper {
+    clear: both;
+}
 .logo-menu-wrapper .logo-box {
     padding-right: 30px;
 }
@@ -9,6 +12,18 @@
     font-family: "CubanoRegular", sans-serif !important;
 }
 
+/** Animal Tracking - RFI **/
+
+.page-id-3508 nav .talk a,
+.page-id-3508.om_theme .vc_btn3.vc_btn3-size-xlg
+.page-id-3508.om_theme .vc_btn3.vc_btn3-style-3d,
+.page-id-3508.om_theme .vc_btn3.vc_btn3-style-flat,
+.page-id-3508 input[type="button"], .page-id-3508 input[type="submit"], .page-id-3508 input[type="reset"]{
+    font-family: "Bevan", sans-serif !important;
+    background-color:#dd8f4b;
+}
+
+
 /** new landing page **/
 .page-id-3103 .header-slider > a {
     display: none;
@@ -18,9 +33,102 @@
     margin-top: -40px;
 }
 
+/** Gravity forms - RFI Home **/
 
-/** form **/
+.page-id-3512 #gform_6 input[type=text], .page-id-3512 #gform_6 textarea {
+    box-sizing: border-box !important;
+    color: #FFF;
+    border-color: #4d4d4d !important;
+    padding: 12px !important;
+    background-color: rgba(255,255,255,0.3) !important;
+}
 
+.page-id-3512 #gform_6 ::-webkit-input-placeholder {
+    color: #4d4d4d;
+    opacity:1;
+}
+
+.page-id-3512 #gform_6 ::-webkit-input-placeholder, .page-id-3512 #gform_6 :-moz-placeholder, .page-id-3512 #gform_6 :-moz-placeholder { /* Firefox 18- */
+    color: #4d4d4d;
+    opacity:1;
+}
+.page-id-3512 #gform_6 ::-webkit-input-placeholder, .page-id-3512 #gform_6 ::-moz-placeholder {  /* Firefox 19+ */
+    color: #4d4d4d;
+    opacity:1;
+}
+.page-id-3512 #gform_6 ::-webkit-input-placeholder, .page-id-3512 #gform_6 :-ms-input-placeholder {
+    color: #4d4d4d;
+    opacity:1;
+}
+/** Gravity forms - Animal Tracking **/
+
+.page-id-3508 #gform_6 input[type=text], .page-id-3508 #gform_6 textarea,
+.page-id-3508 #gform_3 input[type=text], .page-id-3508 #gform_3 textarea,
+.page-id-3508 #gform_2 input[type=text], .page-id-3508 #gform_2 textarea,
+.page-id-3508 #gform_5 input[type=text], .page-id-3508 #gform_5 textarea{
+    box-sizing: border-box;
+    color: #FFF;
+    border-color: #FFF;
+    padding: 12px;
+    background-color: rgba(255,255,255,0.3);
+}
+.page-id-3508 #gform_5 ::-webkit-input-placeholder, .page-id-3508 #gform_3 ::-webkit-input-placeholder, .page-id-3508 #gform_2 ::-webkit-input-placeholder{
+    color: #FFf;
+    opacity:1;
+}
+.page-id-3508 #gform_5 ::-webkit-input-placeholder, .page-id-3508 #gform_3 :-moz-placeholder, .page-id-3508 #gform_2 :-moz-placeholder { /* Firefox 18- */
+    color: #FFf;
+    opacity:1;
+}
+.page-id-3508 #gform_5 ::-webkit-input-placeholder, .page-id-3508 #gform_3 ::-moz-placeholder, .page-id-3508 #gform_2 ::-moz-placeholder {  /* Firefox 19+ */
+    color: #FFf;
+    opacity:1;
+}
+.page-id-3508 #gform_5 ::-webkit-input-placeholder, .page-id-3508 #gform_3 :-ms-input-placeholder, .page-id-3508 #gform_2 :-ms-input-placeholder {
+    color: #FFf;
+    opacity:1;
+}
+.question-form .gform_wrapper {
+    margin-bottom: 0;
+}
+.question-form form {
+    max-width: 600px;
+}
+.question-form .wpb_wrapper {
+    margin-left: 10px;
+}
+
+
+/** Gravity forms - RFI Home **/
+
+.page-id-3512 #gform_6 input[type=text], .page-id-3512 #gform_6 textarea {
+    box-sizing: border-box !important;
+    color: #FFF;
+    border-color: #4d4d4d !important;
+    padding: 12px !important;
+    background-color: rgba(255,255,255,0.3) !important;
+}
+
+.page-id-3512 #gform_6 ::-webkit-input-placeholder {
+    color: #4d4d4d;
+    opacity:1;
+}
+
+.page-id-3512 #gform_6 ::-webkit-input-placeholder, .page-id-3512 #gform_6 :-moz-placeholder, .page-id-3512 #gform_6 :-moz-placeholder { /* Firefox 18- */
+    color: #4d4d4d;
+    opacity:1;
+}
+.page-id-3512 #gform_6 ::-webkit-input-placeholder, .page-id-3512 #gform_6 ::-moz-placeholder {  /* Firefox 19+ */
+    color: #4d4d4d;
+    opacity:1;
+}
+.page-id-3512 #gform_6 ::-webkit-input-placeholder, .page-id-3512 #gform_6 :-ms-input-placeholder {
+    color: #4d4d4d;
+    opacity:1;
+}
+/** Gravity forms - RFI Transformational Snacking **/
+
+.page-id-3512 #gform_6 input[type=text], .page-id-3512 #gform_6 textarea,
 .page-id-3103 #gform_3 input[type=text], .page-id-3103 #gform_3 textarea,
 .page-id-3159 #gform_2 input[type=text], .page-id-3159 #gform_2 textarea,
 .page-id-3346 #gform_5 input[type=text], .page-id-3346 #gform_5 textarea{
@@ -76,6 +184,8 @@
 .page-id-3159 .header-slider {
     border-bottom: none;
 }
+
+
 
 .page-id-3159 nav .talk a,
 .page-id-3159.om_theme .vc_btn3.vc_btn3-size-xlg
@@ -242,5 +352,149 @@
     .heading-1 h1 {
         font-size: 52px !important;
         margin-bottom: 1em !important;
+    }
+}
+/* home heading adjustment */
+.heading-1 h1 {
+    font-size: 36px !important;
+    margin-bottom: 1.5em !important;
+}
+
+@media all and (max-width: 767px) {
+    .heading-1 h1 {
+        margin-top: -6px !important;
+        margin-bottom: 36px !important;
+    }
+    .vc_row .vc_custom_1458331351804 {
+        margin-top: 0 !important;
+    }
+    .vc_row .vc_custom_1458326950970 {
+        margin-top: -7px !important;
+        margin-bottom: -20px !important;
+    }
+    .vc_row .vc_custom_1458324973915 {
+        margin-top: -18px !important;
+        margin-bottom: -98px !important;
+    }
+    .vc_row  .vc_custom_1440799572005 {
+        margin-bottom: -50px !important;
+    }
+    .vc_row .vc_custom_1440807315909 {
+        margin-bottom: -40px !important;;
+    }
+    .vc_row .vc_column_delimiter-vline {
+        margin-top: -44px !important;
+        margin-bottom: -18px !important;
+    }
+    .first-cta .vc_custom_1440811513097 {
+        margin-bottom: -16px !important;
+    }
+    .vc_row .vc_custom_1459290107601 {
+        margin-top: 0 !important;;
+        margin-bottom: -30px !important;
+    }
+    .vc_row .vc_custom_1459290107601 .wpb_wrapper {
+        margin-bottom: -30px !important;
+    }
+    .vc_row .vc_custom_1459290107601 h1 {
+        margin-bottom: -0 !important;
+        margin-top:  16px !important;
+    }
+    .vc_row .vc_custom_1458325000243 {
+        margin-top: -18px !important;
+        margin-bottom: -30px !important;
+    }
+    .vc_row .vc_custom_1443505411445 {
+        margin-top: -32px !important;
+        margin-bottom: -40px !important;;
+    }
+    .second-cta .vc_custom_1440811513097 {
+        margin-bottom: -44px !important;
+    }
+    .vc_row .vc_custom_1442346470053 {
+        margin-bottom: -65px !important;;
+    }
+}
+
+/** translation **/
+#select_language {
+    text-align: right;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: Raleway;
+}
+#lang_sel_click {
+    float: right;
+}
+
+#lang_sel_click li {
+    width: auto;
+    padding-left: 15px;
+}
+#lang_sel_click > ul {
+    margin: 0;
+    padding: 0;
+}
+#lang_sel_click a.lang_sel_sel, #lang_sel_click ul {
+    display: inline-block;
+    list-style-type: none;
+}
+#lang_sel_click a.lang_sel_sel, #lang_sel_click ul ul a {
+    background: none;
+    border: none;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: Raleway;
+}
+#lang_sel_click ul ul {
+    border: none;
+    padding: 0;
+}
+#lang_sel_click a:hover, #lang_sel_click ul ul a:hover, #lang_sel_click :hover > a, #lang_sel_click ul ul :hover > a {
+    background: none;
+    text-decoration: none;
+}
+
+#select_language,
+.menu-stuck #select_language,
+.custom-header-bg-transparent .menu-stuck #select_language {
+    color: #4d4d4d;
+}
+#lang_sel_click a.lang_sel_sel, #lang_sel_click ul ul a,
+.menu-stuck #lang_sel_click a.lang_sel_sel, .menu-stuck  #lang_sel_click ul ul a,
+.custom-header-bg-transparent .menu-stuck #lang_sel_click a.lang_sel_sel, .custom-header-bg-transparent .menu-stuck #lang_sel_click ul ul a  {
+    color: #4d4d4d;
+}
+#lang_sel_click a.lang_sel_sel:hover, #lang_sel_click ul ul a:hover,
+.menu-stuck #lang_sel_click a.lang_sel_sel:hover, .menu-stuck #lang_sel_click ul ul a:hover,
+.custom-header-bg-transparent .menu-stuck #lang_sel_click a.lang_sel_sel:hover, .custom-header-bg-transparent .menu-stuck #lang_sel_click ul ul a:hover {
+    color: #4d4d4d;
+}
+#lang_sel_click a:hover, #lang_sel_click ul ul a:hover, #lang_sel_click :hover > a, #lang_sel_click ul ul :hover > a,
+.menu-stuck #lang_sel_click a:hover, .menu-stuck #lang_sel_click ul ul a:hover, .menu-stuck #lang_sel_click :hover > a, .menu-stuck #lang_sel_click ul ul :hover > a,
+.custom-header-bg-transparent .menu-stuck #lang_sel_click a:hover, .custom-header-bg-transparent .menu-stuck #lang_sel_click ul ul a:hover, .custom-header-bg-transparent .menu-stuck #lang_sel_click :hover > a, .menu-stuck #lang_sel_click ul ul :hover > a {
+    color: #4d4d4d;
+}
+#lang_sel_click ul ul a span,
+.menu-stuck #lang_sel_click ul ul a span,
+.custom-header-bg-transparent .menu-stuck #lang_sel_click ul ul a span {
+    color: #4d4d4d;
+}
+
+@media all and (min-width: 768px) {
+    .custom-header-bg-transparent #select_language {
+        color: #FFF;
+    }
+    .custom-header-bg-transparent #lang_sel_click ul ul a span {
+        color: #FFF;
+    }
+    .custom-header-bg-transparent #lang_sel_click a.lang_sel_sel:hover, #lang_sel_click ul ul a:hover {
+        color: #FFF;
+    }
+    .custom-header-bg-transparent #lang_sel_click a:hover, #lang_sel_click ul ul a:hover, #lang_sel_click :hover > a, #lang_sel_click ul ul :hover > a {
+        color: #FFF;
+    }
+    .custom-header-bg-transparent #lang_sel_click a.lang_sel_sel, #lang_sel_click ul ul a {
+        color: #FFF;
     }
 }

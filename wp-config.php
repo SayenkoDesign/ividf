@@ -1,10 +1,9 @@
 <?php
 # Database Configuration
-define( 'DB_NAME', 'snapshot_ividf' );
-define( 'DB_USER', 'ividf' );
-define( 'DB_PASSWORD', 'fXdXhwdD9pH7mAfq6Vwk' );
+define( 'DB_NAME', 'ividf' );
+define( 'DB_USER', 'root' );
+define( 'DB_PASSWORD', '' );
 define( 'DB_HOST', '127.0.0.1' );
-define( 'DB_HOST_SLAVE', '127.0.0.1' );
 define('DB_CHARSET', 'utf8');
 define('DB_COLLATE', 'utf8_unicode_ci');
 $table_prefix = 'qtx_';

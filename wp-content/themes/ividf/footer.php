@@ -175,6 +175,36 @@
   </div>
 </div>
 
+<!-- RFI Explainer Home - How to Join Network-->
+<div class="modal fade" id="video5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+     
+        <iframe width="900" id="ytplayer5" height="506" src="https://www.youtube.com/embed/HbSo2HmmyWA?autoplay=0" frameborder="0" autostart="true" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- RFI Explainer Home - Why Invent with IVIDF -->
+
+<div class="modal fade" id="video6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+     
+
+        <iframe width="900" id="ytplayer6" height="506" src="https://www.youtube.com/embed/ZkTB5XwIG-A?autoplay=0" frameborder="0" autostart="true" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
 
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/bootstrap.min.js"></script>
 
@@ -184,6 +214,19 @@ jQuery(document).ready(function(){
 		jQuery(".mobile-header-menu-container").toggle();		
     });
 	
+
+                jQuery('#popv6').click(function() 
+		{ 
+		var src_ = jQuery("iframe#ytplayer6").attr('src').replace("autoplay=0", "autoplay=1");
+		jQuery("iframe#ytplayer6").attr('src', src_);		
+		});
+	
+
+                jQuery('#popv5').click(function() 
+		{ 
+		var src_ = jQuery("iframe#ytplayer5").attr('src').replace("autoplay=0", "autoplay=1");
+		jQuery("iframe#ytplayer5").attr('src', src_);		
+		});
 	
                 jQuery('#popv4').click(function() 
 		{ 
@@ -221,6 +264,12 @@ jQuery(document).ready(function(){
 		
 		var vurl = jQuery('#video3').find('iframe').attr('src');
 		jQuery('#video3').find('iframe').attr('src', vurl);
+
+		var vurl = jQuery('#video5').find('iframe').attr('src');
+		jQuery('#video5').find('iframe').attr('src', vurl);
+
+		var vurl = jQuery('#video6').find('iframe').attr('src');
+		jQuery('#video6').find('iframe').attr('src', vurl);
 		
 		
 		var change_src_1 = jQuery("iframe#ytplayer1").attr('src').replace("autoplay=1", "autoplay=0");
@@ -231,6 +280,17 @@ jQuery(document).ready(function(){
 		
 		var change_src_3 = jQuery("iframe#ytplayer3").attr('src').replace("autoplay=1", "autoplay=0");
 		jQuery("iframe#ytplayer3").attr('src', change_src_3);
+
+		var change_src_4 = jQuery("iframe#ytplayer4").attr('src').replace("autoplay=1", "autoplay=0");
+		jQuery("iframe#ytplayer4").attr('src', change_src_4);
+
+
+		var change_src_5 = jQuery("iframe#ytplayer5").attr('src').replace("autoplay=1", "autoplay=0");
+		jQuery("iframe#ytplayer5").attr('src', change_src_5);
+
+		var change_src_6 = jQuery("iframe#ytplayer6").attr('src').replace("autoplay=1", "autoplay=0");
+		jQuery("iframe#ytplayer6").attr('src', change_src_6);
+
 		
 		
 		

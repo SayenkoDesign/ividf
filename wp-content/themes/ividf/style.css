@@ -335,6 +335,8 @@ Table of contents
 
 31. 404 Page
 
+32. Gravity Forms
+
 
 
 
@@ -544,9 +546,10 @@ q { font-style: italic; }
 .primary-menu.show-dropdown-symbol ul li.menu-item-has-children > a:after { content: "\e608"; font-family: "omFont"; margin-left: 0.6em; line-height: 1; }
 .primary-menu > li > a { position: relative; }
 .primary-menu > li > a > .primary-menu-line { content: ''; position: absolute; height: 2px; top: 50%; left: 20px; right: 20px; opacity: 0; margin-top: 0.85em; -webkit-transform: translate3d(0, -4px, 0); transform: translate3d(0, -4px, 0); -webkit-transition: all 0.2s; transition: all 0.2s; z-index: 1; margin: 0 auto; width: 25%; margin-top: 15px; }
+
 .primary-menu > li > a:hover > .primary-menu-line, .primary-menu > li.sfHover > a > .primary-menu-line { -webkit-transform: translate3d(0, 0, 0); -ms-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); opacity: 1; width: 25%; margin: 0 auto; margin-top: 15px; }
 .primary-menu > li { float: left; }
-.primary-menu > li > a { font-size: 15px; font-weight: 500; }
+.primary-menu > li > a { font-size: 14px; font-weight: 500; }
 .primary-menu.menu-bold > li > a { font-size: 125%; font-weight: bold; }
 .primary-menu a { padding: 20px; display: block; text-decoration: none; -webkit-transition: color 0.3s, background 0.3s; transition: color 0.3s, background 0.3s; }
 .header-layout-1 .primary-menu > li > a, .header-layout-3 .primary-menu > li > a { padding-top: 13px !important; padding-bottom: 13px !important; line-height: 20px; }
@@ -2857,12 +2860,12 @@ transform:rotate(360deg)
 .vc_om-click-icon-box-2 .om-cib2-corner, .vc_om-click-icon-box-2 .om-cib2-corner-hover { position: absolute; top: 0; left: 7em; bottom: 0; }
 .vc_om-click-icon-box-2 .om-cib2-corner-hover { border-left-width: 20px; border-left-style: solid; margin-left: -22px; -webkit-transition: all 0.3s; transition: all 0.3s; }
 .vc_om-click-icon-box-2:hover .om-cib2-corner-hover { margin-left: -14px; }
-.vc_om-click-icon-box-2 .om-cib2-content { margin: 0 0 0 7em; padding: 0.5em 0 0.5em 25px; }
+.vc_om-click-icon-box-2 .om-cib2-content { margin: 0 0 0 7em; padding: 2.5em 0 2.5em 25px; }
 .vc_om-click-icon-box-2 .om-cib2-icon-wrapper { position: absolute; top: 50%; left: 0; right: 0; text-align: center; font-size: 4em; line-height: 1; height: 1em; margin-top: -0.5em; }
 .vc_om-click-icon-box-2 .om-cib2-icon-wrapper i { vertical-align: top; }
 .vc_om-click-icon-box-2 .om-cib2-content-title { margin: .4em 20px; font-size: 125%; font-weight: bold; }
 .vc_om-click-icon-box-2 .om-cib2-content-text { margin: 0.5em 20px; }
-.vc_om-click-icon-box-2 .om-cib2-content-text p { margin: 0.5em 0; }
+.vc_om-click-icon-box-2 .om-cib2-content-text p { margin: 1.5em 0; }
 .vc_om-click-icon-box-2 .om-cib2-link { position: absolute; top: 0; right: 0; left: 0; bottom: 0; }
 /* om_posts */
 
@@ -2908,7 +2911,15 @@ transform:rotate(360deg)
 
 
 body.error404 .content-column-content { padding-top: 3em; }
-/* updated css */
+
+
+
+
+/*******************************************
+
+ * 32. Gravity Forms
+
+ *******************************************/
 .header-slider { border-bottom: 8px solid #0e73a3; }
 .home .wpb_column.vc_column_delimiter-vline:after { position: relative !important; }
 nav .talk a { background: #0e73a3; color: #fff; padding-left: 28px; padding-right: 28px;}
@@ -2921,6 +2932,46 @@ nav .talk a { background: #0e73a3; color: #fff; padding-left: 28px; padding-righ
 
 .page-id-3103 .gform_wrapper .ginput_container select { color: #fff; margin-bottom: 13px !important; }
 
+
+.page-id-3512 .gform_wrapper .ginput_container select { color: #fff; margin-bottom: 13px !important; }
+.page-id-3512 .gform_wrapper .gform_title { display: none !important; }
+.page-id-3512 .gform_wrapper .gform_body ul li { margin-bottom: 0 !important; }
+.page-id-3512 .gform_wrapper .gform_body label { display: none !important; }
+.page-id-3512 .gform_wrapper .ginput_container { margin-top: 0; }
+.page-id-3512 .gform_wrapper .ginput_container input { margin-bottom: 13px !important; }
+.page-id-3512 .gform_wrapper .ginput_container select { color: #b1a9a9; margin-bottom: 13px !important; }
+
+.gform_wrapper .ginput_complex .ginput_left, .gform_wrapper .ginput_complex .ginput_right {
+    width: 96.5% !important;
+}
+
+/** Gravity forms - RFI Home **/
+
+.page-id-3512 #gform_6 input[type=text], .page-id-3512 #gform_6 textarea {
+    box-sizing: border-box !important;
+    color: #FFF;
+    border-color: #4d4d4d !important;
+    padding: 12px !important;
+    background-color: rgba(255,255,255,0.3) !important;
+}
+
+.page-id-3512 #gform_6 ::-webkit-input-placeholder {
+    color: #4d4d4d;
+    opacity:1;
+}
+
+.page-id-3512 #gform_6 ::-webkit-input-placeholder, .page-id-3512 #gform_6 :-moz-placeholder, .page-id-3512 #gform_6 :-moz-placeholder { /* Firefox 18- */
+    color: #4d4d4d;
+    opacity:1;
+}
+.page-id-3512 #gform_6 ::-webkit-input-placeholder, .page-id-3512 #gform_6 ::-moz-placeholder {  /* Firefox 19+ */
+    color: #4d4d4d;
+    opacity:1;
+}
+.page-id-3512 #gform_6 ::-webkit-input-placeholder, .page-id-3512 #gform_6 :-ms-input-placeholder {
+    color: #4d4d4d;
+    opacity:1;
+}
 
 
 
@@ -2943,6 +2994,7 @@ nav .talk a { background: #0e73a3; color: #fff; padding-left: 28px; padding-righ
 .gform_wrapper .ginput_container { margin-top: 0; }
 .gform_wrapper .ginput_container input { margin-bottom: 13px !important; }
 .gform_wrapper .ginput_container select { color: #b1a9a9; margin-bottom: 13px !important; }
+
 /* Safari 3.0 and Chrome only */
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 .gform_wrapper .ginput_container select { color: #b1a9a9; margin-bottom: 13px !important; height: 31px !important; }

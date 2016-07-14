@@ -26,12 +26,16 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-67833907-1', 'auto');
+  ga('create', 'UA-67833907-1', 'auto', {allowLinker: true});
   ga('send', 'pageview');
+  ga('require', 'linker');
+  ga('linker:autoLink', ['inventiondevfund.com', 'ivin.intven.com']);
 </script>
 
-
-
+	<!-- sharethis
+	 <?php var_dump($post->post_name); ?>
+	-->
+<?php if ($post->post_name != 'transition-faq'): ?>
 <script type="text/javascript">var switchTo5x=true;</script>
 <script type="text/javascript" src="https://ws.sharethis.com/button/buttons.js"></script>
 <script type="text/javascript" src="https://ss.sharethis.com/loader.js"></script>
@@ -41,6 +45,7 @@
                 publisherGA:"UA-67833907-1"
         });
 </script>
+<?php endif; ?>
 
 <script type="text/javascript">stLight.options({publisher: "336c8463-bd61-4ca3-911e-be8aead2e32b", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
 <script>
@@ -53,7 +58,21 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 
 <link href='https://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<?php if(get_the_ID() == 3508): ?>
+	<link href='https://fonts.googleapis.com/css?family=Rancho' rel='stylesheet' type='text/css'>
 
+<link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet' type='text/css'>
+	<style>
+		.text-rancho {
+			font-family: 'Rancho', cursive !important;
+		}
+
+                .text-bevan {
+			font-family: 'Bevan', cursive !important;
+		}
+
+	</style>
+<?php endif; ?>
 </head>
 <body <?php body_class( array( OM_THEME_SHORT_PREFIX .'theme', OM_THEME_PREFIX. 'theme' ) ) ?>>
 <!--[if lt IE 8]><p class="chromeframe"><?php _e('You are using an <strong>outdated</strong> browser. Please, <a href="http://browsehappy.com/">upgrade to a different browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.','om_theme'); ?></p><![endif]-->
@@ -158,6 +177,9 @@ var st_hover_widget = new sharethis.widgets.hoverbuttons(options);
 											<div class="header-logo-menu">
 												<div class="container">
 													<div class="container-inner">
+														<div id="select_language">
+															<?php do_action('wpml_add_language_selector'); ?>
+														</div>
 														<div class="logo-menu-wrapper">
 															<?php echo om_esc_wpcf($logo); ?>
 															<?php if ($show_mobile_toggle) :?>
