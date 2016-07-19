@@ -122,12 +122,17 @@ add_shortcode('ividf_list', function() use($twig, $api_url, $api_key) {
         'base_uri' => $api_url,
     ]);
 
-    $res = $client->request('GET', 'invention_requests.json', [
-        'query' => ['api_key' => $api_key]
-    ]);
+    //try{
+        $res = $client->request('GET', 'invention_requests.json', [
+            'query' => ['api_key' => $api_key]
+        ]);
 
-    $data = json_decode((string)$res->getBody());
-    return $twig->render('list.html.twig', $data);
+        $data = ['patents' => json_decode((string)$res->getBody())];
+        return $twig->render('list.html.twig', $data);
+    /*}
+    catch (\Exception $e) {
+        return __("There was an error in retrieving the patent information. Please try again later.");
+    }*/
 });
 
 /**

@@ -1,0 +1,9 @@
+<div class="patent-list">
+{% for patent in patents %}
+<ul class="patent">
+    {% if patent.title is defined %}<li class="patent-title">{{ patent.title }}</li>{% endif %}
+    {% if patent.rfi_id is defined %}<li class="patent-id">{{ patent.rfi_id }}</li>{% endif %}
+    {% if patent.summary is defined %}<li class="patent-summary">{{ patent.summary }}</li>{% endif %}
+</ul>
+{% endfor %}
+</div>
