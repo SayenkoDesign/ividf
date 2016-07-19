@@ -127,7 +127,7 @@ add_shortcode('ividf_list', function() use($twig, $api_url, $api_key) {
             'query' => ['api_key' => $api_key]
         ]);
 
-        $data = ['patents' => json_decode((string)$res->getBody())];
+        $data = ['requests' => json_decode((string)$res->getBody())];
         return $twig->render('list.html.twig', $data);
     /*}
     catch (\Exception $e) {
