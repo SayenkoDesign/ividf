@@ -123,6 +123,7 @@
 }
 
 @media only screen and (max-width: 480px) {
+	.vc_om-table-style-1{font-size:14px;}
 	.single-portfolio .portfolio .vc_row.wpb_row.vc_row-fluid { width: 450px; }
 	.portfolio .navigation-prev-next .navigation-prev a, .portfolio .navigation-prev-next .navigation-next a { font-size: 11px; }
 }
