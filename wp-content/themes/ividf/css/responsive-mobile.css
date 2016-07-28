@@ -19,6 +19,13 @@
 	.single-portfolio .portfolio .row-layout-standard:nth-child(3) .vc_column_container { padding: 0 15px !important; }
 	.vc_om-person.om-person-style-colored .om-person-name-job { height: 190px; }
 	#menu-item-2523 a {padding-left:18px; padding-right:18px;}
+	/*Worldwide locations table*/
+	.large-wwloc{display:none;}
+	.small-wwloc{display:block;}
+}
+@media screen and (min-width:769px){
+	.large-wwlock{display:block;}
+	.small-wwloc{display:none;}
 }
 
 @media only screen and (max-width: 767px) {

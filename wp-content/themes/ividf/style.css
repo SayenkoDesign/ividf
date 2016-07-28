@@ -1,127 +1,4 @@
-0........................
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.
-.0.
-.
-..............
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.
-
-.
-0
-
-
-
-
-
-
-
-..........0...........000000000..0...............................0....................................................................................000000000000000000..................../*-----------------------------------------------------------------------------------
-
-
-
-
-
-
-
-Theme Name: IVIDF
+/*Theme Name: IVIDF
 
 	
 
@@ -749,6 +626,14 @@ body.uncovering-footer:after { content: '.'; display: block; overflow: hidden; v
 .flip-sidebar .sidebar-widget.widget_nav_menu .menu li a { padding-left: .5em; padding-right: 1.6em; }
 .flip-sidebar .sidebar-widget.widget_nav_menu .menu li a:before { content: "\e608"; left: auto; right: 0.6em; }
 .footer-widget ul.menu a { color: inherit; text-decoration: none; }
+
+/*Inside Inventor Community do not display News or Press Release*/
+.category-84 .cat-item-67, .category-84 .cat-item-72{
+	display:none;
+}
+.category-67 .cat-item-84{
+	display:none;
+}
 /*******************************************
 
  * 12. Widgets
